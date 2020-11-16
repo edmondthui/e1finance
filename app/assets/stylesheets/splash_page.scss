@@ -1,0 +1,33 @@
+.splash-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-text {
+    width: 20%;
+}
+
+.splash-text h1 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.splash-text p {
+    padding-bottom: 30px;
+}
+
+.splash-image {
+    width: 40%
+}
+
+.splash-text #signup {
+    background-color: #1835C3;
+    color: white;
+}
+
+.splash-text #signup:hover {
+    background-color: #00178A;
+    border: 2px solid #00178A;
+}

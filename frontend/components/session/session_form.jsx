@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
             <input type="submit" value={this.props.formType}/>
         </form>
 
-        const formType = this.props.formType === "login" ? (
+        const formType = (this.props.formType === "Login") ? (
             <div className="login-form">
                 <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo"/>
                 <h2 fontSize="36px" fontWeight="600" color="#606C82">Welcome back!</h2>

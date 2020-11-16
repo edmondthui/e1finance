@@ -9,7 +9,7 @@ const SplashPage = (props) => {
             <div className="splash-container">
                 <div className="splash-text">
                     <h1>THE FINANCE SUPER APP</h1>
-                    <h3>Invest, borrow, and spend, all in one place. You set your strategy, we automate it. For free.</h3>
+                    <p>Invest, borrow, and spend, all in one place. You set your strategy, we automate it. For free.</p>
                     <Link id="signup" to="/signup">Get Started</Link>
                 </div>
                 <div className="splash-image">
