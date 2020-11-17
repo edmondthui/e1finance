@@ -51,15 +51,17 @@ class SessionForm extends React.Component {
                 {form}
             </div>
         ) : (
-            <div className="signup-form">
+            <div className="signup-form-container">
                 <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50"/>
-                <div>
-                    <h1 fontSize="36px" fontWeight="600">Say goodbye to fees and hello to your perfect investment account</h1>
-                    <ul>
-                        <li>Customizable portfolios</li>
-                        <li>Free investing</li>
-                        <li>Best-in-class-security</li>
-                    </ul>
+                <div className="signup-content">
+                    <div className="signup-form-text">
+                        <h1 fontSize="36px" fontWeight="600">Say goodbye to fees and hello to your perfect investment account</h1>
+                        <ul>
+                            <li>Customizable portfolios</li>
+                            <li>Free investing</li>
+                            <li>Best-in-class-security</li>
+                        </ul>
+                    </div>
                     {form}
                 </div>
             </div>

@@ -34,7 +34,7 @@
     border-radius: 6px;
     border: 1px solid #00178A;
     background-color: #E8F0FE;
-    
+    padding-left: 10px;
 }
 
 .input-submit {
@@ -57,6 +57,7 @@
 .input-submit input:hover {
     background-color: #00178A;
     border: 2px solid #00178A;
+    cursor: pointer;
 }
 
 .login-form>.form-errors {
@@ -74,3 +75,37 @@
     line-height: 40px;
 }
 
+.signup-form {
+    box-shadow: 2px 2px 8px lightgray;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 5px;
+    width: 30%;
+}
+
+.signup-form-container {
+    justify-content: center;
+}
+
+.signup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-text {
+    width: 40%
+}
+
+.signup-form-container img {
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.signup-form>.form-errors {
+    display: none;
+}
