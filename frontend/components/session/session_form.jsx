@@ -27,7 +27,9 @@ class SessionForm extends React.Component {
         const formName = (this.props.formType==="Log In") ? "login" : "signup"
         const form = 
         <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
-            <p className="form-errors" >{this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}</p>
+            <div className="form-errors" >
+                {this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}
+            </div>
             <div className="input-form">
                 <label>Email:
                     <input type="text" onChange={this.update("email")}/>
