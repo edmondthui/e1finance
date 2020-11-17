@@ -23,30 +23,36 @@ class SessionForm extends React.Component {
         }
     }
 
-    render() {
-        const form = <form onSubmit={this.handleSubmit}>
-            <p className="form-errors">{this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}</p>
-            <label>Email:
-                <input type="text" onChange={this.update("email")}/>
-            </label>
-
-            <label>Password:
-                <input type="password" onChange={this.update("password")}/>
-            </label>
-
-            <input type="submit" value={this.props.formType}/>
+    render() { 
+        const formName = (this.props.formType==="Log In") ? "login" : "signup"
+        const form = 
+        <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
+            <p className="form-errors" >{this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}</p>
+            <div className="input-form">
+                <label>Email:
+                    <input type="text" onChange={this.update("email")}/>
+                </label>
+            </div>
+            <div className="input-form">
+                <label>Password:
+                    <input type="password" onChange={this.update("password")}/>
+                </label>
+            </div>
+            <div className="input-submit">
+                <input type="submit" value={this.props.formType}/>
+            </div>
         </form>
 
-        const formType = (this.props.formType === "Login") ? (
-            <div className="login-form">
-                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo"/>
-                <h2 fontSize="36px" fontWeight="600" color="#606C82">Welcome back!</h2>
+        const formType = (this.props.formType === "Log In") ? (
+            <div className="login-form-container">
+                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50"/>
+                <h2>Welcome back!</h2>
                 <p>Log in to your account</p>
                 {form}
             </div>
         ) : (
             <div className="signup-form">
-                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo"/>
+                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50"/>
                 <div>
                     <h1 fontSize="36px" fontWeight="600">Say goodbye to fees and hello to your perfect investment account</h1>
                     <ul>
