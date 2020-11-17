@@ -53,6 +53,8 @@
     border-radius: 5px;
     padding: 0px 10px; 
     margin-right: 20px;
+    width: 100px;
+    text-align:center;
 }
 
 .deposit-button:hover {
@@ -68,7 +70,8 @@
 }
 
 .cash-balance{
-    margin: 0
+    margin: 0;
+    color: #606C82;
 }
 
 .cash-balance-number {
