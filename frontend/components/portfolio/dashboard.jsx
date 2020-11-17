@@ -1,5 +1,5 @@
 import React from 'react';
-import LoggedInNavBar from '../nav_bar/logged_in_nav_bar'
+import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
 import PortfolioIndex from './portfolio_index_container'
 import PortfolioInfo from './portfolio_info_container'
 

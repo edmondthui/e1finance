@@ -91,7 +91,9 @@
     display: flex;
     padding: 5px 15px;
     align-items: center;
+    position: relative;
 }
+
 
 .profile-button img{
     padding-right: 3px;
@@ -102,10 +104,101 @@
     padding-right: 300px;
 }
 
-.profile-button-container:hover {
+.profile-button:hover {
     cursor: pointer;
 }
 
 .logged-in-nav-logo:hover {
     cursor: pointer;
+}
+
+.profile-button:hover > .profile-hover{
+    display: block
+}
+
+.profile-hover:hover {
+    display: block;
+
+}
+
+.profile-hover-content {
+    color: black;
+    padding: 0px 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.profile-hover-title {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-weight: 700;
+    
+}
+
+.profile-hover-email {
+    margin-top: 3px;
+    font-size: 14px;
+    color: #606C82;
+}
+
+#logout-button {
+    text-decoration: none;
+    border: 2px solid #1835C3;
+    text-decoration: none;
+    padding-left: 50px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #1835C3;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#logout-button:hover {
+    cursor: pointer;
+}
+
+.profile-hover {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    top: 10px;
+    right: 0;
+    width: 300px;
+
+    margin-top: 20px;
+}
+
+.profile-hover:hover > .profile-hover-content:after {
+    content:"";
+    height: 0;
+    width: 0; 
+    border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid white;
+	position:absolute;
+	top: 5px;
+	right: 5%;
+	margin:0 0 0 3px;
+	z-index:100;	
+}
+
+.profile-button:hover .profile-hover-content:after {
+    content:"";
+    height: 0;
+    width: 0; 
+    border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid white;
+	position:absolute;
+	top: 5px;
+	right: 5%;
+	margin:0 0 0 3px;
+    z-index:100;	
 }
