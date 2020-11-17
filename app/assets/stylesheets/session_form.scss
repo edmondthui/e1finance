@@ -1,4 +1,5 @@
 .login-form-container {
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -114,5 +115,5 @@
 }
 
 .signup-form>.form-errors {
-    display: none;
+    display: none
 }
