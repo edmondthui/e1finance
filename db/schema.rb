@@ -10,10 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_164843) do
+ActiveRecord::Schema.define(version: 2020_11_17_142159) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "holdings", force: :cascade do |t|
+    t.float "quantity", null: false
+    t.integer "user_id", null: false
+    t.integer "stock_id", null: false
+    t.integer "pie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pie_id"], name: "index_holdings_on_pie_id"
+    t.index ["stock_id"], name: "index_holdings_on_stock_id"
+    t.index ["user_id"], name: "index_holdings_on_user_id"
+  end
+
+  create_table "pies", force: :cascade do |t|
+    t.string "pie_name", null: false
+    t.float "percentage", null: false
+    t.integer "portfolio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["portfolio_id"], name: "index_pies_on_portfolio_id"
+  end
+
+  create_table "portfolios", force: :cascade do |t|
+    t.string "portfolio_name", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_portfolios_on_user_id", unique: true
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "ticker", null: false
+    t.string "name", null: false
+    t.float "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_stocks_on_name", unique: true
+    t.index ["ticker"], name: "index_stocks_on_ticker", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false

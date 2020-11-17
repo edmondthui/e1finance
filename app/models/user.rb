@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  buying_power    :float            not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 # require 'bcrypt'
 
 class User < ApplicationRecord
@@ -37,6 +49,10 @@ class User < ApplicationRecord
     def ensure_buying_power
         self.buying_power ||= 1000000
     end
+
+    has_many :portfolios,
+        foreign_key: :user_id,
+        class_name: :Portfolio
 
     private
 
