@@ -122,5 +122,11 @@
 }
 
 .signup-form>.form-errors {
+    display: none; 
+}
+// ^ remove above when component will unmount is finished
+
+
+.signup-form>.demo-login {
     display: none;
 }

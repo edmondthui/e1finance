@@ -9,9 +9,19 @@ class SessionForm extends React.Component {
             email: "",
             password: ""
         };
+        this.demoLogin = this.demoLogin.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleClick = this.handleClick.bind(this)
     }
+
+    demoLogin(e) {
+        e.preventDefault();
+        this.props.processForm({
+            email: "warrenbuffet@gmail.com", 
+            password: "verystrongpassword"
+        });
+    }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -30,10 +40,15 @@ class SessionForm extends React.Component {
         this.props.history.push("/");
     }
 
+    componentWillUnmount(){
+        // this.props.clearErrors();
+    };
+
+
     render() { 
         const e1Logo = <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50" id="form-logo" onClick={this.handleClick}/>
         const formName = (this.props.formType==="Log In") ? ("login") : ("signup");
-        const form = <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
+        const form = <form className={`${formName}-form`}>
             <div className="form-errors">
                 {this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}
             </div>
@@ -48,8 +63,12 @@ class SessionForm extends React.Component {
                 </label>
             </div>
             <div className="input-submit">
-                <input type="submit" value={this.props.formType}/>
+                <input type="submit" value={this.props.formType} onClick={this.handleSubmit}/>
             </div>
+            <div className="input-submit demo-login">
+                <input type="button" value={"Demo Log In"} onClick={this.demoLogin}/>
+            </div>
+
         </form>
 
         const formType = (this.props.formType === "Log In") ? (
