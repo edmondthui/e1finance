@@ -22,7 +22,8 @@ class Portfolio < ApplicationRecord
 
     def value
         value = 0
-        self.pies.each do |pie|
+        pies = Pie.includes(:holdings).where(portfolio_id: self.id)
+        pies.each do |pie|
             value += pie.value
         end
         value.round(2)

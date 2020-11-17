@@ -59,3 +59,49 @@
     cursor: pointer;
     transition: background-color .2s linear;
 }
+
+.logged-in-nav-bar {
+    background-color: #12123D;
+}
+
+.logged-in-nav-container {
+    display: flex;
+    color: white;
+}
+
+.logged-in-nav-container p {
+    padding-left: 20px;
+}
+
+.logged-in-nav-container p:hover {
+    cursor: pointer;
+}
+
+.logged-in-nav-bar{
+    display: flex;
+    padding-left: 300px;
+    height: 70px;
+    align-items: center;
+}
+
+.profile-button {
+    color: white;
+    border: 1px solid #DDAA47;
+    border-radius: 100px;
+    display: flex;
+    padding: 5px 15px;
+    align-items: center;
+}
+
+.profile-button img{
+    padding-right: 3px;
+}
+
+.profile-button-container{
+    margin-left: auto;
+    padding-right: 300px;
+}
+
+.profile-button-container:hover {
+    cursor: pointer;
+}

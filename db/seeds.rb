@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # Seed test user
-User.create({ email: "WarrenBuffet@gmail.com", password: "verystrongpassword"})
+User.create({ email: "warrenbuffet@gmail.com", password: "verystrongpassword"})
 
 # Seed test stock
 Stock.create({ ticker: "AAPL", name: "Apple Inc", price: 119.34})

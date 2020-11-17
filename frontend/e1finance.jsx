@@ -5,6 +5,8 @@ import Root from './components/root'
 
 //TESTING
 import {login, signup, logout} from './util/session_api_util'
+import {getPortfolios} from './util/portfolio_api_util'
+import {fetchPortfolios} from './actions/portfolio_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -24,9 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root)
 
     //TESTING
+    window.fetchPortfolios = fetchPortfolios
     window.login = login;
     window.signup = signup;
     window.logout = logout;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.getPortfolios = getPortfolios
 })

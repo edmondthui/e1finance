@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, exact}) => (
         path={path}
         exact={exact}
         render={props =>
-            !loggedIn ? <Component {...props} /> : <Redirect to="/" /> //change redirect to dashboard once its made
+            !loggedIn ? <Component {...props} /> : <Redirect to="/dashboard" /> //change redirect to dashboard once its made
         }
     />
 );
