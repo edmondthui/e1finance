@@ -27,6 +27,10 @@
     padding:20px;
 }
 
+.input-form label {
+    padding-left: 5px;
+}
+
 .input-form input {
     display: block;
     height: 40px;
@@ -34,7 +38,9 @@
     border-radius: 6px;
     border: 1px solid #00178A;
     background-color: #E8F0FE;
+    margin: 0 auto;
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .input-submit {
@@ -52,6 +58,7 @@
     border: 1px solid #0020BD;
     font-size: 16px;
     font-weight: 700;
+    margin: 0 auto;
 }
 
 .input-submit input:hover {
