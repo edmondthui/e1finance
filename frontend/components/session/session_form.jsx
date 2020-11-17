@@ -24,10 +24,9 @@ class SessionForm extends React.Component {
     }
 
     render() { 
-        const formName = (this.props.formType==="Log In") ? "login" : "signup"
-        const form = 
-        <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
-            <div className="form-errors" >
+        const formName = (this.props.formType==="Log In") ? ("login") : ("signup");
+        const form = <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
+            <div className="form-errors">
                 {this.props.errors.map((error, idx)=> <li key={idx}>{error}</li>)}
             </div>
             <div className="input-form">
@@ -67,7 +66,7 @@ class SessionForm extends React.Component {
                     {form}
                 </div>
             </div>
-        )
+        );
         return (
             <div className="form-container">
                 {formType}
