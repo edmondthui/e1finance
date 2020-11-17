@@ -12,8 +12,8 @@ class PortfolioInfo extends React.Component {
     render() {
         return (
             <div className="portfolio-info-container">
-                {this.props.portfolios.map((portfolio, idx) => (
-                    <div className="portfolio-info">
+                {this.props.portfolios.map((portfolio) => (
+                    <div className="portfolio-info" key={portfolio.id}>
                         <h1 className="portfolio-info-name">{portfolio.portfolio_name.toUpperCase()}</h1>
                         <div className="values">
                             <p className="current-value-title">Current value</p>
