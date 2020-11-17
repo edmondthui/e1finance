@@ -31,3 +31,52 @@
     font-size: 12px;
     color: #606C82;
 }
+
+.buying-power-container {
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+    border-bottom: 2px solid #EBF4F2;
+}
+
+.buying-power {
+    padding: 5px 20px;
+}
+
+.deposit-button {
+    background-color: #0020BD;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 10px; 
+    margin-right: 20px;
+}
+
+.deposit-button:hover {
+    cursor: pointer;
+    background-color: #00178A;
+}
+
+.auto-invest-container{
+    height: 100px;
+    background-color: white;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.cash-balance{
+    margin: 0
+}
+
+.cash-balance-number {
+    font-size: 25px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.deposit-container{
+    width: 30%;
+}

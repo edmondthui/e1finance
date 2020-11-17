@@ -22,13 +22,20 @@ class PortfolioInfo extends React.Component {
                     </div>
                 ))}
 
-                <div className="buying-power-container">
-                    <div className="buying-power">
-                        <p>Cash Balance</p>
-                        <p>{this.props.user.buing_power}</p>
+                <div className="deposit-container">
+                    <div className="buying-power-container">
+                        <div className="buying-power">
+                            <p className="cash-balance">Cash balance</p>
+                            <p className="cash-balance-number">{"$" + this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                        </div>
+                        <div className="deposit-button">
+                            <p>Deposit</p>
+                        </div>
                     </div>
-                    <div className="deposit-button">
-                        <p>Deposit</p>
+                    <div className="auto-invest-container">
+                        <div>
+
+                        </div>
                     </div>
                 </div>
             </div>
