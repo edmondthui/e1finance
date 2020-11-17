@@ -19,4 +19,14 @@ class Portfolio < ApplicationRecord
     has_many :pies,
         foreign_key: :portfolio_id,
         class_name: :Pie
+
+    def value
+        value = 0
+        self.pies.each do |pie|
+            value += pie.value
+        end
+        value.round(2)
+    end
+
+
 end

@@ -26,5 +26,13 @@ class Pie < ApplicationRecord
         through: :holdings,
         source: :stock
 
+    def value
+        value = 0
+        stocks = Stock.all
+        self.holdings.each do |holding|
+            value += holding.quantity * stocks[holding.stock_id-1].price
+        end
+        value.round(2)
+    end
 
 end
