@@ -1,5 +1,6 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class SessionForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     handleSubmit(e) {
@@ -23,7 +25,13 @@ class SessionForm extends React.Component {
         }
     }
 
+    handleClick(e) {
+        e.preventDefault()
+        this.props.history.push("/");
+    }
+
     render() { 
+        const e1Logo = <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50" id="form-logo" onClick={this.handleClick}/>
         const formName = (this.props.formType==="Log In") ? ("login") : ("signup");
         const form = <form onSubmit={this.handleSubmit} className={`${formName}-form`}>
             <div className="form-errors">
@@ -46,14 +54,14 @@ class SessionForm extends React.Component {
 
         const formType = (this.props.formType === "Log In") ? (
             <div className="login-form-container">
-                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50"/>
+                {e1Logo}
                 <h2>Welcome back!</h2>
                 <p>Log in to your account</p>
                 {form}
             </div>
         ) : (
             <div className="signup-form-container">
-                <img src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png" alt="E1 Logo" width="50" height="50"/>
+                {e1Logo}
                 <div className="signup-content">
                     <div className="signup-form-text">
                         <h1 fontSize="36px" fontWeight="600">Say goodbye to fees and hello to your perfect investment account</h1>
@@ -75,4 +83,4 @@ class SessionForm extends React.Component {
     }
 }
 
-export default SessionForm
+export default withRouter(SessionForm)
