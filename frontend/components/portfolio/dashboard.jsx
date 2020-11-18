@@ -19,6 +19,7 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="portfolio-main-content">
                         <PortfolioChart/> 
+                        <h1 className="slice-title">Slices</h1>
                         <PortfolioIndex />
                     </div>
                 </div>

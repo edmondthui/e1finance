@@ -20,6 +20,7 @@ class DashboardStock extends React.Component {
                     </div>
                     <div className="portfolio-main-content">
                         <PortfolioChart/> 
+                        <h1 className="slice-title">Markets</h1>
                         <StockIndex />
                     </div>
                 </div>
