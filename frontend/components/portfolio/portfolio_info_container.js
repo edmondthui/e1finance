@@ -6,7 +6,7 @@ import {fetchPortfolios} from '../../actions/portfolio_actions'
 const mapStateToProps = (state) => {
     return {
         items: Object.values(state.entities.portfolios),
-        user: Object.values(state.entities.users)[0]
+        user: Object.values(state.entities.users)[0],
     }
 }
 

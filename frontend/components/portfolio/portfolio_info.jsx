@@ -9,9 +9,8 @@ class PortfolioInfo extends React.Component {
 
 
     componentDidMount() {
-        let portfolioId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
-        let pieId = this.props.match.params.pieId ? this.props.match.params.pieId : null
-        this.props.action(portfolioId);
+        let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
+        this.props.action(paramsId);
         this.props.fetchPortfolios();
     }
 
@@ -20,9 +19,6 @@ class PortfolioInfo extends React.Component {
         let title;
         if (this.props.portfolio) {
             title = this.props.portfolio.portfolio_name.toUpperCase() 
-        } 
-        if (this.props.pie) {
-
         }
         else {
             title = "TOTAL PORTFOLIO VALUE"
