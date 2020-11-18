@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class PortfolioPieInfo extends React.Component {
     constructor(props) {
@@ -9,27 +9,28 @@ class PortfolioPieInfo extends React.Component {
 
 
     componentDidMount() {
-        // this.props.fetchPortfolios();
+        this.props.fetchPortfolios();
         this.props.fetchPies(this.props.match.params.portfolioId)
-        // this.props.fetchHoldings(this.props.pie.id)
     }
 
     render() {
         let totalValue = 0
         let title;
+        let button;
         if (this.props.pie) {
             title = this.props.pie.pie_name.toUpperCase() 
         } 
-        else {
-            title = "TOTAL PIE VALUE"
+        if (this.props.portfolio) {
+            button = this.props.portfolio.portfolio_name.toUpperCase();
         }
         return (
             <div className="portfolio-info-container">
                 {this.props.items.forEach((item) => (
                     totalValue += item.value
-                ))}
+                    ))}
 
                 <div className="portfolio-info" >
+                    <Link to={`/dashboard/${this.props.match.params.portfolioId}`} id="portfolio-back">{"🡐 "+ button}</Link>
                     <h1 className="portfolio-info-name">{title}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>

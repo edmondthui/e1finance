@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link} from 'react-router-dom'
 
 class StockInfo extends React.Component {
     constructor(props) {
@@ -10,18 +10,24 @@ class StockInfo extends React.Component {
 
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
+        this.props.fetchPies(this.props.match.params.portfolioId)
     }
 
     render() {
         let stockValue = 0;
         let stockName = "Stock"
+        let button;
         if (this.props.stock) {
             stockValue = this.props.stock.value
             stockName = this.props.stock.stock_name
         }
+        if (this.props.pie) {
+            button = this.props.pie.pie_name.toUpperCase();
+        }
         return (
             <div className="portfolio-info-container">
                 <div className="portfolio-info" >
+                    <Link to={`/dashboard/${this.props.match.params.portfolioId}`} id="portfolio-back">{"🡐 "+ button}</Link>
                     <h1 className="portfolio-info-name">{stockName}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>

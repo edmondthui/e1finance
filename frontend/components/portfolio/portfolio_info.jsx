@@ -1,13 +1,13 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class PortfolioInfo extends React.Component {
     constructor(props) {
         super(props)
     }
-
-
-
+    
+    
+    
     componentDidMount() {
         let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
         this.props.action(paramsId);
@@ -17,8 +17,10 @@ class PortfolioInfo extends React.Component {
     render() {
         let totalValue = 0
         let title;
+        let link;
         if (this.props.portfolio) {
-            title = this.props.portfolio.portfolio_name.toUpperCase() 
+            title = this.props.portfolio.portfolio_name.toUpperCase()
+            link = <Link to={`/dashboard`} id="portfolio-back">🡐 TOTAL PORTFOLIO VALUE</Link>
         }
         else {
             title = "TOTAL PORTFOLIO VALUE"
@@ -30,6 +32,7 @@ class PortfolioInfo extends React.Component {
                 ))}
 
                 <div className="portfolio-info" >
+                    {link}
                     <h1 className="portfolio-info-name">{title}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>
