@@ -23,6 +23,7 @@ Stock.create({ ticker: "O", name: "Realty Income Corp", price: 63.20})
 
 # Seet test portfolio
 Portfolio.create({ portfolio_name: "Passive Income", user_id: 1})
+Portfolio.create({ portfolio_name: "ROTH IRA", user_id: 1})
 
 # Seed test pie
 Pie.create({ pie_name: "Tech", percentage: 50, portfolio_id: 1})

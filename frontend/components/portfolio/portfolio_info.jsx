@@ -10,9 +10,10 @@ class PortfolioInfo extends React.Component {
     }
 
     render() {
+        let firstPortfolio = this.props.portfolios.slice(0,1)
         return (
             <div className="portfolio-info-container">
-                {this.props.portfolios.map((portfolio) => (
+                {firstPortfolio.map((portfolio) => (
                     <div className="portfolio-info" key={portfolio.id}>
                         <h1 className="portfolio-info-name">{portfolio.portfolio_name.toUpperCase()}</h1>
                         <div className="values">
