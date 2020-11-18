@@ -74,10 +74,6 @@
     padding-left: 20px;
 }
 
-.logged-in-nav-container p:hover {
-    cursor: pointer;
-}
-
 .logged-in-nav-bar{
     display: flex;
     padding-left: 300px;
@@ -107,10 +103,7 @@
 
 .profile-button:hover {
     cursor: pointer;
-}
-
-.logged-in-nav-logo:hover {
-    cursor: pointer;
+    background-color: #2F315E;
 }
 
 .profile-button:hover > .profile-hover{
@@ -118,8 +111,7 @@
 }
 
 .profile-hover:hover {
-    display: block;
-
+    cursor: default;
 }
 
 .profile-hover-content {
