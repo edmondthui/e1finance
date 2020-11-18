@@ -7,7 +7,7 @@ class InvestmentPie extends React.Component {
     }
 
     render() {
-        const data = [
+        const testdata = [
             { name: 'Test 1', value: 400 },
             { name: 'Test 2', value: 300 },
             { name: 'Test 3', value: 300 },
@@ -18,14 +18,14 @@ class InvestmentPie extends React.Component {
             <div className="pie-container">
                 <PieChart width={300} height={300} onMouseEnter={this.onPieEnter}>
                     <Pie
-                        data={data}
+                        data={testdata}
                         innerRadius={85}
                         outerRadius={120}
                         fill="#8884d8"
                         paddingAngle={5}
                         dataKey="value"
                         >
-                        {data.map((entry, index) => 
+                        {testdata.map((entry, index) => 
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         )}
                     </Pie>
