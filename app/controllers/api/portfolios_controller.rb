@@ -14,6 +14,15 @@ class Api::PortfoliosController < ApplicationController
         end
     end
 
+    def show
+        @portfolio = current_user.portfolios.find(params[:portfolio][:id])
+        if @portfolio
+            render :show
+        else
+            render json: ["Portfolio not found."], status: 404
+        end
+    end
+
     private
 
     def portfolio_params

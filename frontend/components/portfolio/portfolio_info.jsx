@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { withRouter } from 'react-router-dom'
 
 class PortfolioInfo extends React.Component {
     constructor(props) {
@@ -7,19 +7,28 @@ class PortfolioInfo extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPortfolios()
+        let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
+        this.props.action(paramsId)
+        this.props.fetchPortfolios();
     }
 
     render() {
         let totalValue = 0
+        let title;
+        if (this.props.portfolio) {
+            title = this.props.portfolio.portfolio_name.toUpperCase() 
+        } 
+        else {
+            title = "TOTAL PORTFOLIO VALUE"
+        }
         return (
             <div className="portfolio-info-container">
-                {this.props.portfolios.forEach((portfolio) => (
+                {this.props.items.forEach((portfolio) => (
                     totalValue += portfolio.value
                 ))}
 
                 <div className="portfolio-info" >
-                    <h1 className="portfolio-info-name">TOTAL PORTFOLIO VALUE</h1>
+                    <h1 className="portfolio-info-name">{title}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>
                         <p className="current-value">{"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
@@ -47,4 +56,4 @@ class PortfolioInfo extends React.Component {
     }
 }
 
-export default PortfolioInfo
+export default withRouter(PortfolioInfo)

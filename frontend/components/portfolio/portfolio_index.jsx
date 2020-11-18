@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 class PortfolioIndex extends React.Component {
     constructor(props) {
@@ -6,7 +7,19 @@ class PortfolioIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPortfolios()
+        // if (this.props.type === "Portfolio Show") {
+        //     debugger;
+        //     this.props.action(this.props.match.params.portfolioId)
+        // } 
+        // else {
+        //     this.props.action()
+        // }
+        let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
+        this.props.action(paramsId)
+    }
+
+    handleClick(itemId) {
+        this.props.history.push(this.props.match.url+`/${itemId}`);
     }
 
     render() {
@@ -16,13 +29,13 @@ class PortfolioIndex extends React.Component {
                     <p className="header-name">Name</p>
                     <p className="header-value">Value</p>
                 </div>
-                {this.props.portfolios.map((portfolio) => (
-                    <div key={portfolio.id} className="portfolio-index-item">
+                {this.props.items.map((item) => (
+                    <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
                         <div className="portfolio-name">
                         <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
-                        <p>{portfolio.portfolio_name}</p>
+                        <p>{item.portfolio_name} {item.pie_name}</p>
                         </div>
-                        <p className="item-value">{"$" + portfolio.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                        <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                     </div>
                 ))}
 
@@ -31,4 +44,4 @@ class PortfolioIndex extends React.Component {
     }
 }
 
-export default PortfolioIndex
+export default withRouter(PortfolioIndex)

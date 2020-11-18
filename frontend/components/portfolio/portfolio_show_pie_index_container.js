@@ -1,17 +1,18 @@
 import {connect} from 'react-redux'
 import PortfolioIndex from './portfolio_index'
-import {fetchPortfolios} from '../../actions/portfolio_actions'
+import {fetchPies} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state) => {
     return {
-        items: Object.values(state.entities.portfolios)
+        items: Object.values(state.entities.pies),
+        type: "Pie Index"
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: () => dispatch(fetchPortfolios())
+        action: (portfolioId) => dispatch(fetchPies(portfolioId)) // change fetch portfolios to fetch pies
     }
 }
 

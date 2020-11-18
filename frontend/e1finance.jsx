@@ -6,7 +6,8 @@ import Root from './components/root'
 //TESTING
 import {login, signup, logout} from './util/session_api_util'
 import {getPortfolios} from './util/portfolio_api_util'
-import {fetchPortfolios} from './actions/portfolio_actions'
+import {fetchPortfolios, fetchPies} from './actions/portfolio_actions'
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');
@@ -33,4 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.getPortfolios = getPortfolios
+    window.fetchPies = fetchPies
 })
