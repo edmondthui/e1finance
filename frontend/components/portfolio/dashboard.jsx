@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
                 <LoggedInNavBar/>
                 <PortfolioInfo/>
                 {/* <PortfolioPieChart/> */}
-                {/* <PortfolioValue/> */}
+                {/* <PortfolioValueChart/> */}
                 <PortfolioIndex />
             </div>
         )
