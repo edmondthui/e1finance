@@ -28,9 +28,15 @@ Portfolio.create({ portfolio_name: "ROTH IRA", user_id: 1})
 # Seed test pie
 Pie.create({ pie_name: "Tech", percentage: 50, portfolio_id: 1})
 Pie.create({ pie_name: "Real Estate", percentage: 50, portfolio_id: 1})
+Pie.create({ pie_name: "Tech", percentage: 50, portfolio_id: 2})
+Pie.create({ pie_name: "Real Estate", percentage: 50, portfolio_id: 2})
 
 # Seet test holding
 Holding.create({ quantity: 10, user_id: 1, stock_id: 1, pie_id: 1})
 Holding.create({ quantity: 10, user_id: 1, stock_id: 2, pie_id: 1})
 Holding.create({ quantity: 30, user_id: 1, stock_id: 9, pie_id: 2})
 Holding.create({ quantity: 15, user_id: 1, stock_id: 10, pie_id: 2})
+Holding.create({ quantity: 55, user_id: 1, stock_id: 1, pie_id: 3})
+Holding.create({ quantity: 20, user_id: 1, stock_id: 2, pie_id: 3})
+Holding.create({ quantity: 15, user_id: 1, stock_id: 9, pie_id: 4})
+Holding.create({ quantity: 12, user_id: 1, stock_id: 10, pie_id: 4})

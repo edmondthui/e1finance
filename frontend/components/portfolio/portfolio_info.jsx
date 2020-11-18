@@ -10,18 +10,20 @@ class PortfolioInfo extends React.Component {
     }
 
     render() {
-        let firstPortfolio = this.props.portfolios.slice(0,1)
+        let totalValue = 0
         return (
             <div className="portfolio-info-container">
-                {firstPortfolio.map((portfolio) => (
-                    <div className="portfolio-info" key={portfolio.id}>
-                        <h1 className="portfolio-info-name">{portfolio.portfolio_name.toUpperCase()}</h1>
-                        <div className="values">
-                            <p className="current-value-title">Current value</p>
-                            <p className="current-value">{"$" + portfolio.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
-                        </div>
-                    </div>
+                {this.props.portfolios.forEach((portfolio) => (
+                    totalValue += portfolio.value
                 ))}
+
+                <div className="portfolio-info" >
+                    <h1 className="portfolio-info-name">TOTAL PORTFOLIO VALUE</h1>
+                    <div className="values">
+                        <p className="current-value-title">Current value</p>
+                        <p className="current-value">{"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                    </div>
+                </div>
 
                 <div className="deposit-container">
                     <div className="buying-power-container">
