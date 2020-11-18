@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-class PortfolioPieInfo extends React.Component {
+class StockInfo extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -9,31 +9,23 @@ class PortfolioPieInfo extends React.Component {
 
 
     componentDidMount() {
-        // this.props.fetchPortfolios();
-        this.props.fetchPies(this.props.match.params.portfolioId)
-        // this.props.fetchHoldings(this.props.pie.id)
+        this.props.fetchHolding(this.props.match.params.stockId)
     }
 
     render() {
-        let totalValue = 0
-        let title;
-        if (this.props.pie) {
-            title = this.props.pie.pie_name.toUpperCase() 
-        } 
-        else {
-            title = "TOTAL PIE VALUE"
+        let stockValue = 0;
+        let stockName = "Stock"
+        if (this.props.stock) {
+            stockValue = this.props.stock.value
+            stockName = this.props.stock.stock_name
         }
         return (
             <div className="portfolio-info-container">
-                {this.props.items.forEach((item) => (
-                    totalValue += item.value
-                ))}
-
                 <div className="portfolio-info" >
-                    <h1 className="portfolio-info-name">{title}</h1>
+                    <h1 className="portfolio-info-name">{stockName}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>
-                        <p className="current-value">{"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                        <p className="current-value">{"$" + stockValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                     </div>
                 </div>
 
@@ -58,4 +50,4 @@ class PortfolioPieInfo extends React.Component {
     }
 }
 
-export default withRouter(PortfolioPieInfo)
+export default withRouter(StockInfo)

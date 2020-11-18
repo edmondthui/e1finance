@@ -4,6 +4,7 @@ export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS"
 export const RECEIVE_PIES = "RECEIVE_PIES"
 export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO"
 export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS"
+export const RECEIVE_HOLDING = "RECEIVE_HOLDING"
 
 const receivePortfolios = (portfolios) => {
     return {
@@ -33,6 +34,13 @@ const receiveHoldings = (holdings) => {
     }
 }
 
+const receiveHolding = (holding) => {
+    return {
+        type: RECEIVE_HOLDING,
+        holding
+    }
+}
+
 export const fetchPortfolios = () => {
     return (dispatch) => {
         PortfolioAPIUtil.getPortfolios().then((portfolios) => dispatch(receivePortfolios(portfolios)))
@@ -54,5 +62,11 @@ export const fetchPortfolio = (portfolioId) => {
 export const fetchHoldings = (pieId) => {
     return (dispatch) => {
         PortfolioAPIUtil.getHoldings(pieId).then((holdings) => dispatch(receiveHoldings(holdings)))
+    }
+}
+
+export const fetchHolding = (holdingId) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.getHolding(holdingId).then((holding) => dispatch(receiveHolding(holding)))
     }
 }

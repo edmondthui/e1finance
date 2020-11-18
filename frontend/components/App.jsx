@@ -7,6 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import Dashboard from './portfolio/dashboard'
 import DashboardPortfolio from './portfolio/dashboard_portfolio'
 import DashboardPie from './portfolio/dashboard_pie'
+import DashboardStock from './portfolio/dashboard_stock'
 
 const App = () => (
   <div>
@@ -15,6 +16,7 @@ const App = () => (
     <AuthRoute path="/signup" component={SignupFormContainer} />
     <ProtectedRoute exact path="/dashboard/:portfolioId" component={DashboardPortfolio} />
     <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId" component={DashboardPie} />
+    <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId/:stockId" component={DashboardStock} />
     <ProtectedRoute exact path="/dashboard" component={Dashboard} />
   </div>
 );

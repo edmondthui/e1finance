@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: (portfolioId) => dispatch(fetchPies(portfolioId)) // change fetch portfolios to fetch pies
+        action: (portfolioId) => dispatch(fetchPies(portfolioId)) 
     }
 }
 
