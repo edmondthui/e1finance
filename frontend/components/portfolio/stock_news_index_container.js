@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId))
+        fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId)),
     }
 }
 
