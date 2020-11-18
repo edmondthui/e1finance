@@ -1,16 +1,14 @@
 class Api::StocksController < ApplicationController
 
     def index
-        @pie = Pie.where(id: params[:stock][:pie_id])
-        @holdings = @pie.holdings
-        @stocks = @pie.stocks
+        @holdings = Holding.includes(:stock).where(pie_id: params[:stock][:pie_id])
         render :index
     end
 
     private
 
     def stock_params
-        params.require(:stock).permit(:ticker:, :name, :pie_id)
+        params.require(:stock).permit(:ticker, :name, :pie_id)
     end
     
 end

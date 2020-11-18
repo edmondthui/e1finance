@@ -1,20 +1,13 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-class PortfolioIndex extends React.Component {
+class PortfolioPieIndex extends React.Component {
     constructor(props) {
         super(props)
     }
 
     componentDidMount() {
-        // if (this.props.type === "Portfolio Show") {
-        //     debugger;
-        //     this.props.action(this.props.match.params.portfolioId)
-        // } 
-        // else {
-        //     this.props.action()
-        // }
-        let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
+        let paramsId = this.props.match.params.pieId ? this.props.match.params.pieId : ""
         this.props.action(paramsId)
     }
 
@@ -44,4 +37,4 @@ class PortfolioIndex extends React.Component {
     }
 }
 
-export default withRouter(PortfolioIndex)
+export default withRouter(PortfolioPieIndex)

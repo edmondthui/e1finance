@@ -25,4 +25,10 @@ class Holding < ApplicationRecord
     belongs_to :stock,
         foreign_key: :stock_id,
         class_name: :Stock
+
+    def value 
+        stock = Stock.where(id: stock_id)
+        value = stock[0].price * quantity
+        value.round(2)
+    end
 end

@@ -1,23 +1,24 @@
 import {connect} from 'react-redux'
-import PortfolioInfo from './portfolio_info'
-import {fetchPies, fetchPortfolios} from '../../actions/portfolio_actions'
+import PortfolioPieInfo from './portfolio_pie_info'
+import {fetchPies, fetchHoldings, fetchPortfolios} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
     debugger;
     return {
-        items: Object.values(state.entities.pies), // change from portfolios to pies
+        items: Object.values(state.entities.holdings), // change from portfolios to pies
         user: Object.values(state.entities.users)[0],
-        portfolio: state.entities.portfolios[ownProps.match.params.portfolioId],
-        type: "Portfolio Show"
+        pie: state.entities.pies[ownProps.match.params.pieId],
+        type: "Pie Show"
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: (portfolioId) => dispatch(fetchPies(portfolioId)), //change to fetch pies
+        fetchHoldings: (pieId) => dispatch(fetchHoldings(pieId)), //change to fetch pies
+        fetchPies: (portfolioId) => dispatch(fetchPies(portfolioId)),
         fetchPortfolios: () => dispatch(fetchPortfolios())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioInfo)
+export default connect(mapStateToProps, mapDispatchToProps)(PortfolioPieInfo)

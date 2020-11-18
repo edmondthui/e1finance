@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-class PortfolioInfo extends React.Component {
+class PortfolioPieInfo extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -9,21 +9,17 @@ class PortfolioInfo extends React.Component {
 
 
     componentDidMount() {
-        let portfolioId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
-        let pieId = this.props.match.params.pieId ? this.props.match.params.pieId : null
-        this.props.action(portfolioId);
-        this.props.fetchPortfolios();
+        // this.props.fetchPortfolios();
+        this.props.fetchPies(this.props.match.params.portfolioId)
+        // this.props.fetchHoldings(this.props.pie.id)
     }
 
     render() {
         let totalValue = 0
         let title;
-        if (this.props.portfolio) {
-            title = this.props.portfolio.portfolio_name.toUpperCase() 
-        } 
         if (this.props.pie) {
-
-        }
+            title = this.props.pie.pie_name.toUpperCase() 
+        } 
         else {
             title = "TOTAL PORTFOLIO VALUE"
         }
@@ -62,4 +58,4 @@ class PortfolioInfo extends React.Component {
     }
 }
 
-export default withRouter(PortfolioInfo)
+export default withRouter(PortfolioPieInfo)

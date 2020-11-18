@@ -21,3 +21,11 @@ export const getPies = (portfolioId) => {
         data: { pie: { portfolio_id: portfolioId }}
     })
 }
+
+export const getHoldings = (pieId) => {
+    return $.ajax({
+        method: 'get',
+        url: '/api/stocks',
+        data: { stock: { pie_id: pieId }}
+    })
+}

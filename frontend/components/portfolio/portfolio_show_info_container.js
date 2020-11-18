@@ -4,7 +4,6 @@ import {fetchPies, fetchPortfolios} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
         items: Object.values(state.entities.pies), // change from portfolios to pies
         user: Object.values(state.entities.users)[0],
