@@ -204,3 +204,27 @@
 	margin:0 0 0 3px;
     z-index:100;	
 }
+
+@media all and (max-width: 1260) {
+    .login-buttons#signup .login-buttons#login {
+        display: none;
+    }
+}
+
+.login-buttons #signup {
+    @media only screen and (max-width: 1260px) {
+      display: none;
+    }
+}
+
+#login {
+    @media only screen and (max-width: 1060px) {
+        display: none;
+    }
+}
+
+.nav-content {
+    @media only screen and (max-width: 995px) {
+        display: none;
+    }
+}
