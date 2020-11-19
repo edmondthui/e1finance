@@ -1,38 +1,36 @@
 import React from 'react';
 import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 
 class Stocks extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            render: false,
-        }
-        this.clickNews = this.clickNews.bind(this);
+        this.clickStock = this.clickStock.bind(this);
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.props.fetchAllNews();
-            this.setState({render: true}) 
-        }, 1000)
+        this.props.fetchStocks()
     }
 
-    clickNews(idx) {
-        // window.location.assign(this.props.news[idx].url)
-        window.location.href = this.props.news[idx].url
+    clickStock(idx) {
+        this.props.history.push(`/stocks/${idx}`)
     }
 
     render() {
-        let news;
-        if(this.state.render) {
-            news = this.props.news.map((article, idx )=> (
-                <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
-                    <div className="news-text-content" >
-                        <p className="news-title">{(article.headline.length > 120) ? article.headline.slice(0, 150)+"..." : article.headline}</p>
-                        <p className="news-summary">{article.summary.slice(0, 150)+"..."}</p>
-                    </div>
-                    <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
+        let stocks
+        if (this.props.stocks) {
+            stocks = this.props.stocks.map((stock, idx )=> (
+                <div className="portfolio-index-item" key={idx} onClick={() => this.clickStock(idx)}>
+                    <div className = "stock-content">
+                        <div>Image</div>
+                        <div className = "stock-name">
+                            <p>{stock.ticker}</p>
+                            <p>{stock.stock_name}</p>
+                        </div>
+                        <div className = "stock-research-price">
+                            <p>{stock.value}</p>
+                        </div>
+                    </div>       
                 </div>
             ))
         }
@@ -47,13 +45,13 @@ class Stocks extends React.Component {
                 </div>
                 <div className="research-index-container">
                     <div className="portfolio-index-header">
-                        <p className="header-name">{"Latest market news"}</p>
+                        <p className="header-name">Stocks</p>
                     </div>
-                    {news}
+                    {stocks}
                 </div>
             </div>
         )
     }
 }
 
-export default Stocks
+export default withRouter(Stocks)

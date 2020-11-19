@@ -70,7 +70,7 @@ class StockNewsIndex extends React.Component {
                     <br/>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
-                            <p className="header-name">{"Latest news"}</p>
+                            <p className="header-name">Latest news</p>
                         </div>
                         {news}
                     </div>

@@ -24,7 +24,7 @@ export const getPies = (portfolioId) => {
 
 export const getHoldings = (pieId) => {
     return $.ajax({
-        method: 'get',
+        method: 'GET',
         url: '/api/stocks',
         data: { stock: { pie_id: pieId }}
     })
@@ -32,8 +32,15 @@ export const getHoldings = (pieId) => {
 
 export const getHolding = (holdingId) => {
     return $.ajax({
-        method: 'get',
+        method: 'GET',
         url: `/api/stocks/${holdingId}`,
 
+    })
+}
+
+export const getStocks = () => {
+    return $.ajax({
+        method: 'GET',
+        url: '/api/stocks'
     })
 }

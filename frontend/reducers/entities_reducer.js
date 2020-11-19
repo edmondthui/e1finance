@@ -5,6 +5,7 @@ import piesReducer from './pies_reducer'
 import holdingsReducer from './holdings_reducer'
 import newsReducer from './news_reducer'
 import pricesReducer from './prices_reducer'
+import stocksReducer from './stocks_reducer'
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
   pies: piesReducer,
   holdings: holdingsReducer,
   news: newsReducer,
-  prices: pricesReducer
+  prices: pricesReducer,
+  stocks: stocksReducer
 });
 
 export default entitiesReducer;

@@ -28,3 +28,29 @@
     border-radius: 10px;
     font-weight: 500;
 }
+
+.stock-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.stock-content:hover {
+    cursor: pointer;
+}
+
+
+.stock-name {
+    margin-left: 100px;
+}
+
+
+.stock-research-price {
+    margin-left: auto;
+    margin-right: 100px;
+}
+
+.stock-research-price {
+    font-size: 18px;
+}
+

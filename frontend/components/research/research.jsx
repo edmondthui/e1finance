@@ -19,7 +19,6 @@ class Research extends React.Component {
     }
 
     clickNews(idx) {
-        // window.location.assign(this.props.news[idx].url)
         window.location.href = this.props.news[idx].url
     }
 
@@ -47,7 +46,7 @@ class Research extends React.Component {
                 </div>
                 <div className="research-index-container">
                     <div className="portfolio-index-header">
-                        <p className="header-name">{"Latest market news"}</p>
+                        <p className="header-name">Latest market news</p>
                     </div>
                     {news}
                 </div>

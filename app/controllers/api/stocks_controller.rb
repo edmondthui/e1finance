@@ -1,7 +1,12 @@
 class Api::StocksController < ApplicationController
 
     def index
-        @holdings = params[:stock][:pie_id] ? Holding.includes(:stock).where(pie_id: params[:stock][:pie_id]) : Stock.all
+        # @holdings = params[:stock][:pie_id] ? Holding.includes(:stock).where(pie_id: params[:stock][:pie_id]) : Stock.all
+        if params[:stock]
+            @holdings = Holding.includes(:stock).where(pie_id: params[:stock][:pie_id])
+        else
+            @stocks = Stock.all
+        end
         render :index
     end
 

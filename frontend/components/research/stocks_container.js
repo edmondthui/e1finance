@@ -1,17 +1,17 @@
 import {connect} from 'react-redux'
 import Stocks from './stocks'
-import {fetchAllNews} from '../../actions/news_actions'
+import {fetchStocks} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state) => {
     return {
-        news: state.entities.news,
+        stocks: Object.values(state.entities.stocks)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchAllNews: () => dispatch(fetchAllNews())
+        fetchStocks: () => dispatch(fetchStocks())
         // Will need to fetch all stocks
     }
 }
