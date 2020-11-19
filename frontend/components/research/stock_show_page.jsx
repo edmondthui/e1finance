@@ -22,7 +22,7 @@ class StockShowPage extends React.Component {
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
-        }, 500)
+        }, 1000)
     }
 
     clickNews(idx) {
