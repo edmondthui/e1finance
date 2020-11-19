@@ -15,3 +15,12 @@ export const fetchInterdayData = (ticker) => (
     // SANDBOX ^
   })
 )
+
+export const fetchStockNews = () => (
+  $.ajax({
+    method: 'GET',
+    // url: `https://cloud.iexapis.com/stable/stock/spy/news/last/10?token=${window.api_key}`,
+    url: `https://sandbox.iexapis.com/stable/stock/spy/news/last/10?token=Tpk_b52b6d3dff234c59994a24ccc7ecd48f`
+    // SANDBOX^
+  })
+)

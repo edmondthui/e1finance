@@ -8,12 +8,12 @@ const LoggedOutNavBar = (props) => (
         <nav className="nav-content">
 
             <div className="dropdown">
-                <Link activeClassName="active" to="how-it-works" spy={true} smooth={true} duration={1000} className="dropdown-title">How it works</Link>
+                <Link to="how-it-works" spy={true} smooth={true} duration={1000} className="dropdown-title">How it works</Link>
                 {/* <p className="dropdown-title">How it works</p> */}
                     {/* <div className="dropdown-content">
                         <a href="#">Test</a>
                     </div> */}
-                <Link activeClassName="active" to="why-e1" spy={true} smooth={true} duration={1000} className="dropdown-title">Why E1</Link>
+                <Link to="why-e1" spy={true} smooth={true} duration={1000} className="dropdown-title">Why E1</Link>
                 {/* <p className="dropdown-title">Why E1</p> */}
                     {/* <div className="dropdown-content">
                         <a href="#">Test</a>
@@ -29,8 +29,8 @@ const LoggedOutNavBar = (props) => (
             </div>
         </nav>
         <div className="login-buttons">
-            <Link id="login" onClick={() => props.history.push("/login")}>Login</Link>
-            <Link id="signup" onClick={() => props.history.push("/signup")}>Get Started</Link>
+            <Link to="/login" id="login" onClick={() => props.history.push("/login")}>Login</Link>
+            <Link to="/signup" id="signup" onClick={() => props.history.push("/signup")}>Get Started</Link>
         </div>
     </section>
 )

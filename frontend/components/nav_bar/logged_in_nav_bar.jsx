@@ -31,8 +31,8 @@ class LoggedInNavBar extends React.Component {
                         <nav className="nav-content">
 
                             <div className="logged-in-nav-container">
-                                <NavLink to="/dashboard" activeClassName="active" className="logged-in-nav-content">Invest</NavLink>
-                                <NavLink to="/research" activeClassName="active" className="logged-in-nav-content">Research</NavLink>
+                                <NavLink to="/dashboard" activeclass="active" className="logged-in-nav-content">Invest</NavLink>
+                                <NavLink to="/research" activeclass="active" className="logged-in-nav-content">Research</NavLink>
                                 {/* <p className="logged-in-nav-content">Invest</p> */}
                                 {/* <p className="logged-in-nav-content">Spend</p> */}
                                 {/* <p className="logged-in-nav-content">Borrow</p> */}

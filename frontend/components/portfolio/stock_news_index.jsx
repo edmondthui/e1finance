@@ -12,7 +12,6 @@ class StockNewsIndex extends React.Component {
             render: false,
             price: 0,
         }
-        this.clickNews = this.clickNews.bind(this);
     }
 
     componentDidMount() {

@@ -1,0 +1,30 @@
+.research-index-container {
+    margin: 50px 200px;
+}
+
+.research-nav-bar {
+    background-color: #F6F7FB;
+    border-bottom: 1px solid #D9DEE7;
+    height: 50px;
+    align-items: center;
+    display: flex;
+}
+
+.research-nav-container {
+    padding-left: 290px;
+
+}
+
+.research-nav-content {
+    color: #606C82;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.research-nav-container .active {
+    background-color: #DDFA04;
+    border-radius: 10px;
+    font-weight: 500;
+}
