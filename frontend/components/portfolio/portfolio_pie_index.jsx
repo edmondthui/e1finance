@@ -22,7 +22,7 @@ class PortfolioPieIndex extends React.Component {
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie/>
+                        <PortfolioPie items={this.props.items}/>
                     </div>
                 </div>
                 <div className="portfolio-main-content">

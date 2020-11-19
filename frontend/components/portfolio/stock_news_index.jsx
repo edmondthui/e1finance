@@ -21,9 +21,10 @@ class StockNewsIndex extends React.Component {
     
     render() {
         let news = null
+        let pie;
         if(this.state.render) {
-            news = this.props.news.map(article => (
-                <div className="portfolio-index-item">
+            news = this.props.news.map((article,idx) => (
+                <div className="portfolio-index-item" key={idx}>
                     <div className="news-text-content">
                         <p className="news-title">{(article.headline.length > 95) ? article.headline.slice(0, 95)+"..." : article.headline}</p>
                         <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
@@ -31,12 +32,14 @@ class StockNewsIndex extends React.Component {
                     <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                 </div>
             ))
+            pie = <PortfolioPie items={[this.props.stock]}/>
         }
+        debugger;
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie/>
+                        {pie}
                     </div>
                 </div>
                 <div className="portfolio-main-content">

@@ -1,5 +1,5 @@
 import React from 'react'
-import { PieChart, Pie, Sector, Cell, } from 'recharts';
+import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts';
 
 class InvestmentPie extends React.Component {
     constructor(props) {
@@ -7,28 +7,25 @@ class InvestmentPie extends React.Component {
     }
 
     render() {
-        const testdata = [
-            { name: 'Test 1', value: 400 },
-            { name: 'Test 2', value: 300 },
-            { name: 'Test 3', value: 300 },
-            { name: 'Test 4', value: 200 },
-          ];
-        const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+        let data = this.props.items
+
+        const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];
         return (
             <div className="pie-container">
                 <PieChart width={300} height={300} onMouseEnter={this.onPieEnter}>
                     <Pie
-                        data={testdata}
+                        data={data}
                         innerRadius={85}
                         outerRadius={120}
                         fill="#8884d8"
                         paddingAngle={5}
                         dataKey="value"
                         >
-                        {testdata.map((entry, index) => 
+                        {data.map((entry, index) => 
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                        )}
+                            )}
                     </Pie>
+                    <Tooltip />
                 </PieChart>
             </div>
         )
