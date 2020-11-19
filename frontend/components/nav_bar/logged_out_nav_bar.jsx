@@ -19,10 +19,10 @@ const LoggedOutNavBar = (props) => (
                     <div className="dropdown-content">
                         <a href="#">Test</a>
                     </div> */}
-                <p className="dropdown-title">FAQs</p>
+                {/* <p className="dropdown-title">FAQs</p>
                     <div className="dropdown-content">
                         <a href="#">Test</a>
-                    </div>
+                    </div> */}
             </div>
         </nav>
         <div className="login-buttons">

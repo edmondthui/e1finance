@@ -19,7 +19,6 @@
 }
 
 .splash-image {
-    width: 40%;
 }
 
 .splash-text #signup {
@@ -32,3 +31,70 @@
     border: 2px solid #00178A;
 }
 
+.how-it-works {
+    background-color: #12123D;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.how-it-works-title {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}
+
+.how-it-works-text {
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-signup-bar {
+    background-color: #12123D;
+    padding: 30px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-signup {
+    margin-top: 20px;
+    padding: 15px 80px;
+    color: #12123D;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #DDFA00;
+    border: 1px solid #DDFA00;
+    text-decoration: none;
+}
+
+.why-e1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px 200px;
+    padding-top: 70px;
+}
+
+.why-e1-container {
+    display: flex;
+    align-items: center;
+}
+
+.why-e1-text {
+    padding: 0 150px;
+}
+
+.why-e1-text h2 {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #00D4A3;
+    color: #12123D;
+
+}
+
+.why-e1-text p {
+    color: #12123D;
+}
