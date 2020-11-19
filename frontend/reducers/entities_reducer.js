@@ -4,13 +4,15 @@ import portfoliosReducer from './portfolios_reducer'
 import piesReducer from './pies_reducer'
 import holdingsReducer from './holdings_reducer'
 import newsReducer from './news_reducer'
+import pricesReducer from './prices_reducer'
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
   portfolios: portfoliosReducer,
   pies: piesReducer,
   holdings: holdingsReducer,
-  news: newsReducer
+  news: newsReducer,
+  prices: pricesReducer
 });
 
 export default entitiesReducer;

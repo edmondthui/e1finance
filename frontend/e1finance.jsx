@@ -7,7 +7,7 @@ import Root from './components/root'
 import {login, signup, logout} from './util/session_api_util'
 import {getPortfolios} from './util/portfolio_api_util'
 import {fetchPortfolios, fetchPies} from './actions/portfolio_actions'
-import {fetchCompanyNews} from './util/IEX_api_utl'
+import {fetchCompanyNews, fetchInterdayData} from './util/IEX_api_utl'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,4 +37,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getPortfolios = getPortfolios
     window.fetchPies = fetchPies
     window.fetchCompanyNews = fetchCompanyNews
+    window.fetchInterdayData = fetchInterdayData
 })

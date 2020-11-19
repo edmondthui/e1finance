@@ -14,12 +14,16 @@ class StockNewsIndex extends React.Component {
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
         setTimeout(() => {
+            debugger;
+            this.props.fetchStockPrice(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
+            debugger;
             this.setState({render: true}) 
         }, 100)
     }
     
     render() {
+        debugger;
         let news = null
         let pie;
         let stockPrice;
@@ -37,7 +41,6 @@ class StockNewsIndex extends React.Component {
             const formattedStock = [{id: this.props.stock.id, value: this.props.stock.value, name: this.props.stock.stock_name}]
             pie = <PortfolioPie items={formattedStock} totalValue={"$" + this.props.stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
         }
-        debugger;
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
@@ -46,7 +49,7 @@ class StockNewsIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    <PortfolioChart/> 
+                    <PortfolioChart data={this.props.prices}/> 
                     <h1 className="slice-title">Markets</h1>
 
 

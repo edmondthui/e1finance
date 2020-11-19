@@ -8,7 +8,6 @@ class InvestmentPie extends React.Component {
 
     render() {
         let data = this.props.items
-        debugger;
         const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];
         return (
             <div className="pie-container">
@@ -29,6 +28,7 @@ class InvestmentPie extends React.Component {
                         )}
                     </Pie>
                     <Tooltip />
+                    {/* TODO ADD BUY SELL REBALANCE BUTTONS SEPARATE COMPONENT */}
                 </PieChart>
             </div>
         )

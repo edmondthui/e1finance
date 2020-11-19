@@ -1,4 +1,7 @@
 import * as PortfolioAPIUtil from '../util/portfolio_api_util'
+import * as ExternalAPIUtil from '../util/IEX_api_utl'
+
+export const RECEIVE_STOCK_PRICE = "RECEIVE_STOCK_PRICE"
 
 export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS"
 export const RECEIVE_PIES = "RECEIVE_PIES"
@@ -68,5 +71,26 @@ export const fetchHoldings = (pieId) => {
 export const fetchHolding = (holdingId) => {
     return (dispatch) => {
         PortfolioAPIUtil.getHolding(holdingId).then((holding) => dispatch(receiveHolding(holding)))
+    }
+}
+
+
+
+
+
+
+// FOR UPDATING STOCK GRAPH PRICES
+
+
+const receiveStockPrice = (prices) => {
+    return {
+        type: RECEIVE_STOCK_PRICE,
+        prices
+    }
+}
+
+export const fetchStockPrice = (ticker) => {
+    return (dispatch) => {
+        ExternalAPIUtil.fetchInterdayData(ticker).then((prices) => dispatch(receiveStockPrice(prices)))
     }
 }
