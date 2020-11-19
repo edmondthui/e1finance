@@ -21,7 +21,7 @@ class StockNewsIndex extends React.Component {
             this.props.fetchStockPrice(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
-        }, 100)
+        }, 1000)
     }
 
     clickNews(idx) {

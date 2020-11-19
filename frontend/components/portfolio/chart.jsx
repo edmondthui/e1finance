@@ -25,7 +25,7 @@ class Chart extends React.Component {
                     </div>
                     <LineChart width={800} height={250} data={this.props.data} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=> this.setState({value: null})}>
                         <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false}/>
-                        <Tooltip contentStyle={opacityZero} />
+                        <Tooltip contentStyle={opacityZero} cursor={{strokeWidth: 20, opacity: .2}}/>
                         <XAxis dataKey="label" hide={true} />
                         <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
                     </LineChart>
