@@ -6,8 +6,6 @@ class PortfolioInfo extends React.Component {
         super(props)
     }
     
-    
-    
     componentDidMount() {
         let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : null
         this.props.action(paramsId);

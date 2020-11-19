@@ -4,6 +4,7 @@ import PortfolioIndex from './portfolio_index_container'
 import PortfolioInfo from './portfolio_info_container'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
+import DashboardFooter from './dashboard_footer'
 
 class Dashboard extends React.Component {
     render() {
@@ -23,6 +24,7 @@ class Dashboard extends React.Component {
                         <PortfolioIndex />
                     </div>
                 </div>
+                <DashboardFooter/>
             </div>
         )
     }

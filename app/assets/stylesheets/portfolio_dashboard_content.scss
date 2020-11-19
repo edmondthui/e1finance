@@ -35,3 +35,17 @@
 
 .portfolio-main-content {
 }
+
+.dashboard-footer {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+.dashboard-footer-text {
+    width: 600px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    color: #606C82;
+}

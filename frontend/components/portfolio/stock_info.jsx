@@ -6,8 +6,6 @@ class StockInfo extends React.Component {
         super(props)
     }
 
-
-
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
     }

@@ -5,6 +5,7 @@ import StockInfo from './stock_info_container'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 import { Route } from 'react-router-dom'
+import DashboardFooter from './dashboard_footer'
 
 class DashboardStock extends React.Component {
     render() {
@@ -24,6 +25,7 @@ class DashboardStock extends React.Component {
                         <Route path="/dashboard/:portfolioId/:pieId/:stockId" component={StockNewsIndex} />
                     </div>
                 </div>
+                <DashboardFooter/>
             </div>
         )
     }

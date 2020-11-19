@@ -6,8 +6,6 @@ class PortfolioPieInfo extends React.Component {
         super(props)
     }
 
-
-
     componentDidMount() {
         this.props.fetchPortfolios();
         this.props.fetchPies(this.props.match.params.portfolioId)

@@ -5,6 +5,7 @@ import PortfolioInfo from './pie_show_info_container'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 import { Route } from 'react-router-dom'
+import DashboardFooter from './dashboard_footer'
 
 class DashboardPie extends React.Component {
     render() {
@@ -24,6 +25,7 @@ class DashboardPie extends React.Component {
                         <PortfolioIndex />
                     </div>
                 </div>
+                <DashboardFooter/>
             </div>
         )
     }

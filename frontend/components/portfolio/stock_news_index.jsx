@@ -17,8 +17,6 @@ class StockNewsIndex extends React.Component {
         }, 100)
     }
     
-
-    
     render() {
         let news = null
         if(this.state.render) {
