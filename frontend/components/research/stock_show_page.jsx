@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom'
 // import PortfolioChart from './portfolio_value_chart_container'
 // import PortfolioPie from './portfolio_value_pie_container'
 
+let news = null;
+let info = null;
+
 class StockShowPage extends React.Component {
     constructor(props) {
         super(props)
@@ -22,9 +25,52 @@ class StockShowPage extends React.Component {
 
 
     render () {
+        let stockPrice;
+        if(this.state.render) {
+            news = this.props.news.map((article,idx) => (
+                <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
+                    <div className="news-text-content" >
+                        <p className="news-title">{(article.headline.length > 95) ? article.headline.slice(0, 95)+"..." : article.headline}</p>
+                        <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
+                    </div>
+                    <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
+                </div>
+            ))
+            stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>
+            
+            info = <div className="stock-show-profile">
+                <h1>{this.props.stock.stock_name}</h1>
+                <p>{this.props.info.tags}</p>
+                <p>{this.props.info.description}</p>
+                <a href={this.props.info.website}>Visit website</a>
+                <div className="stock-show-small">
+                    <div>
+                        <p>CEO</p>
+                        <p>{this.props.info.CEO}</p>
+                    </div>
+                    <div>
+                        <p>Employees</p>
+                        <p>{this.props.info.employees}</p>
+                    </div>
+                    <div>
+                        <p>Market</p>
+                        <p>{this.props.info.exchange}</p>
+                    </div>
+                </div>
+            </div>
+        
+        }
         return (
-            <div>
-                
+            <div className="stock-show-container">
+                <div className="stock-show-profile-container">
+                    {info}
+                </div>
+                <div className="stock-show-news-container">
+                    <div className="portfolio-index-header">
+                        <p className="header-name">Latest stock news</p>
+                    </div>
+                    {news}
+                </div>
             </div>
         )
     }
