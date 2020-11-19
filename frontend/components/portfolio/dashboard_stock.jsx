@@ -13,7 +13,7 @@ class DashboardStock extends React.Component {
             <div>
                 <LoggedInNavBar/>
                 <Route path="/dashboard/:portfolioId/:pieId/:stockId" component={StockInfo} />
-                <div className="portfolio-content-container">
+                {/* <div className="portfolio-content-container">
                     <div className="portfolio-pie-container">
                         <div className="portfolio-pie">
                             <PortfolioPie/>
@@ -24,7 +24,8 @@ class DashboardStock extends React.Component {
                         <h1 className="slice-title">Markets</h1>
                         <Route path="/dashboard/:portfolioId/:pieId/:stockId" component={StockNewsIndex} />
                     </div>
-                </div>
+                </div> */}
+                <Route path="/dashboard/:portfolioId/:pieId/:stockId" component={StockNewsIndex} />
                 <DashboardFooter/>
             </div>
         )

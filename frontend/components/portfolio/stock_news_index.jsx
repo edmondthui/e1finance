@@ -1,5 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import PortfolioChart from './portfolio_value_chart_container'
+import PortfolioPie from './portfolio_value_pie_container'
 
 class StockNewsIndex extends React.Component {
     constructor(props) {
@@ -31,25 +33,37 @@ class StockNewsIndex extends React.Component {
             ))
         }
         return (
-            <div>
-                <div className="portfolio-index-container">
-                    <div className="portfolio-index-header">
-                        <p className="header-name">Price</p>
-                        <p className="header-value">Daily Change</p>
-                    </div>
-                    <div className="portfolio-index-item">
-                        <h1>test</h1>                        
+            <div className="portfolio-content-container">
+                <div className="portfolio-pie-container">
+                    <div className="portfolio-pie">
+                        <PortfolioPie/>
                     </div>
                 </div>
-                <br/>
-                <div className="portfolio-index-container">
-                    <div className="portfolio-index-header">
-                        <p className="header-name">{"Latest news"}</p>
-                    </div>
+                <div className="portfolio-main-content">
+                    <PortfolioChart/> 
+                    <h1 className="slice-title">Markets</h1>
 
-                    {news}
+
+                <div>
+                    <div className="portfolio-index-container">
+                        <div className="portfolio-index-header">
+                            <p className="header-name">Price</p>
+                            <p className="header-value">Daily Change</p>
+                        </div>
+                        <div className="portfolio-index-item">
+                            <h1>test</h1>                        
+                        </div>
+                    </div>
+                    <br/>
+                    <div className="portfolio-index-container">
+                        <div className="portfolio-index-header">
+                            <p className="header-name">{"Latest news"}</p>
+                        </div>
+                        {news}
+                    </div>
                 </div>
             </div>
+        </div>
         )
     }
 }

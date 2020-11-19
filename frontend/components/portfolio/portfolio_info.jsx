@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
+
 class PortfolioInfo extends React.Component {
     constructor(props) {
         super(props)

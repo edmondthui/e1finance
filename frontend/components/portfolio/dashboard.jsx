@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
             <div>
                 <LoggedInNavBar/>
                 <PortfolioInfo/>
-                <div className="portfolio-content-container">
+                {/* <div className="portfolio-content-container">
                     <div className="portfolio-pie-container">
                         <div className="portfolio-pie">
                             <PortfolioPie/>
@@ -23,7 +23,8 @@ class Dashboard extends React.Component {
                         <h1 className="slice-title">Slices</h1>
                         <PortfolioIndex />
                     </div>
-                </div>
+                </div> */}
+                <PortfolioIndex />
                 <DashboardFooter/>
             </div>
         )
