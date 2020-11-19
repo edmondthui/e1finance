@@ -31,10 +31,10 @@ class LoggedInNavBar extends React.Component {
 
                             <div className="logged-in-nav-container">
                                 <p className="logged-in-nav-content">Invest</p>
-                                <p className="logged-in-nav-content">Spend</p>
-                                <p className="logged-in-nav-content">Borrow</p>
+                                {/* <p className="logged-in-nav-content">Spend</p> */}
+                                {/* <p className="logged-in-nav-content">Borrow</p> */}
                                 <p className="logged-in-nav-content">Research</p>
-                                <p className="logged-in-nav-content">Transfer</p>
+                                {/* <p className="logged-in-nav-content">Transfer</p> */}
                             </div>
                         </nav>
                         <div className="profile-button-container">
