@@ -3,13 +3,16 @@ import { withRouter } from 'react-router-dom'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
+let news = null;
+
 class StockNewsIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             render: false,
-            price: 0
+            price: 0,
         }
+        this.clickNews = this.clickNews.bind(this);
     }
 
     componentDidMount() {
@@ -20,15 +23,19 @@ class StockNewsIndex extends React.Component {
             this.setState({render: true}) 
         }, 100)
     }
+
+    clickNews(idx) {
+        // window.location.assign(this.props.news[idx].url)
+        window.location.href = this.props.news[idx].url
+    }
     
     render() {
-        let news = null
         let pie;
         let stockPrice;
         if(this.state.render) {
             news = this.props.news.map((article,idx) => (
-                <div className="portfolio-index-item" key={idx}>
-                    <div className="news-text-content">
+                <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
+                    <div className="news-text-content" >
                         <p className="news-title">{(article.headline.length > 95) ? article.headline.slice(0, 95)+"..." : article.headline}</p>
                         <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
                     </div>
