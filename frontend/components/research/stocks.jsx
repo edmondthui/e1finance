@@ -12,7 +12,7 @@ class Stocks extends React.Component {
     }
 
     clickStock(idx) {
-        this.props.history.push(`/stocks/${idx}`)
+        this.props.history.push(`/research/stocks/${idx}`)
     }
 
     render() {

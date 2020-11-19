@@ -15,7 +15,7 @@ class StockShow extends React.Component {
                         <NavLink to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
                     </div>
                 </div>
-                <Route path="/stocks/:stockId" component={StockShowPage} />
+                <Route path="/research/stocks/:stockId" component={StockShowPage} />
                 <DashboardFooter/>
             </div>
         )

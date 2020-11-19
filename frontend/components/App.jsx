@@ -23,7 +23,7 @@ const App = () => (
     <ProtectedRoute exact path="/dashboard" component={Dashboard} />
     <ProtectedRoute exact path="/research" component={Research} />
     <ProtectedRoute exact path="/research/stocks" component={Stocks} />
-    <ProtectedRoute exact path="/stocks/:stockId" component={StockShow} />
+    <ProtectedRoute exact path="/research/stocks/:stockId" component={StockShow} />
   </div>
 );
 
