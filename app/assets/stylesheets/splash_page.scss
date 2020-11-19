@@ -6,19 +6,24 @@
 }
 
 .splash-text {
-    width: 20%;
+    width: 30%;
+    padding-left: 100px;
 }
 
 .splash-text h1 {
-    font-size: 40px;
+    color: #12123D;
+    font-size: 50px;
     font-weight: 800;
 }
 
 .splash-text p {
+    color: #12123D;
     padding-bottom: 30px;
+    font-size: 20px;
 }
 
-.splash-image {
+.splash-image img{
+    width: 900px;
 }
 
 .splash-text #signup {
@@ -48,7 +53,7 @@
 .how-it-works-text {
     text-align: center;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .footer-signup-bar {
@@ -79,20 +84,25 @@
     padding-top: 70px;
 }
 
+.why-e1 h1 {
+    font-size: 40px;
+}
+
 .why-e1-container {
     display: flex;
     align-items: center;
+    justify-content: center;;
 }
 
 .why-e1-text {
     padding: 0 150px;
+    width: 40%;
 }
 
 .why-e1-text h2 {
     padding-bottom: 20px;
     border-bottom: 1px solid #00D4A3;
     color: #12123D;
-
 }
 
 .why-e1-text p {

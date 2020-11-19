@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 const LoggedOutNavBar = (props) => (
     <section className="nav-bar">
@@ -7,14 +8,16 @@ const LoggedOutNavBar = (props) => (
         <nav className="nav-content">
 
             <div className="dropdown">
-                <p className="dropdown-title">How it works</p>
-                    <div className="dropdown-content">
+                <Link activeClass="active" to="how-it-works" spy={true} smooth={true} duration={1000} className="dropdown-title">How it works</Link>
+                {/* <p className="dropdown-title">How it works</p> */}
+                    {/* <div className="dropdown-content">
                         <a href="#">Test</a>
-                    </div>
-                <p className="dropdown-title">Why E1</p>
-                    <div className="dropdown-content">
+                    </div> */}
+                <Link activeClass="active" to="why-e1" spy={true} smooth={true} duration={1000} className="dropdown-title">Why E1</Link>
+                {/* <p className="dropdown-title">Why E1</p> */}
+                    {/* <div className="dropdown-content">
                         <a href="#">Test</a>
-                    </div>
+                    </div> */}
                 {/* <p className="dropdown-title">Insights</p>
                     <div className="dropdown-content">
                         <a href="#">Test</a>

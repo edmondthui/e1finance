@@ -16,13 +16,13 @@ const SplashPage = (props) => {
                     <img src="https://i.imgur.com/efLJKh8.png" alt="E1 Pies"/>
                 </div>
             </div>
-            <div className="how-it-works">
+            <div className="how-it-works" id="how-it-works">
                 <div>
                     <h1 className="how-it-works-title">Smarter Investing</h1>
                     <p className="how-it-works-text">Build your own investing strategy and keep it in balance automatically. For free.</p>
                 </div>
             </div>
-            <div className="why-e1">
+            <div className="why-e1" id="why-e1">
                 {/* I WILL REPLACE THIS WITH MORE PERSONAL INFO LATER! */}
                 <h1>We believe:</h1>
                 <div className="why-e1-container">
