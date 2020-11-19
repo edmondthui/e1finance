@@ -1,7 +1,7 @@
 class Api::StocksController < ApplicationController
 
     def index
-        @holdings = Holding.includes(:stock).where(pie_id: params[:stock][:pie_id])
+        @holdings = params[:stock][:pie_id] ? Holding.includes(:stock).where(pie_id: params[:stock][:pie_id]) : Stock.all
         render :index
     end
 

@@ -2,7 +2,7 @@ import React from 'react';
 import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
 import { NavLink } from 'react-router-dom';
 
-class Research extends React.Component {
+class Stocks extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -15,7 +15,7 @@ class Research extends React.Component {
         setTimeout(() => {
             this.props.fetchAllNews();
             this.setState({render: true}) 
-        }, 500)
+        }, 1000)
     }
 
     clickNews(idx) {
@@ -56,4 +56,4 @@ class Research extends React.Component {
     }
 }
 
-export default Research
+export default Stocks

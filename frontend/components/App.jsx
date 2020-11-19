@@ -9,6 +9,7 @@ import DashboardPortfolio from './portfolio/dashboard_portfolio'
 import DashboardPie from './portfolio/dashboard_pie'
 import DashboardStock from './portfolio/dashboard_stock'
 import Research from './research/research_container'
+import Stocks from './research/stocks_container'
 
 const App = () => (
   <div>
@@ -20,6 +21,7 @@ const App = () => (
     <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId/:stockId" component={DashboardStock} />
     <ProtectedRoute exact path="/dashboard" component={Dashboard} />
     <ProtectedRoute exact path="/research" component={Research} />
+    <ProtectedRoute exact path="/stocks" component={Stocks} />
   </div>
 );
 
