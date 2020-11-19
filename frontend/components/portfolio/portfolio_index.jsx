@@ -7,13 +7,6 @@ class PortfolioIndex extends React.Component {
     }
 
     componentDidMount() {
-        // if (this.props.type === "Portfolio Show") {
-        //     debugger;
-        //     this.props.action(this.props.match.params.portfolioId)
-        // } 
-        // else {
-        //     this.props.action()
-        // }
         let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
         this.props.action(paramsId)
     }

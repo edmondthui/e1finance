@@ -4,7 +4,6 @@ import {fetchHolding, fetchPies} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
         stock: state.entities.holdings[ownProps.match.params.stockId],
         pie: state.entities.pies[ownProps.match.params.pieId],

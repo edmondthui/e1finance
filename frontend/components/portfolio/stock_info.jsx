@@ -10,7 +10,6 @@ class StockInfo extends React.Component {
 
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
-        this.props.fetchPies(this.props.match.params.portfolioId)
     }
 
     render() {
@@ -27,7 +26,7 @@ class StockInfo extends React.Component {
         return (
             <div className="portfolio-info-container">
                 <div className="portfolio-info" >
-                    <Link to={`/dashboard/${this.props.match.params.portfolioId}`} id="portfolio-back">{"🡐 "+ button}</Link>
+                    <Link to={`/dashboard/${this.props.match.params.portfolioId}/${this.props.match.params.pieId}`} id="portfolio-back">{"🡐 Back"}</Link>
                     <h1 className="portfolio-info-name">{stockName}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>
