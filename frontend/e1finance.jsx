@@ -7,7 +7,7 @@ import Root from './components/root'
 import {login, signup, logout} from './util/session_api_util'
 import {getPortfolios, getStocks} from './util/portfolio_api_util'
 import {fetchPortfolios, fetchPies} from './actions/portfolio_actions'
-import {fetchCompanyNews, fetchInterdayData, fetchStockNews} from './util/IEX_api_utl'
+import {fetchCompanyNews, fetchInterdayData, fetchStockNews, fetchCompanyInfo} from './util/IEX_api_utl'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,4 +40,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchInterdayData = fetchInterdayData
     window.fetchStockNews = fetchStockNews
     window.getStocks = getStocks
+    window.fetchCompanyInfo = fetchCompanyInfo
 })

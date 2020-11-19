@@ -39,8 +39,8 @@ class Stocks extends React.Component {
                 <LoggedInNavBar/>
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
-                        <NavLink to="/research" activeclass="active" className="research-nav-content">Market News</NavLink>
-                        <NavLink to="/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
+                        <NavLink exact to="/research" activeclass="active" className="research-nav-content">Market News</NavLink>
+                        <NavLink exact to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
                     </div>
                 </div>
                 <div className="research-index-container">
