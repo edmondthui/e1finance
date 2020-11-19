@@ -22,6 +22,7 @@ class StockNewsIndex extends React.Component {
     render() {
         let news = null
         let pie;
+        let stockPrice;
         if(this.state.render) {
             news = this.props.news.map((article,idx) => (
                 <div className="portfolio-index-item" key={idx}>
@@ -32,6 +33,7 @@ class StockNewsIndex extends React.Component {
                     <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                 </div>
             ))
+            stockPrice = <h1 className="stock-index-price">{"$" + 30.31.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>  // TODO FETCH STOCK PRICE
             pie = <PortfolioPie items={[this.props.stock]}/>
         }
         debugger;
@@ -51,10 +53,10 @@ class StockNewsIndex extends React.Component {
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
                             <p className="header-name">Price</p>
-                            <p className="header-value">Daily Change</p>
+                            <p className="header-value"></p>
                         </div>
                         <div className="portfolio-index-item">
-                            <h1>test</h1>                        
+                            {stockPrice}                    
                         </div>
                     </div>
                     <br/>
