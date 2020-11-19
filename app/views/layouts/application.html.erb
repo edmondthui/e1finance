@@ -8,8 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <script type="text/javascript">
-      window.IEX_API_KEY = "<%= Rails.application.credentials.IEX_API[:key]%>"
+      window.api_key = "<%= Rails.application.credentials.IEX_API[:key]%>"
     </script>
+    <% if logged_in? %>
+      <script type="text/javascript">
+          window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+      </script>
+    <% end %>
     <%= javascript_include_tag 'application'  %>
     <%= favicon_link_tag asset_path('e1-logo-small.png') %>
   </head>

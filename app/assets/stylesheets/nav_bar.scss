@@ -229,3 +229,18 @@
         display: none;
     }
 }
+.logged-in-nav-content {
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+}
+
+.active {
+    font-weight: 700;
+    color: #DDFA04;
+    text-decoration: none;
+}
+
+.logged-in-nav-content:hover {
+    cursor: pointer;
+}

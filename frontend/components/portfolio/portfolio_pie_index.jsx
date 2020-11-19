@@ -18,11 +18,15 @@ class PortfolioPieIndex extends React.Component {
     }
 
     render() {
+        debugger;
+        const formattedPie = this.props.items.map(item => {
+            return { id: item.id, value: item.value, name: item.stock_name };
+        });
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie items={this.props.items}/>
+                        <PortfolioPie items={formattedPie}/>
                     </div>
                 </div>
                 <div className="portfolio-main-content">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 class LoggedInNavBar extends React.Component {
     constructor(props) {
@@ -30,10 +31,12 @@ class LoggedInNavBar extends React.Component {
                         <nav className="nav-content">
 
                             <div className="logged-in-nav-container">
-                                <p className="logged-in-nav-content">Invest</p>
+                                <NavLink to="/dashboard" activeClassName="active" className="logged-in-nav-content">Invest</NavLink>
+                                <NavLink to="/research" activeClassName="active" className="logged-in-nav-content">Research</NavLink>
+                                {/* <p className="logged-in-nav-content">Invest</p> */}
                                 {/* <p className="logged-in-nav-content">Spend</p> */}
                                 {/* <p className="logged-in-nav-content">Borrow</p> */}
-                                <p className="logged-in-nav-content">Research</p>
+                                {/* <p className="logged-in-nav-content">Research</p> */}
                                 {/* <p className="logged-in-nav-content">Transfer</p> */}
                             </div>
                         </nav>
