@@ -4,24 +4,34 @@ import { withRouter } from 'react-router-dom'
 class StockNewsIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.handleLoad = this.handleLoad.bind(this)
+        this.state = {
+            render: false
+        }
     }
 
     componentDidMount() {
-        debugger;
         this.props.fetchHolding(this.props.match.params.stockId)
-        window.addEventListener('load', this.handleLoad)
-
-    }
-
-    handleLoad() {
-        debugger;
-        this.props.fetchStockNews(this.props.stock.ticker)
+        setTimeout(() => {
+            this.props.fetchStockNews(this.props.stock.ticker)
+            this.setState({render: true}) 
+        }, 100)
     }
     
-    render() {
-            debugger;
 
+    
+    render() {
+        let news = null
+        if(this.state.render) {
+            news = this.props.news.map(article => (
+                <div className="portfolio-index-item">
+                    <div className="news-text-content">
+                        <p className="news-title">{article.headline}</p>
+                        <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
+                    </div>
+                    <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
+                </div>
+            ))
+        }
         return (
             <div>
                 <div className="portfolio-index-container">
@@ -39,15 +49,7 @@ class StockNewsIndex extends React.Component {
                         <p className="header-name">{"Latest news"}</p>
                     </div>
 
-                    {this.props.news.map(article => (
-                        <div className="portfolio-index-item">
-                            <div className="news-text-content">
-                                <p className="news-title">{article.headline}</p>
-                                <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
-                            </div>
-                            <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
-                        </div>
-                    ))}
+                    {news}
                 </div>
             </div>
         )

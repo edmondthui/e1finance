@@ -5,7 +5,6 @@ import {fetchStockNews} from '../../actions/news_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
         stock: state.entities.holdings[ownProps.match.params.stockId],
         news: state.entities.news,
