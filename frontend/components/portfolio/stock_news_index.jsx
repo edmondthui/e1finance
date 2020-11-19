@@ -11,6 +11,7 @@ class StockNewsIndex extends React.Component {
         debugger;
         this.props.fetchHolding(this.props.match.params.stockId)
         window.addEventListener('load', this.handleLoad)
+
     }
 
     handleLoad() {
@@ -20,7 +21,6 @@ class StockNewsIndex extends React.Component {
     
     render() {
             debugger;
-
 
         return (
             <div>
@@ -43,9 +43,9 @@ class StockNewsIndex extends React.Component {
                         <div className="portfolio-index-item">
                             <div className="news-text-content">
                                 <p className="news-title">{article.headline}</p>
-                                <p className="news-summary">{article.summary}</p>
+                                <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
                             </div>
-                            <img src={article.image} alt="pie-image" height="40" width="40"/>                 
+                            <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                         </div>
                     ))}
                 </div>
