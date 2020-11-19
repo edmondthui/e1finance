@@ -1,6 +1,6 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { Link } from 'react-scroll';
+import { withRouter } from "react-router";
 
 const LoggedOutNavBar = (props) => (
     <section className="nav-bar">
@@ -29,10 +29,10 @@ const LoggedOutNavBar = (props) => (
             </div>
         </nav>
         <div className="login-buttons">
-            <Link id="login" to='/login'>Login</Link>
-            <Link id="signup" to='/signup'>Get Started</Link>
+            <Link id="login" onClick={() => props.history.push("/login")}>Login</Link>
+            <Link id="signup" onClick={() => props.history.push("/signup")}>Get Started</Link>
         </div>
     </section>
 )
 
-export default LoggedOutNavBar
+export default withRouter(LoggedOutNavBar)
