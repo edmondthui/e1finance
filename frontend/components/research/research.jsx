@@ -8,7 +8,6 @@ class Research extends React.Component {
         this.state = {
             render: false,
         }
-        this.clickNews = this.clickNews.bind(this);
     }
 
     componentDidMount() {
@@ -41,7 +40,7 @@ class Research extends React.Component {
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
                         <NavLink exact to="/research" activeclass="active" className="research-nav-content">Market News</NavLink>
-                        <NavLink exact to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
+                        <NavLink to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
                     </div>
                 </div>
                 <div className="research-index-container">

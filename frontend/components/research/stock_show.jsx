@@ -12,7 +12,7 @@ class StockShow extends React.Component {
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
                         <NavLink exact to="/research" activeclass="active" className="research-nav-content">Market News</NavLink>
-                        <NavLink exact to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
+                        <NavLink to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
                     </div>
                 </div>
                 <Route path="/stocks/:stockId" component={StockShowPage} />

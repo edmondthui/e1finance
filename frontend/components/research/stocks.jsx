@@ -5,7 +5,6 @@ import { NavLink, withRouter } from 'react-router-dom';
 class Stocks extends React.Component {
     constructor(props) {
         super(props)
-        this.clickStock = this.clickStock.bind(this);
     }
 
     componentDidMount() {
@@ -40,7 +39,7 @@ class Stocks extends React.Component {
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
                         <NavLink exact to="/research" activeclass="active" className="research-nav-content">Market News</NavLink>
-                        <NavLink exact to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
+                        <NavLink to="/research/stocks" activeclass="active" className="research-nav-content">Stocks</NavLink>
                     </div>
                 </div>
                 <div className="research-index-container">

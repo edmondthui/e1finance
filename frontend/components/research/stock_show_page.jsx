@@ -12,6 +12,7 @@ class StockShowPage extends React.Component {
         this.state = {
             render: false,
         }
+        
     }
 
     componentDidMount() {
@@ -23,11 +24,14 @@ class StockShowPage extends React.Component {
         }, 500)
     }
 
+    clickNews(idx) {
+        window.location.href = this.props.news[idx].url
+    }
 
     render () {
         let stockPrice;
         if(this.state.render) {
-            news = this.props.news.map((article,idx) => (
+            news = this.props.news.map((article, idx) => (
                 <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
                     <div className="news-text-content" >
                         <p className="news-title">{(article.headline.length > 95) ? article.headline.slice(0, 95)+"..." : article.headline}</p>
