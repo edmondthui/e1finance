@@ -18,15 +18,17 @@ class PortfolioPieIndex extends React.Component {
     }
 
     render() {
-        debugger;
-        const formattedPie = this.props.items.map(item => {
-            return { id: item.id, value: item.value, name: item.stock_name };
+        let formattedPie = [];
+        let totalValue = 0
+        this.props.items.forEach(item => {
+            formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
+            totalValue += item.value
         });
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie items={formattedPie}/>
+                        <PortfolioPie items={formattedPie} totalValue={"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
                     </div>
                 </div>
                 <div className="portfolio-main-content">

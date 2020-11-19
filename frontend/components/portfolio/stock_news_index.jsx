@@ -35,7 +35,7 @@ class StockNewsIndex extends React.Component {
             ))
             stockPrice = <h1 className="stock-index-price">{"$" + 30.31.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>  // TODO FETCH STOCK PRICE
             const formattedStock = [{id: this.props.stock.id, value: this.props.stock.value, name: this.props.stock.stock_name}]
-            pie = <PortfolioPie items={formattedStock}/>
+            pie = <PortfolioPie items={formattedStock} totalValue={"$" + this.props.stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
         }
         debugger;
         return (

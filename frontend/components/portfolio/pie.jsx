@@ -13,6 +13,9 @@ class InvestmentPie extends React.Component {
         return (
             <div className="pie-container">
                 <PieChart width={300} height={300} onMouseEnter={this.onPieEnter}>
+                    <text x={150} y={150} textAnchor="middle" dominantBaseline="middle" class="pie-value">
+                        {this.props.totalValue}
+                    </text>
                     <Pie
                         data={data}
                         innerRadius={85}
