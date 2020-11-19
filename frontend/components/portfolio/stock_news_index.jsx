@@ -7,23 +7,21 @@ class StockNewsIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            render: false
+            render: false,
+            price: 0
         }
     }
 
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
         setTimeout(() => {
-            debugger;
             this.props.fetchStockPrice(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
-            debugger;
             this.setState({render: true}) 
         }, 100)
     }
     
     render() {
-        debugger;
         let news = null
         let pie;
         let stockPrice;
@@ -37,7 +35,7 @@ class StockNewsIndex extends React.Component {
                     <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                 </div>
             ))
-            stockPrice = <h1 className="stock-index-price">{"$" + 30.31.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>  // TODO FETCH STOCK PRICE
+            stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>  // TODO FETCH STOCK PRICE
             const formattedStock = [{id: this.props.stock.id, value: this.props.stock.value, name: this.props.stock.stock_name}]
             pie = <PortfolioPie items={formattedStock} totalValue={"$" + this.props.stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
         }
