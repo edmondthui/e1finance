@@ -38,7 +38,8 @@
 
 .dashboard-footer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 40px;
 }
 
@@ -48,4 +49,8 @@
     font-size: 12px;
     line-height: 20px;
     color: #606C82;
+}
+
+.footer-social a{
+    padding: 5px;
 }
