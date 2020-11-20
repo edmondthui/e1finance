@@ -55,10 +55,8 @@ class PortfolioIndex extends React.Component {
             </div>
         ))
         if (this.props.items.length > 1) {
-           
             chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
         }
-        console.log(items)
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
