@@ -4,7 +4,7 @@ import {fetchCompanyInfo, fetchStockNews} from '../../actions/news_actions'
 import { fetchHolding } from '../../actions/portfolio_actions'
 
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     debugger;
     return {
         stock: Object.values(state.entities.holdings)[0],
