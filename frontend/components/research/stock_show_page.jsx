@@ -38,8 +38,8 @@ class StockShowPage extends React.Component {
             news = this.props.news.map((article, idx) => (
                 <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
                     <div className="news-text-content" >
-                        <p className="news-title">{(article.headline.length > 95) ? article.headline.slice(0, 95)+"..." : article.headline}</p>
-                        <p className="news-summary">{article.summary.slice(0, 100)+"..."}</p>
+                        <p className="news-title">{(article.headline.length > 80) ? article.headline.slice(0, 80)+"..." : article.headline}</p>
+                        <p className="news-summary">{article.summary.slice(0, 80)+"..."}</p>
                     </div>
                     <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                 </div>
