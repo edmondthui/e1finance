@@ -29,7 +29,7 @@ const SplashPage = (props) => {
                     <img src="https://i.postimg.cc/vZngvcd8/choice-1-768x768.png" alt="" height="350" width="350"/>
                     <div className="why-e1-text"> 
                         <h2>Your financial goals are personal and unique to you. You should have total choice, control, and transparency over how you achieve them.</h2>
-                        <p>This includes choosing the stocks and ETFs you like and having the capability to move your money freely among your various M1 accounts.</p>
+                        <p>This includes choosing the stocks and ETFs you like and having the capability to move your money freely among your various E1 accounts.</p>
                     </div>
                 </div>
                 <div className="why-e1-container">
@@ -43,7 +43,7 @@ const SplashPage = (props) => {
                     <img src="https://i.postimg.cc/pX458K41/race-2-768x587.png" alt="" height="350" width="350"/>
                     <div className="why-e1-text">
                         <h2>Wealth building is a marathon, not a sprint, and it should be available to all who want to run that race, no matter where they’re starting from.</h2>
-                        <p>We don’t believe in day trading or speculating as viable ways to build long-term wealth, so we didn’t build M1 to do that. M1 can be a great companion to other investing apps, but if you’re only looking to day trade, you’ll have better luck elsewhere.</p>
+                        <p>We don’t believe in day trading or speculating as viable ways to build long-term wealth, so we didn’t build E1 to do that. E1 can be a great companion to other investing apps, but if you’re only looking to day trade, you’ll have better luck elsewhere.</p>
                     </div>
                 </div>
                 <div className="why-e1-container">

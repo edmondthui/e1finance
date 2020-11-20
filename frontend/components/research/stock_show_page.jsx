@@ -49,7 +49,7 @@ class StockShowPage extends React.Component {
             info = <div className="stock-show-profile">
                 <Link to="/research/stocks" id="portfolio-back">🡐 BACK</Link>
                 <h1>{this.props.stock.stock_name}</h1>
-                <p>{this.props.info.tags}</p>
+                {/* <p>{this.props.info.tags}</p> */}
                 <p>{this.props.info.description}</p>
                 <a href={this.props.info.website}>Visit website</a>
                 <div className="stock-show-small">

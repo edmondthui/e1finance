@@ -36,6 +36,16 @@ class PortfolioIndex extends React.Component {
                 console.log(item)
             })
         }
+        let items = this.props.items.map((item) => (
+            <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
+                <div className="portfolio-name">
+                <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
+                <p>{item.portfolio_name} {item.pie_name} {item.stock_name}</p>
+                </div>
+                <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+            </div>
+        ))
+        console.log(items)
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
@@ -51,15 +61,7 @@ class PortfolioIndex extends React.Component {
                             <p className="header-name">Name</p>
                             <p className="header-value">Value</p>
                         </div>
-                        {this.props.items.map((item) => (
-                            <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
-                                <div className="portfolio-name">
-                                <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
-                                <p>{item.portfolio_name} {item.pie_name} {item.stock_name}</p>
-                                </div>
-                                <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
-                            </div>
-                        ))}
+                        {items.length>0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please create a portfolio to add pies and stocks.</p></div></div>}
                         </div>
                     </div>
             </div>
