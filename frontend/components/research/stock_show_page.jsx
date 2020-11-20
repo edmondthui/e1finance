@@ -47,7 +47,7 @@ class StockShowPage extends React.Component {
             stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>
             
             info = <div className="stock-show-profile">
-                <Link to="/research/stocks" id="stock-back">🡐 BACK</Link>
+                <Link to="/research/stocks" id="portfolio-back">🡐 BACK</Link>
                 <h1>{this.props.stock.stock_name}</h1>
                 <p>{this.props.info.tags}</p>
                 <p>{this.props.info.description}</p>
