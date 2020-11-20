@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tooltip, LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
 
 
 let formattedChart = [];
@@ -13,6 +13,8 @@ class Chart extends React.Component {
         super(props)
         this.state = {
             value: null,
+            hover: false,
+            chartX: null,
         }
         this.getValue = this.getValue.bind(this)
         this.formatData = this.formatData.bind(this)
@@ -24,14 +26,15 @@ class Chart extends React.Component {
         }
         this.setState({
             value: "$"+data.activePayload[0].value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
+            hover: true,
+            chartX: data.chartX,
         })
-        debugger;
     }
+
 
     getValue() {
         this.props.holdings.forEach(holding => value += holding.value)
     }
-
 
     formatData(dataArray) {
         if (this.props.holdings) {
@@ -63,12 +66,18 @@ class Chart extends React.Component {
         chartValue = "$"+data.activePayload[0].value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
     }
 
+
     render() {
-        formattedChart = []
+        formattedChart = [];
+        let verticalLine = null;
+        let dot = null;
         if (this.props.data !== undefined) {
             if (this.props.data.length > 0) {
                 formattedChart = this.formatData(this.props.data)
             }
+        }
+        if (this.state.hover) {
+            verticalLine =  <line x1={this.state.chartX} y1={0} x2={this.state.chartX} y2={400} stroke="white" strokeWidth="20" opacity=".2"  />;
         }
         return (
             <div className="chart-container">
@@ -77,9 +86,10 @@ class Chart extends React.Component {
                         <h1 className="portfolio-header">Value over time</h1>
                         <p className="portfolio-graph-value">{this.state.value}</p>
                     </div>
-                    <LineChart width={800} height={300} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null})}>
-                        <Tooltip cursor={{strokeWidth: 20, opacity: .2}} contentStyle={{ opacity: 0 }} />
-                        <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false}/>
+                    <LineChart width={800} height={300} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null, hover: false, chartX: null})}>
+                        {verticalLine}
+                        {dot}
+                        <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false} />
                         <XAxis dataKey="minute" hide={true} />
                         <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
                     </LineChart>
