@@ -1,6 +1,7 @@
 import React from 'react';
 import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
 import { NavLink, withRouter } from 'react-router-dom';
+import DashboardFooter from '../portfolio/dashboard_footer'
 
 class Stocks extends React.Component {
     constructor(props) {
@@ -48,6 +49,7 @@ class Stocks extends React.Component {
                     </div>
                     {stocks}
                 </div>
+                <DashboardFooter/>
             </div>
         )
     }

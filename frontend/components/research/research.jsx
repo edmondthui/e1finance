@@ -1,6 +1,7 @@
 import React from 'react';
 import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
 import { NavLink } from 'react-router-dom';
+import DashboardFooter from '../portfolio/dashboard_footer'
 
 class Research extends React.Component {
     constructor(props) {
@@ -49,6 +50,7 @@ class Research extends React.Component {
                     </div>
                     {news}
                 </div>
+                <DashboardFooter/>
             </div>
         )
     }
