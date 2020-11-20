@@ -17,13 +17,13 @@ class StockShowPage extends React.Component {
 
     componentDidMount() {
         debugger;
-        this.props.fetchHolding(this.props.match.params.stockId)
+        this.props.fetchHolding(this.props.match.params.stockId+1)
         setTimeout(() => {
             debugger;
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
-        }, 1000)
+        }, 500)
     }
 
     clickNews(idx) {
