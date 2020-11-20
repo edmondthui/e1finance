@@ -19,6 +19,7 @@ class StockShowPage extends React.Component {
         debugger;
         this.props.fetchHolding(this.props.match.params.stockId)
         setTimeout(() => {
+            debugger;
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
