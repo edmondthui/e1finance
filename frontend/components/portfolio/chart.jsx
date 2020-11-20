@@ -4,20 +4,26 @@ import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 
 let formattedChart = [];
 let chartValue;
+let value = 0
 
 class Chart extends React.Component {
     constructor(props) {
         super(props)
-        this.formatData = this.formatData.bind(this)
         this.state = {
             value: null
         }
+        this.getValue = this.getValue.bind(this)
+        this.formatData = this.formatData.bind(this)
     }
 
     updateState(data) {
         this.setState({
             value: "$"+data.activePayload[0].value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
         })
+    }
+
+    getValue() {
+        this.props.holdings.forEach(holding => value += holding.value)
     }
 
 
@@ -32,15 +38,11 @@ class Chart extends React.Component {
                 });
                 let newPrices = [];
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
-                    let quantity1 = this.props.holdings[i].quantity
-                    let quantity2 = this.props.holdings[i+1].quantity
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
-                        if (quantity1 !== undefined && quantity2 !== undefined) {
-                            newPrices.push({ high: (((filteredPrices[i][j].high*quantity1) + (filteredPrices[i+1][j].high*quantity2))), minute: filteredPrices[i][j].minute })
-                        }
-                        else {
+                            this.getValue();
+                            newPrices.push({ high: (filteredPrices[i][j].high) + (filteredPrices[i+1][j].high)* (value/(filteredPrices[i][j].high) + (filteredPrices[i+1][j].high)), minute: filteredPrices[i][j].minute })
+                            value = 0;
 
-                        }
                     }
                 }
                 return newPrices;
@@ -71,7 +73,7 @@ class Chart extends React.Component {
                         <p className="portfolio-graph-value">{this.state.value}</p>
                     </div>
                     <LineChart width={800} height={250} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null})}>
-                    {/* <LineChart width={800} height={250} data={formattedChart} onMouseLeave={()=> this.setState({value: null})}> */}
+                    {/* <LineChart width={800} height={250} data={formattedChart} > */}
                         <Tooltip contentStyle={opacityZero} cursor={{strokeWidth: 20, opacity: .2}}/>
                         <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false}/>
                         <XAxis dataKey="label" hide={true} />

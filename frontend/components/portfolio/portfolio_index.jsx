@@ -24,7 +24,7 @@ class PortfolioIndex extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.items.length !== this.props.items.length) {
             this.props.items.forEach(items => {
-                debugger;
+                // debugger;
                 items.tickers.forEach(item=> this.props.fetchStockPrice(item))
             })
         }
@@ -60,7 +60,7 @@ class PortfolioIndex extends React.Component {
             </div>
         ))
         if (this.props.items.length > 1) {
-            debugger;
+            // debugger;
            
             chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
         }
