@@ -5,7 +5,6 @@ import { fetchHolding } from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state) => {
-    debugger;
     return {
         stock: Object.values(state.entities.holdings)[0],
         info: state.entities.info,
