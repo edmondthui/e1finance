@@ -16,8 +16,7 @@ class StockShowPage extends React.Component {
     }
 
     componentDidMount() {
-        let stockId = this.props.match.params.stockId
-        this.props.fetchHolding(parseInt(stockId)+1)
+        this.props.fetchStock(parseInt(this.props.match.params.stockId)+1)
         setTimeout(() => {
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
@@ -41,11 +40,12 @@ class StockShowPage extends React.Component {
                     <img src={article.image} alt="news-image" className="news-image" height="60" width="60"/>                 
                 </div>
             ))
-            stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>
+            stockPrice = <h2 className="stock-index-price">{"$"+(this.props.stock.value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h2>
             
             info = <div className="stock-show-profile">
                 <Link to="/research/stocks" id="portfolio-back">🡐 BACK</Link>
                 <h1>{this.props.stock.stock_name}</h1>
+                {stockPrice}
                 {/* <p>{this.props.info.tags}</p> */}
                 <p>{this.props.info.description}</p>
                 <a href={this.props.info.website}>Visit website</a>

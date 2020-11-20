@@ -9,6 +9,7 @@ export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO"
 export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS"
 export const RECEIVE_HOLDING = "RECEIVE_HOLDING"
 export const RECEIVE_STOCKS = "RECEIVE_STOCKS"
+export const RECEIVE_STOCK = "RECEIVE_STOCK"
 
 const receiveStocks = (stocks) => {
     return {
@@ -52,6 +53,13 @@ const receiveHolding = (holding) => {
     }
 }
 
+const receiveStock = (stock) => {
+    return {
+        type: RECEIVE_STOCK,
+        stock
+    }
+}
+
 export const fetchPortfolios = () => {
     return (dispatch) => {
         PortfolioAPIUtil.getPortfolios().then((portfolios) => dispatch(receivePortfolios(portfolios)))
@@ -88,6 +96,11 @@ export const fetchStocks = () => {
     }
 }
 
+export const fetchStock = (stockId) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.getStock(stockId).then((stock) => dispatch(receiveStock(stock)))
+    }
+}
 
 
 

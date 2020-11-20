@@ -11,7 +11,7 @@ class Api::StocksController < ApplicationController
     end
 
     def show
-        @holding = Holding.find(params[:id])
+        @stock = Stock.find(params[:id])
         render :show
     end
 

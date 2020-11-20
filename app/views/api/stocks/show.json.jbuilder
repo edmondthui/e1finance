@@ -1,7 +1,6 @@
-json.set! @holding.id do
-    json.id @holding.id
-    json.stock_name @holding.stock.name
-    json.value @holding.value
-    json.ticker @holding.stock.ticker
-    json.quantity @holding.quantity
+json.set! @stock.id do
+    json.id @stock.id
+    json.stock_name @stock.name
+    json.ticker @stock.ticker
+    json.value @stock.price
 end
