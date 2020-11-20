@@ -18,6 +18,7 @@ class PortfolioIndex extends React.Component {
     }
 
     render() {
+        let formattedChart;
         let formattedPortfolio = [];
         let totalValue = 0;
         if (this.props.match.params.portfolioId) {

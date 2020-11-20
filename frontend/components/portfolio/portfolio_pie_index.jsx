@@ -3,6 +3,9 @@ import { withRouter } from 'react-router-dom'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
+let formattedChart = []
+let chart;
+
 class PortfolioPieIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -17,15 +20,28 @@ class PortfolioPieIndex extends React.Component {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.items.length !== this.props.items.length) {
+            this.props.items.forEach(item => {
+                this.props.fetchStockPrice(item.ticker)
+            })
+        }
+        formattedChart.push(this.props.prices)
+    }
+
+
     render() {
         let formattedPie = [];
         let totalValue = 0
-        this.props.items.forEach(item => {
-            formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
-            totalValue += item.value
-            // for each item fetch all the stocks using holding info 
-            console.log(item)
-        });
+        if (this.props.items) {
+            this.props.items.forEach(item => {
+                formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
+                totalValue += item.value
+                // this.fetchAndFormatStockData(item.ticker)
+                // is it possible to iterate through items here and fetch data recursive loop?
+            });
+            chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
+        }
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
@@ -34,7 +50,7 @@ class PortfolioPieIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    <PortfolioChart/> 
+                    {chart}
                     <h1 className="slice-title">Markets</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
