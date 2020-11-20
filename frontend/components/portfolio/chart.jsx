@@ -4,7 +4,9 @@ import { LineChart, Line, XAxis, YAxis, Tooltip } from 'recharts';
 
 let formattedChart = [];
 let chartValue;
-let value = 0
+let value = 0;
+let multiplier1 = 1;
+let multiplier2 = 1;
 
 class Chart extends React.Component {
     constructor(props) {
@@ -37,14 +39,19 @@ class Chart extends React.Component {
                     return el.length>0;
                 });
                 let newPrices = [];
+                this.getValue();
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
-                            this.getValue();
-                            newPrices.push({ high: (filteredPrices[i][j].high) + (filteredPrices[i+1][j].high)* (value/(filteredPrices[i][j].high) + (filteredPrices[i+1][j].high)), minute: filteredPrices[i][j].minute })
-                            value = 0;
-
+                        debugger;
+                        multiplier1 = value / filteredPrices[0][0].high
+                        multiplier2 = value / filteredPrices[0+1][0].high
+                        // newPrices.push({ high: (filteredPrices[i][j].high) + (filteredPrices[i+1][j].high)* multiplier, minute: filteredPrices[i][j].minute })
+                        newPrices.push({ high: (filteredPrices[i][j].high*multiplier1) + (filteredPrices[i+1][j].high * multiplier2), minute: filteredPrices[i][j].minute })
                     }
                 }
+                multiplier1 = 0
+                multiplier2 = 0
+                value = 0;
                 return newPrices;
             } 
         }
