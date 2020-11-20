@@ -1,6 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
-import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
@@ -43,10 +42,7 @@ class PortfolioPieIndex extends React.Component {
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
                 totalValue += item.value
                 holdings.push(item)
-                // this.fetchAndFormatStockData(item.ticker)
-                // is it possible to iterate through items here and fetch data recursive loop?
             });
-            debugger;
            
             chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
         }

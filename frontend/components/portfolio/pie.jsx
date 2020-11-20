@@ -76,7 +76,6 @@ class InvestmentPie extends React.Component {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         )}
                     </Pie>
-                    {/* <Tooltip /> */}
                     {/* TODO ADD BUY SELL REBALANCE BUTTONS SEPARATE COMPONENT */}
                 </PieChart>
             </div>

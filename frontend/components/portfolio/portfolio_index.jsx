@@ -24,7 +24,6 @@ class PortfolioIndex extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.items.length !== this.props.items.length) {
             this.props.items.forEach(items => {
-                // debugger;
                 items.tickers.forEach(item=> this.props.fetchStockPrice(item))
             })
         }
@@ -38,16 +37,12 @@ class PortfolioIndex extends React.Component {
             this.props.items.forEach(item => {
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.pie_name })
                 totalValue += item.value
-                // for each item fetch all the stocks using holding ids
-                console.log(item)
             })
         } 
         else {
             this.props.items.forEach(item => {
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.portfolio_name })
                 totalValue += item.value
-                // for each item fetch all the stocks using holding ids
-                console.log(item)
             })
         }
         let items = this.props.items.map((item) => (
@@ -60,7 +55,6 @@ class PortfolioIndex extends React.Component {
             </div>
         ))
         if (this.props.items.length > 1) {
-            // debugger;
            
             chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
         }
