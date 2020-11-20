@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
@@ -27,6 +28,10 @@ class PortfolioPieIndex extends React.Component {
             })
         }
         formattedChart.push(this.props.prices)
+    }
+
+    componentWillUnmount() {
+        alert("TEST")
     }
 
 

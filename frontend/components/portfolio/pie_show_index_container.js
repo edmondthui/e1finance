@@ -1,7 +1,8 @@
 import {connect} from 'react-redux'
 import PortfolioPieIndex from './portfolio_pie_index'
 import {fetchHoldings} from '../../actions/portfolio_actions'
-import {fetchStockPrice} from '../../actions/portfolio_actions'
+import {fetchStockPrice, removeHolding} from '../../actions/portfolio_actions'
+
 
 
 const mapStateToProps = (state) => {
@@ -15,7 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         action: (pieId) => dispatch(fetchHoldings(pieId)),
-        fetchStockPrice: (ticker) => dispatch(fetchStockPrice(ticker))
+        fetchStockPrice: (ticker) => dispatch(fetchStockPrice(ticker)),
+        removeHolding: () => dispatch(removeHolding())
     }
 }
 

@@ -27,6 +27,7 @@ class StockNewsIndex extends React.Component {
         // window.location.assign(this.props.news[idx].url)
         window.location.href = this.props.news[idx].url
     }
+
     
     render() {
         let pie;

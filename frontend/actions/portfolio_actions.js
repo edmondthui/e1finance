@@ -10,6 +10,7 @@ export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS"
 export const RECEIVE_HOLDING = "RECEIVE_HOLDING"
 export const RECEIVE_STOCKS = "RECEIVE_STOCKS"
 export const RECEIVE_STOCK = "RECEIVE_STOCK"
+export const REMOVE_HOLDING = "REMOVE_HOLDING"
 
 const receiveStocks = (stocks) => {
     return {
@@ -102,6 +103,11 @@ export const fetchStock = (stockId) => {
     }
 }
 
+export const removeHolding = () => {
+    return {
+        type: REMOVE_HOLDING,
+    }
+}
 
 
 // FOR UPDATING STOCK GRAPH PRICES

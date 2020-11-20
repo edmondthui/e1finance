@@ -1,4 +1,4 @@
-import { RECEIVE_HOLDINGS, RECEIVE_HOLDING } from '../actions/portfolio_actions'
+import { RECEIVE_HOLDINGS, RECEIVE_HOLDING, REMOVE_HOLDING } from '../actions/portfolio_actions'
 
 const holdingsReducer = (state={}, action) => {
     Object.freeze(state);
@@ -9,6 +9,8 @@ const holdingsReducer = (state={}, action) => {
         case RECEIVE_HOLDING:
             newState = action.holding;
             return newState;
+        case REMOVE_HOLDING:
+            return {};
         default:
             return state;
     }
