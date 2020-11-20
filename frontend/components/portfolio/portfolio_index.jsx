@@ -3,6 +3,10 @@ import { withRouter } from 'react-router-dom'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
+
+let formattedChart = []
+let chart;
+
 class PortfolioIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -17,8 +21,17 @@ class PortfolioIndex extends React.Component {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.items.length !== this.props.items.length) {
+            this.props.items.forEach(items => {
+                debugger;
+                items.tickers.forEach(item=> this.props.fetchStockPrice(item))
+            })
+        }
+        formattedChart.push(this.props.prices)
+    }
+
     render() {
-        let formattedChart;
         let formattedPortfolio = [];
         let totalValue = 0;
         if (this.props.match.params.portfolioId) {
@@ -46,6 +59,11 @@ class PortfolioIndex extends React.Component {
                 <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
         ))
+        if (this.props.items.length > 1) {
+            debugger;
+           
+            chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
+        }
         console.log(items)
         return (
             <div className="portfolio-content-container">
@@ -55,7 +73,7 @@ class PortfolioIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    <PortfolioChart/> 
+                    {chart}
                     <h1 className="slice-title">Slices</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">

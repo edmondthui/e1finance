@@ -13,7 +13,7 @@
         json.id portfolio.id
         json.value portfolio.value
         json.portfolio_name portfolio.portfolio_name
-        json.tickers = tickers
-        json.holding_percentages = holding_percentages
+        json.tickers tickers
+        json.holding_percentages holding_percentages
     end
 end

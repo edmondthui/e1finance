@@ -14,6 +14,6 @@
         json.percentage pie.percentage
         # json.holding_ids pie.stocks.ids
         json.tickers tickers
-        json.holding_percentages = holding_percentages
+        json.holding_percentages holding_percentages
     end
 end

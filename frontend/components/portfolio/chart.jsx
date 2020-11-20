@@ -32,13 +32,9 @@ class Chart extends React.Component {
                 });
                 let newPrices = [];
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
-                    let quantity1 = 0;
-                    let quantity2 = 0;
-                    if (this.props.holdings) {
-                        quantity1 = this.props.holdings[i].quantity
-                        quantity2 = this.props.holdings[i+1].quantity
-                    }
-                    for (let j = 0 ; j < filteredPrices[i].length; j+=20) {
+                    let quantity1 = this.props.holdings[i].quantity
+                    let quantity2 = this.props.holdings[i+1].quantity
+                    for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
                         if (quantity1 !== undefined && quantity2 !== undefined) {
                             newPrices.push({ high: (((filteredPrices[i][j].high*quantity1) + (filteredPrices[i+1][j].high*quantity2))), minute: filteredPrices[i][j].minute })
                         }

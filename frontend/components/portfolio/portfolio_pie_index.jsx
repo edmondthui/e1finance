@@ -31,21 +31,24 @@ class PortfolioPieIndex extends React.Component {
     }
 
     componentWillUnmount() {
-        alert("TEST")
     }
 
 
     render() {
         let formattedPie = [];
         let totalValue = 0
-        if (this.props.items) {
+        let holdings = [];
+        if (this.props.items.length > 1) {
             this.props.items.forEach(item => {
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
                 totalValue += item.value
+                holdings.push(item)
                 // this.fetchAndFormatStockData(item.ticker)
                 // is it possible to iterate through items here and fetch data recursive loop?
             });
-            chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
+            debugger;
+           
+            chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
         }
         return (
             <div className="portfolio-content-container">
