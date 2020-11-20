@@ -8,12 +8,19 @@ if @stocks
         end
     end
 else
+    value = 0
+    @holdings.each do |holding|
+        value += holding.value
+    end
     @holdings.each do |holding|
         json.set! holding.id do
             json.id holding.id
             json.stock_name holding.stock.name
+            json.ticker holding.stock.ticker
             json.value holding.value
             json.quantity holding.quantity
+            json.total_value value
+            json.percentage holding.value/value
         end
     end
 end

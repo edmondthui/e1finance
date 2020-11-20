@@ -1,7 +1,7 @@
 class Api::PortfoliosController < ApplicationController
 
     def index
-        @portfolios = Portfolio.where(user_id: current_user.id)
+        @portfolios = Portfolio.where(user_id: current_user.id).includes(:pies)
         render :index
     end
 

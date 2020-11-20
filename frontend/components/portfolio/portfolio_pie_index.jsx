@@ -23,6 +23,8 @@ class PortfolioPieIndex extends React.Component {
         this.props.items.forEach(item => {
             formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
             totalValue += item.value
+            // for each item fetch all the stocks using holding info 
+            console.log(item)
         });
         return (
             <div className="portfolio-content-container">

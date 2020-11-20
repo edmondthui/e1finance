@@ -24,12 +24,16 @@ class PortfolioIndex extends React.Component {
             this.props.items.forEach(item => {
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.pie_name })
                 totalValue += item.value
+                // for each item fetch all the stocks using holding ids
+                console.log(item)
             })
         } 
         else {
             this.props.items.forEach(item => {
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.portfolio_name })
                 totalValue += item.value
+                // for each item fetch all the stocks using holding ids
+                console.log(item)
             })
         }
         return (
