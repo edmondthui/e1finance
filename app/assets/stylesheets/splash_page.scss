@@ -95,7 +95,7 @@
 }
 
 .why-e1-text {
-    padding: 0 150px;
+    padding: 0 auto;
     width: 40%;
 }
 
@@ -107,4 +107,32 @@
 
 .why-e1-text p {
     color: #12123D;
+}
+.why-e1-container img {
+    padding: 0px 100px;
+}
+
+.splash-container {
+    @media only screen and (max-width: 1060px) {
+        flex-direction: column;
+    }
+}
+
+.splash-text {
+    @media only screen and (max-width: 1060px) {
+        padding: 0;
+        margin-bottom: 50px;
+    }
+}
+
+.splash-image img {
+    @media only screen and (max-width: 1060px) {
+        width: 100%;
+    }
+}
+
+.why-e1 {
+    @media only screen and (max-width: 1060px) {
+        margin: 0px auto;
+    }
 }

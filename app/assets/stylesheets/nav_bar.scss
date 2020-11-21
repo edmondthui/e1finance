@@ -218,17 +218,18 @@
     }
 }
 
-#login {
-    @media only screen and (max-width: 1060px) {
-        display: none;
-    }
-}
+// #login {
+//     @media only screen and (max-width: 1060px) {
+//         display: none;
+//     }
+// }
 
 .nav-content {
     @media only screen and (max-width: 995px) {
         display: none;
     }
 }
+
 .logged-in-nav-content {
     text-decoration: none;
     color: white;
