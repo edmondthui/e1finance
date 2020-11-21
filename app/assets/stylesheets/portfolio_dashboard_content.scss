@@ -55,3 +55,40 @@
 .pie-title-container {
     position: relative;
 }
+
+.crud-button-continer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.crud-create-button {
+    height: 40px;
+    width: 45%;
+    background-color: #0020BD;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    border: 2px solid #0020BD;
+    margin: 0px 5px;
+}
+
+.crud-delete-button {
+    height: 40px;
+    width: 45%;
+    background-color:white;
+    border-radius: 5px;
+    color: #0020BD;
+    font-weight: 700;
+    border: 2px solid #0020BD;
+    margin: 0px 5px;
+}
+
+.crud-delete-button:hover {
+    cursor: pointer;
+}
+
+.crud-create-button:hover {
+    cursor: pointer;
+    background-color: #00008B;
+    border: 2px solid #00008B;
+}

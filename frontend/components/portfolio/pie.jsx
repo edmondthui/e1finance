@@ -1,5 +1,6 @@
 import React from 'react'
 import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts';
+import { withRouter } from 'react-router-dom'
 
 class InvestmentPie extends React.Component {
     constructor(props) {
@@ -48,9 +49,26 @@ class InvestmentPie extends React.Component {
     }
 
     render() {
+        let button;
         let data = this.props.items
         const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];
         let value = this.state.value ? "$"+this.state.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') : this.props.totalValue
+
+
+
+        if (this.props.match.params) {
+            button = <div className="crud-button-continer"><button className="crud-create-button">Create Portfolio</button><button className="crud-delete-button">Remove Portfolio</button></div>
+        }
+        if (this.props.match.params.portfolioId) {
+            button = <div className="crud-button-continer"><button className="crud-create-button">Create Pie</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Delete Pie</button></div>
+        }
+        if (this.props.match.params.pieId) {
+            button = <div className="crud-button-continer"><button className="crud-create-button">Buy Stock</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Sell Stock</button></div>
+        }
+        if (this.props.match.params.stockId) {
+            button = <div className="crud-button-continer"><button className="crud-create-button">Buy Stock</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Sell Stock</button></div>
+        }
+        
         return (
             <div className="pie-container">
                 <div className="pie-title-container">
@@ -76,11 +94,12 @@ class InvestmentPie extends React.Component {
                             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                         )}
                     </Pie>
-                    {/* TODO ADD BUY SELL REBALANCE BUTTONS SEPARATE COMPONENT */}
+
                 </PieChart>
+                {button}
             </div>
         )
     }
 }
 
-export default InvestmentPie
+export default withRouter(InvestmentPie)
