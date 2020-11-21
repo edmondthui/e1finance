@@ -20,6 +20,12 @@ Stock.create({ ticker: "COST", name: "Costco Wholesale Corporation", price: 385.
 Stock.create({ ticker: "HD", name: "Home Depot Inc", price: 271.40})
 Stock.create({ ticker: "STOR", name: "Store Capital Corp", price: 31.97})
 Stock.create({ ticker: "O", name: "Realty Income Corp", price: 63.20})
+Stock.create({ ticker: "SPCE", name: "Virgin Galactic Holdings Inc", price: 23.65})
+Stock.create({ ticker: "BABA", name: "Alibaba Group Holding Ltd", price: 63.20})
+Stock.create({ ticker: "AMZN", name: "Amazon.com, Inc.", price: 3099.40})
+Stock.create({ ticker: "GOOG", name: "Alphabet Inc Class C", price: 1742.19})
+Stock.create({ ticker: "PTON", name: "Peloton Interactive Inc", price: 110.90})
+
 
 # Seet test portfolio
 Portfolio.create({ portfolio_name: "Passive Income", user_id: 1})
