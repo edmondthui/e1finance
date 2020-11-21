@@ -30,6 +30,12 @@ class PortfolioIndex extends React.Component {
         formattedChart.push(this.props.prices)
     }
 
+    componentWillUnmount() {
+        debugger;
+        this.props.removeHolding();
+    }
+
+
     render() {
         let formattedPortfolio = [];
         let totalValue = 0;
@@ -55,7 +61,7 @@ class PortfolioIndex extends React.Component {
             </div>
         ))
         if (this.props.items.length > 1) {
-            chart = <PortfolioChart data={formattedChart} holdings={this.props.items}/> 
+            chart = <PortfolioChart data={formattedChart} holdings={this.props.items} /> 
         }
         return (
             <div className="portfolio-content-container">

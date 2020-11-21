@@ -7,6 +7,7 @@ let chartValue;
 let value = 0;
 let multiplier1 = 1;
 let multiplier2 = 1;
+let quantity = []
 
 class Chart extends React.Component {
     constructor(props) {
@@ -34,14 +35,17 @@ class Chart extends React.Component {
 
     getValue() {
         // this.props.holdings.forEach(holding => value += holding.value)
-        this.props.holdings.forEach(holding => {
+        this.props.holdings.forEach((holding, idx) => {
             if (Array.isArray(holding.quantity)) {
-                holding.quantity.forEach(quantity => {
-                    value += (holding.value / quantity)
+                holding.quantity.forEach(quantityNum => {
+                    value += (holding.value / quantityNum)
+                    quantity.push(quantityNum)
                 })
             }
             else {
+                debugger;
                 value += ( holding.value / holding.quantity )
+                quantity.push(holding.quantity)
             }
         })
     }
@@ -49,20 +53,22 @@ class Chart extends React.Component {
     formatData(dataArray) {
         if (this.props.holdings) {
             if (Array.isArray(dataArray[0])) {
-                let filteredPrices = dataArray.filter(function (el) {
+                let filteredPrices = dataArray.filter((el) => {
                     return el.length>0;
                 });
                 let newPrices = [];
                 this.getValue();
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
-                        multiplier1 = value / filteredPrices[0][0].high
-                        multiplier2 = value / filteredPrices[1][0].high
-                        // multiplier1 = value / (this.props.data.length) / filteredPrices[0][0].high
-                        // multiplier2 = value / (this.props.data.length) / filteredPrices[1][0].high
-                        newPrices.push({ high: (filteredPrices[i][j].high*multiplier1) + (filteredPrices[i+1][j].high * multiplier2), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
+                        multiplier1 = value / filteredPrices[i][0].high * quantity[i]
+                        multiplier2 = value / filteredPrices[i+1][0].high * quantity[i+1]
+                        debugger;
+                        if (quantity[i+1]) {
+                            newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1]), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
+                        }
                     }
                 }
+                quantity = []
                 multiplier1 = 1
                 multiplier2 = 1
                 value = 0;
