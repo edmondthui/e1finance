@@ -3,10 +3,6 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 
 let formattedChart = [];
-let chartValue;
-let value = 0;
-let multiplier1 = 1;
-let multiplier2 = 1;
 let quantity = []
 
 class Chart extends React.Component {
@@ -34,17 +30,13 @@ class Chart extends React.Component {
 
 
     getValue() {
-        // this.props.holdings.forEach(holding => value += holding.value)
         this.props.holdings.forEach((holding, idx) => {
             if (Array.isArray(holding.quantity)) {
                 holding.quantity.forEach(quantityNum => {
-                    value += (holding.value / quantityNum)
                     quantity.push(quantityNum)
                 })
             }
             else {
-                debugger;
-                value += ( holding.value / holding.quantity )
                 quantity.push(holding.quantity)
             }
         })
@@ -60,28 +52,18 @@ class Chart extends React.Component {
                 this.getValue();
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
-                        multiplier1 = value / filteredPrices[i][0].high * quantity[i]
-                        multiplier2 = value / filteredPrices[i+1][0].high * quantity[i+1]
-                        debugger;
                         if (quantity[i+1]) {
-                            newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1]), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
+                            newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1]), label: filteredPrices[i][j].label})
                         }
                     }
                 }
                 quantity = []
-                multiplier1 = 1
-                multiplier2 = 1
-                value = 0;
                 return newPrices;
             } 
         }
         else {
             return dataArray;
         }
-    }
-
-    updateChartValue(data) {
-        chartValue = "$"+data.activePayload[0].value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
     }
 
 
