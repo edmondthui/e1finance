@@ -1,0 +1,94 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 10;
+    transition: opacity 400ms ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-child {
+    position: absolute;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 8px lightgray;
+    padding: 20px;
+    border-radius: 8px;
+    transition: background-color .5s ease-in;
+}
+
+.close-x {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.create-portfolio-radio {
+    display: flex;
+    align-items: center;
+}
+
+.create-portfolio-name input {
+    display: block;
+    height: 40px;
+    width: 95%;
+    border-radius: 6px;
+    border: 1px solid #00178A;
+    background-color: #E8F0FE;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    opacity: 1;
+}
+
+.create-portfolio-submit {
+    height: 40px;
+    width: 20%;
+    background-color: #0020BD;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    border: 2px solid #0020BD;
+    margin: 0px 5px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    line-height: 22px;
+}
+
+.create-portfolio-submit:hover {
+    cursor: pointer;
+}
+
+.create-portfolio-radio p {
+    padding-left: 20px;
+    margin: 10px 0px;
+}
+
+.radio-title {
+    font-weight: 700;
+}
+
+@keyframes fadeIn {
+    from {transform: translateY(0);opacity: 0;}
+    to {transform: translateY(0);opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {transform: translateY(0);opacity: 1;}
+    to {transform: translateY(0);opacity: 0;}
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: .3s;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: .3s;
+}

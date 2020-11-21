@@ -61,7 +61,7 @@ class PortfolioIndex extends React.Component {
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie items={formattedPortfolio} totalValue={"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
+                        <PortfolioPie items={formattedPortfolio} totalValue={"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} openModal={this.props.openModal}/>
                     </div>
                 </div>
                 <div className="portfolio-main-content">

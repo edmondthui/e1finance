@@ -2,6 +2,7 @@ import React from 'react'
 import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts';
 import { withRouter } from 'react-router-dom'
 
+
 class InvestmentPie extends React.Component {
     constructor(props) {
         super(props)
@@ -57,7 +58,7 @@ class InvestmentPie extends React.Component {
 
 
         if (this.props.match.params) {
-            button = <div className="crud-button-continer"><button className="crud-create-button">Create Portfolio</button><button className="crud-delete-button">Remove Portfolio</button></div>
+            button = <div className="crud-button-continer"><button className="crud-create-button" onClick={()=> this.props.openModal('create portfolio')}>Create Portfolio</button><button className="crud-delete-button">Remove Portfolio</button></div>
         }
         if (this.props.match.params.portfolioId) {
             button = <div className="crud-button-continer"><button className="crud-create-button">Create Pie</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Delete Pie</button></div>

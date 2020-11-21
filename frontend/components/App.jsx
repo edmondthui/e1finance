@@ -11,9 +11,11 @@ import DashboardStock from './portfolio/dashboard_stock'
 import Research from './research/research_container'
 import Stocks from './research/stocks_container'
 import StockShow from './research/stock_show'
+import Modal from './modal/modal'
 
 const App = () => (
   <div>
+    <Modal />
     <Route exact path="/" component={SplashPage} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
