@@ -24,7 +24,6 @@ class StockNewsIndex extends React.Component {
     }
 
     clickNews(idx) {
-        // window.location.assign(this.props.news[idx].url)
         window.location.href = this.props.news[idx].url
     }
 
@@ -61,7 +60,7 @@ class StockNewsIndex extends React.Component {
                 <div>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
-                            <p className="header-name">Price</p>
+                            <p className="header-name">Price per share</p>
                             <p className="header-value"></p>
                         </div>
                         <div className="portfolio-index-item">
