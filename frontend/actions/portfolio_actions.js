@@ -11,6 +11,7 @@ export const RECEIVE_HOLDING = "RECEIVE_HOLDING"
 export const RECEIVE_STOCKS = "RECEIVE_STOCKS"
 export const RECEIVE_STOCK = "RECEIVE_STOCK"
 export const REMOVE_HOLDING = "REMOVE_HOLDING"
+export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO"
 
 const receiveStocks = (stocks) => {
     return {
@@ -109,6 +110,18 @@ export const removeHolding = () => {
     }
 }
 
+export const createPortfolio = (portfolioData) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.postPortfolio(portfolioData).then((portfolio) => dispatch(createPortfolioAction(portfolio)))
+    }
+}
+
+const createPortfolioAction = (portfolio) => {
+    return {
+        type: CREATE_PORTFOLIO,
+        portfolio
+    }
+}
 
 // FOR UPDATING STOCK GRAPH PRICES
 

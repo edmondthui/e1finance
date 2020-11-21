@@ -1,4 +1,4 @@
-import { RECEIVE_PORTFOLIOS, RECEIVE_PORTFOLIO} from '../actions/portfolio_actions'
+import { RECEIVE_PORTFOLIOS, RECEIVE_PORTFOLIO, CREATE_PORTFOLIO} from '../actions/portfolio_actions'
 
 const portfoliosReducer = (state={}, action) => {
     Object.freeze(state);
@@ -7,6 +7,9 @@ const portfoliosReducer = (state={}, action) => {
         case RECEIVE_PORTFOLIOS:
             return action.portfolios
         case RECEIVE_PORTFOLIO:
+            newState[action.portfolio.id] = action.portfolio;
+            return newState;
+        case CREATE_PORTFOLIO:
             newState[action.portfolio.id] = action.portfolio;
             return newState
         default:

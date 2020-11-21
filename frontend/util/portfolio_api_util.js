@@ -50,3 +50,11 @@ export const getStocks = () => {
         url: '/api/stocks'
     })
 }
+
+export const postPortfolio = (data) => {
+    return $.ajax({
+        method: 'POST',
+        url: '/api/portfolios',
+        data: { portfolio: {portfolio_name: data.name} }
+    })
+}

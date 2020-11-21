@@ -1,18 +1,35 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 class CreatePortfolio extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            name: ""
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.createPortfolio(this.state);
+        this.props.closeModal();
+    }
+
+    update(field) {
+        return (e) => {
+            this.setState({[field]: e.currentTarget.value})
+        }
     }
 
     render() {
         return (
             <div className="create-portfolio-container">
                 <div className="create-portfolio-form-container">
-                    <form>
+                    <form onSubmit={this.handleSubmit}>
                         <div className="create-portfolio-name">
                             <h3>Account name</h3>
-                            <input type="text"/>
+                            <input type="text" value={this.state.name} onChange={this.update("name")}/>
                         </div>
                         <h3>Select account type</h3>
                         <p>Choose between a taxable or retrement investing account.</p>
@@ -52,4 +69,4 @@ class CreatePortfolio extends React.Component {
     }
 }
 
-export default CreatePortfolio
+export default withRouter(CreatePortfolio)

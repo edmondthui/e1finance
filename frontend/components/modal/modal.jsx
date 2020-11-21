@@ -1,27 +1,55 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import CreatePortfolio from './create_portfolio'
+import CreatePortfolio from './create_portfolio_container'
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
-    return null;
+// function Modal({modal, closeModal, createPortfolio}) {
+//   if (!modal) {
+//     return null;
+//   }
+//   let component;
+//   switch (modal) {
+//     case 'create portfolio':
+//       component = <CreatePortfolio createPortfolio={createPortfolio}/>;
+//       break;
+//     default:
+//       return null;
+//   }
+  // return (
+  //   <div className="modal-background fadeIn" onClick={closeModal}>
+  //     <div className="modal-child fadeIn" onClick={e => e.stopPropagation()}>
+  //       { component }
+  //     </div>
+  //   </div>
+  // );
+// }
+
+class Modal extends React.Component {
+  
+  constructor(props) {
+    super(props)
   }
-  let component;
-  switch (modal) {
-    case 'create portfolio':
-      component = <CreatePortfolio />;
-      break;
-    default:
+
+  render() {
+    if (!this.props.modal) {
       return null;
-  }
-  return (
-    <div className="modal-background fadeIn" onClick={closeModal}>
-      <div className="modal-child fadeIn" onClick={e => e.stopPropagation()}>
-        { component }
+    }
+    let component;
+    switch (this.props.modal) {
+      case 'create portfolio':
+        component = <CreatePortfolio/>;
+        break;
+      default:
+        return null;
+    }
+    return (
+      <div className="modal-background fadeIn" onClick={this.props.closeModal}>
+        <div className="modal-child fadeIn" onClick={e => e.stopPropagation()}>
+          { component }
+        </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 const mapStateToProps = state => {
@@ -32,7 +60,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

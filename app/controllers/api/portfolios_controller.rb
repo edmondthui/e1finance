@@ -8,7 +8,7 @@ class Api::PortfoliosController < ApplicationController
     def create
         @portfolio = current_user.portfolios.new(portfolio_params)
         if @portfolio.save
-            render :index
+            render :show
         else
             render json: @portfolio.errors.full_messages
         end
