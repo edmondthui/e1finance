@@ -28,7 +28,7 @@ class PortfolioPieInfo extends React.Component {
                     ))}
 
                 <div className="portfolio-info" >
-                    <Link to={`/dashboard/${this.props.match.params.portfolioId}`} id="portfolio-back">{"🡐 "+ button}</Link>
+                    <Link to={`/dashboard/${this.props.match.params.portfolioId}`} id="portfolio-back">{"⬅ "+ button}</Link>
                     <h1 className="portfolio-info-name">{title}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>

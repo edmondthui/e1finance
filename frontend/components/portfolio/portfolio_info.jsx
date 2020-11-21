@@ -19,7 +19,7 @@ class PortfolioInfo extends React.Component {
         let link;
         if (this.props.portfolio) {
             title = this.props.portfolio.portfolio_name.toUpperCase()
-            link = <Link to={`/dashboard`} id="portfolio-back">🡐 TOTAL PORTFOLIO VALUE</Link>
+            link = <Link to={`/dashboard`} id="portfolio-back">⬅ TOTAL PORTFOLIO VALUE</Link>
         }
         else {
             title = "TOTAL PORTFOLIO VALUE"
