@@ -13,6 +13,9 @@ class PortfolioPieIndex extends React.Component {
 
     componentDidMount() {
         let paramsId = this.props.match.params.pieId ? this.props.match.params.pieId : ""
+        this.props.items.forEach(item => {
+            this.props.fetchStockPrice(item.ticker)
+        })
         this.props.action(paramsId)
     }
 
@@ -21,16 +24,14 @@ class PortfolioPieIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.items.length !== this.props.items.length) {
-            this.props.items.forEach(item => {
-                this.props.fetchStockPrice(item.ticker)
-            })
-        }
-        formattedChart.push(this.props.prices)
+        // if (prevProps.items.length !== this.props.items.length) {
+        //     this.props.items.forEach(item => {
+        //         this.props.fetchStockPrice(item.ticker)
+        //     })
+        // }
+        
     }
 
-    componentWillUnmount() {
-    }
 
 
     render() {
@@ -39,11 +40,11 @@ class PortfolioPieIndex extends React.Component {
         let holdings = [];
         if (this.props.items.length > 1) {
             this.props.items.forEach(item => {
+                formattedChart.push(this.props.prices)
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
                 totalValue += item.value
                 holdings.push(item)
             });
-           
             chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
         }
         return (

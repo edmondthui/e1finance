@@ -27,26 +27,22 @@ class PortfolioIndex extends React.Component {
                 items.tickers.forEach(item=> this.props.fetchStockPrice(item))
             })
         }
-        formattedChart.push(this.props.prices)
     }
-
-    componentWillUnmount() {
-        debugger;
-        this.props.removeHolding();
-    }
-
-
+    
     render() {
+        
         let formattedPortfolio = [];
         let totalValue = 0;
         if (this.props.match.params.portfolioId) {
             this.props.items.forEach(item => {
+                formattedChart.push(this.props.prices)
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.pie_name })
                 totalValue += item.value
             })
-        } 
+        }
         else {
             this.props.items.forEach(item => {
+                formattedChart.push(this.props.prices)
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.portfolio_name })
                 totalValue += item.value
             })
