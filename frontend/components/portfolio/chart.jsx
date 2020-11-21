@@ -1,5 +1,5 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 
 let formattedChart = [];
@@ -86,13 +86,15 @@ class Chart extends React.Component {
                         <h1 className="portfolio-header">Value over time</h1>
                         <p className="portfolio-graph-value">{this.state.value}</p>
                     </div>
-                    <LineChart width={800} height={300} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null, hover: false, chartX: null})}>
-                        {verticalLine}
-                        {dot}
-                        <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false} />
-                        <XAxis dataKey="minute" hide={true} />
-                        <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
-                    </LineChart>
+                    <ResponsiveContainer>
+                        <LineChart height={300} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null, hover: false, chartX: null})}>
+                            {verticalLine}
+                            {dot}
+                            <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false} />
+                            <XAxis dataKey="minute" hide={true} />
+                            <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
+                        </LineChart>
+                    </ResponsiveContainer>
                 </div>
             </div>
         )

@@ -1,11 +1,14 @@
 .portfolio-chart {
     margin: auto;
+    width: 100%;
+    height: 300px;
 }
 
 .chart-container {
     background-color: #12123D;
     margin: 5px 20px 5px 0px;
     border-radius: 5px;
+    width: 800px;
 }
 
 .portfolio-content-container {
@@ -91,4 +94,44 @@
     cursor: pointer;
     background-color: #00008B;
     border: 2px solid #00008B;
+}
+
+.portfolio-content-container {
+    @media only screen and (max-width: 1160px) {
+        display: block;
+        margin: -5px 0 0px 0;
+    }
+}
+
+.portfolio-pie-container {
+    @media only screen and (max-width: 1160px) {
+        margin: 0 auto;
+        width: 95%
+    }
+}
+
+.chart-container {
+    @media only screen and (max-width: 1160px) {
+        width: 95%;
+        margin: 50px auto;
+    }
+}
+
+.portfolio-main-content .portfolio-index-container {
+    @media only screen and (max-width: 1160px) {
+        width: 95%;
+        margin: 5px auto;
+    }
+}
+
+.slice-title {
+    @media only screen and (max-width: 1160px) {
+        margin-left: 25px;
+    }
+}
+
+.portfolio-info-container {
+    @media only screen and (max-width: 1160px) {
+        padding: 0px 25px;
+    }
 }
