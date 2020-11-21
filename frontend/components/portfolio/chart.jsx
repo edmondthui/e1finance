@@ -21,7 +21,7 @@ class Chart extends React.Component {
     }
 
     updateState(data) {
-        if (!data.activePayload) {
+        if (data === null || !data.activePayload ) {
             return
         }
         this.setState({
@@ -33,7 +33,17 @@ class Chart extends React.Component {
 
 
     getValue() {
-        this.props.holdings.forEach(holding => value += holding.value)
+        // this.props.holdings.forEach(holding => value += holding.value)
+        this.props.holdings.forEach(holding => {
+            if (Array.isArray(holding.quantity)) {
+                holding.quantity.forEach(quantity => {
+                    value += (holding.value / quantity)
+                })
+            }
+            else {
+                value += ( holding.value / holding.quantity )
+            }
+        })
     }
 
     formatData(dataArray) {
@@ -47,7 +57,9 @@ class Chart extends React.Component {
                 for (let i = 0 ; i < filteredPrices.length -1; i++ ) {
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
                         multiplier1 = value / filteredPrices[0][0].high
-                        multiplier2 = value / filteredPrices[0+1][0].high
+                        multiplier2 = value / filteredPrices[1][0].high
+                        // multiplier1 = value / (this.props.data.length) / filteredPrices[0][0].high
+                        // multiplier2 = value / (this.props.data.length) / filteredPrices[1][0].high
                         newPrices.push({ high: (filteredPrices[i][j].high*multiplier1) + (filteredPrices[i+1][j].high * multiplier2), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
                     }
                 }
