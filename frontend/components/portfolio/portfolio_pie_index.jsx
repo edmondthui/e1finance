@@ -54,8 +54,9 @@ class PortfolioPieIndex extends React.Component {
                 <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
                 <p>{item.pie_name} {item.stock_name}</p>
                 </div>
-                <div style={{display: 'none' }}>{value = item.value ? item.value : 1}</div>
+                <div style={{display: 'none' }}>{value = item.value ? item.value : window.location.reload()}</div>
                 <p className="item-value">{"$" + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                <p className="item-value">{item.quantity ? item.quantity.toFixed(2) : 0 }</p>
             </div>
         ))
         return (
@@ -72,6 +73,7 @@ class PortfolioPieIndex extends React.Component {
                         <div className="portfolio-index-header">
                             <p className="header-name">Name</p>
                             <p className="header-value">Value</p>
+                            <p className="header-value">Quantity</p>
                         </div>
 
                         {items.length>0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please buy stocks to populate your pie.</p></div></div>}

@@ -18,7 +18,6 @@ class DeletePie extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
         this.props.fetchPies(this.props.match.params.portfolioId)
     }
 

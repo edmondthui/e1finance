@@ -13,7 +13,7 @@
         json.id pie.id
         json.pie_name pie.pie_name
         json.value pie.value
-        # json.holding_ids pie.stocks.ids
+        json.holding_ids pie.stocks.ids
         json.tickers tickers
         json.holding_percentages holding_percentages
         json.quantity quantity
