@@ -34,6 +34,10 @@ class PortfolioIndex extends React.Component {
             })
         }
     }
+
+    componentWillUnmount() {
+        formattedChart = []
+    }
     
     render() {
         

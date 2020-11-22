@@ -1,4 +1,4 @@
-import * as ExternalAPIUtil from '../util/IEX_api_utl'
+import * as ExternalAPIUtil from '../util/IEX_api_util'
 
 export const RECEIVE_STOCK_NEWS = "RECEIVE_STOCK_NEWS"
 export const RECEIVE_ALL_NEWS = "RECEIVE_ALL_NEWS"

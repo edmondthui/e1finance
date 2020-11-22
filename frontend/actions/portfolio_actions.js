@@ -1,5 +1,5 @@
 import * as PortfolioAPIUtil from '../util/portfolio_api_util'
-import * as ExternalAPIUtil from '../util/IEX_api_utl'
+import * as ExternalAPIUtil from '../util/IEX_api_util'
 
 export const RECEIVE_STOCK_PRICE = "RECEIVE_STOCK_PRICE"
 export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS"
@@ -17,6 +17,7 @@ export const DELETE_PIE = "DELETE_PIE"
 export const CREATE_HOLDING = "CREATE_HOLDING"
 export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER"
 export const UPDATE_HOLDING = "UPDATE_HOLDING"
+// export const CLEAR_HOLDINGS = "CLEAR_HOLDINGS"
 
 
 const receiveStocks = (stocks) => {
@@ -213,6 +214,12 @@ export const removeHolding = (holdingId) => {
         PortfolioAPIUtil.removeHolding(holdingId).then((holding) => dispatch(removeHoldingAction(holding)))
     }
 }
+
+// export const clearHoldings = () => {
+//     return {
+//         type: CLEAR_HOLDINGS
+//     }
+// }
 
 // FOR UPDATING STOCK GRAPH PRICES
 

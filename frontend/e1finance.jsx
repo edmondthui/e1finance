@@ -4,10 +4,10 @@ import configureStore from './store/store'
 import Root from './components/root'
 
 //TESTING
-import {login, signup, logout} from './util/session_api_util'
-import {getPortfolios, getStocks} from './util/portfolio_api_util'
-import {fetchPortfolios, fetchPies, getHolding, getStock} from './actions/portfolio_actions'
-import {fetchCompanyNews, fetchInterdayData, fetchStockNews, fetchCompanyInfo} from './util/IEX_api_utl'
+// import {login, signup, logout} from './util/session_api_util'
+// import {getPortfolios, getStocks} from './util/portfolio_api_util'
+// import {fetchPortfolios, fetchPies, getHolding, getStock} from './actions/portfolio_actions'
+// import {fetchCompanyNews, fetchInterdayData, fetchStockNews, fetchCompanyInfo} from './util/IEX_api_util'
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -28,19 +28,19 @@ document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root store={store} />, root)
 
     //TESTING
-    window.fetchPortfolios = fetchPortfolios
-    window.login = login;
-    window.signup = signup;
-    window.logout = logout;
-    window.getState = store.getState;
-    window.dispatch = store.dispatch;
-    window.getPortfolios = getPortfolios
-    window.fetchPies = fetchPies
-    window.fetchCompanyNews = fetchCompanyNews
-    window.fetchInterdayData = fetchInterdayData
-    window.fetchStockNews = fetchStockNews
-    window.getStocks = getStocks
-    window.fetchCompanyInfo = fetchCompanyInfo
-    window.getHolding = getHolding
-    window.getStock= getStock
+    // window.fetchPortfolios = fetchPortfolios
+    // window.login = login;
+    // window.signup = signup;
+    // window.logout = logout;
+    // window.getState = store.getState;
+    // window.dispatch = store.dispatch;
+    // window.getPortfolios = getPortfolios
+    // window.fetchPies = fetchPies
+    // window.fetchCompanyNews = fetchCompanyNews
+    // window.fetchInterdayData = fetchInterdayData
+    // window.fetchStockNews = fetchStockNews
+    // window.getStocks = getStocks
+    // window.fetchCompanyInfo = fetchCompanyInfo
+    // window.getHolding = getHolding
+    // window.getStock= getStock
 })
