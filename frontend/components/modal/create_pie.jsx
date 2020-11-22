@@ -19,7 +19,7 @@ class CreatePie extends React.Component {
 
     update(field) {
         return (e) => {
-            this.setState({[field]: e.currentTarget.value, portfolio_id: 2})
+            this.setState({[field]: e.currentTarget.value, portfolio_id: this.props.match.params.portfolioId})
         }
     }
 

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import DeletePortfolio from './delete_portfolio_container'
 import CreatePortfolio from './create_portfolio_container'
 import CreatePie from './create_pie_container'
+import DeletePie from './delete_pie_container'
+import { Route } from 'react-router-dom'
 
 class Modal extends React.Component {
   
@@ -24,7 +26,10 @@ class Modal extends React.Component {
         component = <DeletePortfolio/>;
         break;
       case 'createPie':
-        component = <CreatePie/>;
+        component = <Route path="/dashboard/:portfolioId" component={CreatePie} />
+        break;
+      case 'deletePie':
+        component = <Route path="/dashboard/:portfolioId" component={DeletePie} />
         break;
       default:
         return null;

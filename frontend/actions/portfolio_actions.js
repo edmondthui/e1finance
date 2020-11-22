@@ -13,6 +13,7 @@ export const REMOVE_HOLDING = "REMOVE_HOLDING"
 export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO"
 export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO"
 export const CREATE_PIE = "CREATE_PIE"
+export const DELETE_PIE = "DELETE_PIE"
 
 
 const receiveStocks = (stocks) => {
@@ -148,6 +149,19 @@ const createPieAction = (pie) => {
 export const createPie = (pieData) => {
     return (dispatch) => {
         PortfolioAPIUtil.postPie(pieData).then((pie) => dispatch(createPieAction(pie)))
+    }
+}
+
+const deletePieAction = (pie) => {
+    return {
+        type: DELETE_PIE,
+        pie
+    }
+}
+
+export const deletePie = (pieId) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.deletePie(pieId).then((pie) => dispatch(deletePieAction(pie)))
     }
 }
 

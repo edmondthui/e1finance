@@ -73,3 +73,10 @@ export const postPie = (data) => {
         data: { pie: data }
     })
 }
+
+export const deletePie = (pieId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/pies/${pieId}`
+    })
+}

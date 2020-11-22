@@ -14,6 +14,15 @@ class Api::PiesController < ApplicationController
         end
     end
 
+    def destroy
+        @pie = current_user.pies.find(params[:id])
+        if @pie.destroy
+            render :show
+        else
+            render json: ["Error, you weren't supposed to do that."], status: 404
+        end
+    end
+
     private
 
     def pie_params

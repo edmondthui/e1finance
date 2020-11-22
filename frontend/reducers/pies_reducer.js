@@ -1,4 +1,4 @@
-import { RECEIVE_PIES, CREATE_PIE } from '../actions/portfolio_actions'
+import { RECEIVE_PIES, CREATE_PIE, DELETE_PIE } from '../actions/portfolio_actions'
 
 const piesReducer = (state={}, action) => {
     Object.freeze(state);
@@ -8,6 +8,9 @@ const piesReducer = (state={}, action) => {
             return action.pies
         case CREATE_PIE:
             newState[action.pie.id] = action.pie;
+            return newState
+        case DELETE_PIE:
+            delete newState[Object.values(action.pie)[0].id]
             return newState
         default:
             return state;

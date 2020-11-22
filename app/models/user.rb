@@ -54,6 +54,10 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Portfolio
 
+    has_many :pies,
+        through: :portfolios,
+        source: :pies
+
     private
 
     def self.generate_session_token
