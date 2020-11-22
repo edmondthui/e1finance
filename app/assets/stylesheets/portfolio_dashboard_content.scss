@@ -1,6 +1,7 @@
 .portfolio-chart {
     margin: auto;
     width: 100%;
+    // width: 800px;
     height: 300px;
 }
 
@@ -134,4 +135,8 @@
     @media only screen and (max-width: 1160px) {
         padding: 0px 25px;
     }
+}
+
+.portfolio-main-content {
+    width: 820px;
 }

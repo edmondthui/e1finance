@@ -1,23 +1,25 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 class CreatePie extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            name: ""
+            pie_name: "",
+            portfolio_id: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.createPie(this.state);
+        this.props.createPie(this.state);
         this.props.closeModal();
     }
 
     update(field) {
         return (e) => {
-            this.setState({[field]: e.currentTarget.value})
+            this.setState({[field]: e.currentTarget.value, portfolio_id: 2})
         }
     }
 
@@ -30,7 +32,7 @@ class CreatePie extends React.Component {
                             <div onClick={this.props.closeModal} className="close-x">X</div>
                             <h3>Pie name</h3>
                             <p>Please enter the name of your pie.</p>
-                            <input type="text" value={this.state.name} onChange={this.update("name")}/>
+                            <input type="text" value={this.state.name} onChange={this.update("pie_name")}/>
                         </div>
                         <input type="submit" value="Create Pie" className="create-portfolio-submit"/>
                     </form>
@@ -40,4 +42,4 @@ class CreatePie extends React.Component {
     }
 }
 
-export default CreatePie
+export default withRouter(CreatePie)

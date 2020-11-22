@@ -12,6 +12,8 @@ export const RECEIVE_STOCK = "RECEIVE_STOCK"
 export const REMOVE_HOLDING = "REMOVE_HOLDING"
 export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO"
 export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO"
+export const CREATE_PIE = "CREATE_PIE"
+
 
 const receiveStocks = (stocks) => {
     return {
@@ -136,6 +138,18 @@ export const deletePortfolio = (portfolioId) => {
     }
 }
 
+const createPieAction = (pie) => {
+    return {
+        type: CREATE_PIE,
+        pie
+    }
+}
+
+export const createPie = (pieData) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.postPie(pieData).then((pie) => dispatch(createPieAction(pie)))
+    }
+}
 
 // FOR UPDATING STOCK GRAPH PRICES
 

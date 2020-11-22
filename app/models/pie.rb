@@ -11,8 +11,8 @@
 #
 class Pie < ApplicationRecord
 
-    validates :pie_name, :percentage, :portfolio_id, presence: true
-    validates :percentage, numericality: {greater_than_or_equal_to: 0, less_than_or_equal_to: 100}
+    validates :pie_name, :portfolio_id, presence: true
+
 
     belongs_to :portfolio,
         foreign_key: :portfolio_id,

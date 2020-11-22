@@ -65,3 +65,11 @@ export const deletePortfolio = (portfolioId) => {
         url: `api/portfolios/${portfolioId}`
     })
 }
+
+export const postPie = (data) => {
+    return $.ajax({
+        method: 'POST',
+        url: '/api/pies',
+        data: { pie: data }
+    })
+}

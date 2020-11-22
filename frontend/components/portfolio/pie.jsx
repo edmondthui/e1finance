@@ -49,7 +49,6 @@ class InvestmentPie extends React.Component {
     }
 
     render() {
-        debugger;
         let button;
         let data = this.props.items
         const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];

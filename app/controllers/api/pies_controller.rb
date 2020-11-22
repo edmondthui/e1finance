@@ -6,9 +6,9 @@ class Api::PiesController < ApplicationController
     end
 
     def create
-        @pie = current_user.pie.new(pie_params)
+        @pie = Pie.new(pie_params)
         if @pie.save
-            render :index
+            render :show
         else
             render json: @pie.errors.full_messages
         end
@@ -17,7 +17,7 @@ class Api::PiesController < ApplicationController
     private
 
     def pie_params
-        params.require(:pie).permit(:pie_name, :percentage, :portfolio_id)
+        params.require(:pie).permit(:pie_name, :portfolio_id)
     end
     
 end
