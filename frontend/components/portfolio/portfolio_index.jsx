@@ -62,7 +62,7 @@ class PortfolioIndex extends React.Component {
                 <p className="item-value">{"$" + (item.value ? item.value : 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
         ))
-        if (this.props.items.length > 1) {
+        if (this.props.items.length > 0) {
             chart = <PortfolioChart data={formattedChart} holdings={this.props.items} /> 
         }
 

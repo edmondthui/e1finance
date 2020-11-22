@@ -55,12 +55,22 @@ class Chart extends React.Component {
                 let filteredPrices = dataArray.filter((el) => {
                     return el.length>0;
                 });
+                if ( filteredPrices.length === 1 ) {
+                    return filteredPrices[0]
+                }
                 let newPrices = [];
                 this.getValue();
                 for (let i = 0 ; i < filteredPrices.length -1 ; i++ ) {
                     for (let j = 0 ; j < filteredPrices[i].length; j+=30) {
                         if (quantity[i+1]) {
-                            newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1]), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
+                            // if (i > 1) {
+                            //     debugger;
+                            //     newPrices[j/30].high += (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1])
+                            // } 
+                            // else {
+                            //     newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]) + (filteredPrices[i+1][j].high * quantity[i+1]), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
+                            // }
+                            newPrices.push({ high: (filteredPrices[i][j].high*quantity[i]), label: filteredPrices[i][j].label, date: filteredPrices[i][j].date, minute: filteredPrices[i][j].minute })
                         }
                     }
                 }
