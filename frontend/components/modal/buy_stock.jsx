@@ -14,7 +14,6 @@ class BuyStock extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
         let stockId = this.state.stock_id ? this.state.stock_id : this.props.stocks[0].id
         let holding = this.props.holdings.filter(holding => holding.stock_id === stockId)[0]
         let quantity = (this.state.value / this.props.stocks[stockId-1].value)

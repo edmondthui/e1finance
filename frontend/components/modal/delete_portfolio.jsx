@@ -5,7 +5,7 @@ class DeletePortfolio extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: null
+            id: this.props.portfolios[0].id
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onChange = this.onChange.bind(this)

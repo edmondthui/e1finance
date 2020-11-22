@@ -20,8 +20,7 @@ class Pie < ApplicationRecord
 
     has_many :holdings,
         foreign_key: :pie_id,
-        class_name: :Holding,
-        dependent: :destroy
+        class_name: :Holding
 
     has_many :stocks,
         through: :holdings,
