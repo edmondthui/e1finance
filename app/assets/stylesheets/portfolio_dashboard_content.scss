@@ -97,6 +97,10 @@
     border: 2px solid #00008B;
 }
 
+.portfolio-main-content {
+    width: 820px;
+}
+
 .portfolio-content-container {
     @media only screen and (max-width: 1160px) {
         display: block;
@@ -125,6 +129,12 @@
     }
 }
 
+.portfolio-main-content {
+    @media only screen and (max-width: 1160px) {
+        width: 100%;
+    }
+}
+
 .slice-title {
     @media only screen and (max-width: 1160px) {
         margin-left: 25px;
@@ -137,6 +147,3 @@
     }
 }
 
-.portfolio-main-content {
-    width: 820px;
-}
