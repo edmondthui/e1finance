@@ -66,7 +66,6 @@ class InvestmentPie extends React.Component {
         if (this.props.match.params.portfolioId) {
             button = <div className="crud-button-container">
                 <button className="crud-create-button">Create Pie</button>
-                <button className="crud-delete-button">Rebalance</button>
                 <button className="crud-delete-button">Delete Pie</button>
             </div>
         }
