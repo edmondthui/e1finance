@@ -2,7 +2,6 @@ import React from 'react'
 import { PieChart, Pie, Sector, Cell, Tooltip } from 'recharts';
 import { withRouter } from 'react-router-dom'
 
-
 class InvestmentPie extends React.Component {
     constructor(props) {
         super(props)
@@ -50,12 +49,11 @@ class InvestmentPie extends React.Component {
     }
 
     render() {
+        debugger;
         let button;
         let data = this.props.items
         const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];
         let value = this.state.value ? "$"+this.state.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') : this.props.totalValue
-
-
 
         if (this.props.match.params) {
             button = <div className="crud-button-container">
@@ -65,21 +63,21 @@ class InvestmentPie extends React.Component {
         }
         if (this.props.match.params.portfolioId) {
             button = <div className="crud-button-container">
-                <button className="crud-create-button">Create Pie</button>
-                <button className="crud-delete-button">Delete Pie</button>
+                <button className="crud-create-button" onClick={() => this.props.openModal('createPie')}>Create Pie</button>
+                <button className="crud-delete-button" onClick={() => this.props.openModal('deletePie')}>Delete Pie</button>
             </div>
         }
         if (this.props.match.params.pieId) {
             button = <div className="crud-button-container">
-                <button className="crud-create-button">Buy Stock</button>
-                <button className="crud-delete-button">Rebalance</button>
-                <button className="crud-delete-button">Sell Stock</button>
+                <button className="crud-create-button" onClick={() => this.props.openModal('buyStock')}>Buy Stock</button>
+                <button className="crud-delete-button" onClick={() => this.props.openModal('rebalance')}>Rebalance</button>
+                <button className="crud-delete-button" onClick={() => this.props.openModal('sellStock')}>Sell Stock</button>
                 </div>
         }
         if (this.props.match.params.stockId) {
             button = <div className="crud-button-container">
-                <button className="crud-create-button">Buy Stock</button>
-                <button className="crud-delete-button">Sell Stock</button>
+                <button className="crud-create-button" onClick={() => this.props.openModal('buyStock')}>Buy Stock</button>
+                <button className="crud-delete-button" onClick={() => this.props.openModal('sellStock')}>Sell Stock</button>
             </div>
         }
         

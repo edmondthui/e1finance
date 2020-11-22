@@ -2,7 +2,6 @@ import { RECEIVE_PORTFOLIOS, RECEIVE_PORTFOLIO, CREATE_PORTFOLIO, DELETE_PORTFOL
 
 const portfoliosReducer = (state={}, action) => {
     Object.freeze(state);
-    debugger;
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_PORTFOLIOS:

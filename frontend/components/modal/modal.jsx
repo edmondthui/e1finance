@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import DeletePortfolio from './delete_portfolio_container'
 import CreatePortfolio from './create_portfolio_container'
+import CreatePie from './create_pie_container'
 
 class Modal extends React.Component {
   
@@ -21,6 +22,9 @@ class Modal extends React.Component {
         break;
       case 'deletePortfolio':
         component = <DeletePortfolio/>;
+        break;
+      case 'createPie':
+        component = <CreatePie/>;
         break;
       default:
         return null;

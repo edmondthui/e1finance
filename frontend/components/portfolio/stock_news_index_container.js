@@ -3,6 +3,7 @@ import StockNewsIndex from './stock_news_index'
 import { fetchHolding } from '../../actions/portfolio_actions'
 import {fetchStockNews} from '../../actions/news_actions'
 import {fetchStockPrice} from '../../actions/portfolio_actions'
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,7 +19,8 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId)),
         fetchStockNews: (ticker) => dispatch(fetchStockNews(ticker)),
-        fetchStockPrice: (ticker) => dispatch(fetchStockPrice(ticker))
+        fetchStockPrice: (ticker) => dispatch(fetchStockPrice(ticker)),
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 

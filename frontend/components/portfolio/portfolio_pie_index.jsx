@@ -51,7 +51,7 @@ class PortfolioPieIndex extends React.Component {
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
                     <div className="portfolio-pie">
-                        <PortfolioPie items={formattedPie} totalValue={"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}/>
+                        <PortfolioPie items={formattedPie} totalValue={"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} openModal={this.props.openModal}/>
                     </div>
                 </div>
                 <div className="portfolio-main-content">
@@ -66,7 +66,7 @@ class PortfolioPieIndex extends React.Component {
                             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
                                 <div className="portfolio-name">
                                 <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
-                                <p>{item.portfolio_name} {item.pie_name} {item.stock_name}</p>
+                                <p>{item.pie_name} {item.stock_name}</p>
                                 </div>
                                 <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                             </div>
