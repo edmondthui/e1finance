@@ -96,3 +96,11 @@ export const updateBuyingPower = (userData) => {
         data: { user: userData }
     })
 }
+
+export const updateHolding = (holdingData) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/holdings/${holdingData.id}`,
+        data: { holding: holdingData }
+    })
+}

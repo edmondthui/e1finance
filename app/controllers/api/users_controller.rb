@@ -11,8 +11,7 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    def update 
-        debugger;
+    def update
         @user = User.find(params[:id])
         @user.buying_power += params[:user][:buying_power].to_i
         if @user.buying_power >= 0

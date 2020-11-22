@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :update]
     resource :session, only: [:create, :destroy]
     resources :portfolios, only: [:index, :create, :show, :destroy]
-    resources :holdings, only: [:show, :create, :destroy]
+    resources :holdings, only: [:show, :create, :destroy, :update]
     resources :stocks, only: [:index, :show]
   end
 end

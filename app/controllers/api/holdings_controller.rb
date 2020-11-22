@@ -19,14 +19,24 @@ class Api::HoldingsController < ApplicationController
         if @holding.destroy
             render :show
         else
-            render json: ["Error, you weren't supposed to do that."], status: 404
+            render json: ["Error, you weren't supposed to do that"], status: 404
+        end
+    end
+
+    def update
+        @holding = current_user.holdings.find(params[:id])
+        @holding.quantity += params[:holding][:quantity].to_i
+        if @holding.save
+            render :show
+        else
+            render json: ["Something went wrong please try again"], status: 422
         end
     end
 
     private
 
     def holding_params
-        params.require(:holding).permit(:quantity, :user_id, :stock_id, :pie_id)
+        params.require(:holding).permit(:id, :quantity, :user_id, :stock_id, :pie_id)
     end
 
 end

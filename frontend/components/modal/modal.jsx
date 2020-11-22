@@ -37,7 +37,7 @@ class Modal extends React.Component {
         component = <Route path="/dashboard/:portfolioId/:pieId" component={BuyStock} />
         break;
       case 'sellStock':
-        // component = <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
+        component = <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
         break
       default:
         return null;
