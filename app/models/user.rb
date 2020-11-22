@@ -58,6 +58,10 @@ class User < ApplicationRecord
         through: :portfolios,
         source: :pies
 
+    has_many :holdings,
+        through: :pies,
+        source: :holdings
+
     private
 
     def self.generate_session_token
