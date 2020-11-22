@@ -15,6 +15,7 @@ class Chart extends React.Component {
         }
         this.getValue = this.getValue.bind(this)
         this.formatData = this.formatData.bind(this)
+        // next thing to do is to create component containers for each of the indexes that call this so i can fetch the stocks from database each time instead of passing it through
     }
 
     componentDidMount() {

@@ -18,6 +18,7 @@ class BuyStock extends React.Component {
         let quantity = (this.state.value / this.props.stocks[this.state.stock_id-1].value)
         let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id}
         this.props.createHolding(buy);
+        this.props.updateBuyingPower({id: this.props.user.id, buying_power: -this.state.value})
         this.props.closeModal();
     }
 

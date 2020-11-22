@@ -51,7 +51,7 @@ class InvestmentPie extends React.Component {
     render() {
         let button;
         let data = this.props.items
-        const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '8F9BC4', '#00A881', '#4C5080', '#FF8042', 'B5BDD8', '#03C084'];
+        const COLORS = ['#00D4A3', '#7078AA', '#7FDEBD', '#8F9BC4', '#00A881', '#4C5080', '#FF8042', '#B5BDD8', '#03C084'];
         let value = this.state.value ? "$"+this.state.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') : this.props.totalValue
 
         if (this.props.match.params) {

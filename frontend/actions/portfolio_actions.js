@@ -15,6 +15,7 @@ export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO"
 export const CREATE_PIE = "CREATE_PIE"
 export const DELETE_PIE = "DELETE_PIE"
 export const CREATE_HOLDING = "CREATE_HOLDING"
+export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER"
 
 
 const receiveStocks = (stocks) => {
@@ -179,6 +180,18 @@ export const createHolding = (holdingData) => {
     }
 }
 
+const updateBuyingPowerAction = (user) => {
+    return {
+        type: UPDATE_BUYING_POWER,
+        user
+    }
+}
+
+export const updateBuyingPower = (userData) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.updateBuyingPower(userData).then((user) => dispatch(updateBuyingPowerAction(user)))
+    }
+}
 
 
 // FOR UPDATING STOCK GRAPH PRICES
