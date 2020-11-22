@@ -87,7 +87,6 @@ class Chart extends React.Component {
         formattedChart = [];
         let verticalLine = null;
         let filteredPrices
-        debugger;
         if (this.props.data !== undefined) {
             if (this.props.data.length > 0) {
                 filteredPrices = this.props.data.filter((dataArray) => {
@@ -95,7 +94,6 @@ class Chart extends React.Component {
                 });
                 if (this.props.holdings) {
                     if (this.props.holdings.length === 1) {
-                        debugger;
                         formattedChart = filteredPrices[0]
                     }
                     else {

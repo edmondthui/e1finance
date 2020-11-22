@@ -25,7 +25,7 @@ class Api::HoldingsController < ApplicationController
 
     def update
         @holding = current_user.holdings.find(params[:id])
-        @holding.quantity += params[:holding][:quantity].to_i
+        @holding.quantity += params[:holding][:quantity].to_f
         if @holding.save
             render :show
         else
