@@ -17,6 +17,12 @@ class Chart extends React.Component {
         this.formatData = this.formatData.bind(this)
     }
 
+    componentDidMount() {
+        this.setState({
+            value: null,
+        })
+    }
+
     updateState(data) {
         if (data === null || !data.activePayload ) {
             return
