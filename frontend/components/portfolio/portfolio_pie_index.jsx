@@ -47,13 +47,15 @@ class PortfolioPieIndex extends React.Component {
             });
             chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
         }
+        let value;
         let items = this.props.items.map((item) => (
             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
                 <div className="portfolio-name">
                 <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
                 <p>{item.pie_name} {item.stock_name}</p>
                 </div>
-                <p className="item-value">{"$" + item.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                <div style={{display: 'none' }}>{value = item.value ? item.value : 1}</div>
+                <p className="item-value">{"$" + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
         ))
         return (

@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    //   createHolding: (holdingData) => dispatch(createHolding(holdingData)),
+      createHolding: (holdingData) => dispatch(createHolding(holdingData)),
       closeModal: () => dispatch(closeModal())
   };
 };
