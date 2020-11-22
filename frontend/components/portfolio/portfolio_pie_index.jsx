@@ -38,7 +38,7 @@ class PortfolioPieIndex extends React.Component {
         let formattedPie = [];
         let totalValue = 0
         let holdings = [];
-        if (this.props.items.length > 1) {
+        if (this.props.items.length >= 1) {
             this.props.items.forEach(item => {
                 formattedChart.push(this.props.prices)
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });

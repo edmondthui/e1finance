@@ -77,7 +77,6 @@ class Chart extends React.Component {
     render() {
         formattedChart = [];
         let verticalLine = null;
-        let dot = null;
         if (this.props.data !== undefined) {
             if (this.props.data.length > 0) {
                 formattedChart = this.formatData(this.props.data)
@@ -96,7 +95,6 @@ class Chart extends React.Component {
                     <ResponsiveContainer>
                         <LineChart height={300} data={formattedChart} onMouseMove={(data) => this.updateState(data)} onMouseLeave={()=>this.setState({value: null, hover: false, chartX: null})}>
                             {verticalLine}
-                            {dot}
                             <Line type="monotone" dataKey="high" stroke="#00D4A3" strokeWidth={2} fill="#8884d8" dot={false} />
                             <XAxis dataKey="minute" hide={true} />
                             <YAxis type="number" domain={['dataMin', 'dataMax']} hide={true} />
