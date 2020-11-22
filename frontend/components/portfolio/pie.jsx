@@ -87,7 +87,7 @@ class InvestmentPie extends React.Component {
                         data={data}
                         innerRadius={85}
                         outerRadius={120}
-                        paddingAngle={5}
+                        paddingAngle={0}
                         nameKey="name"
                         dataKey="value"
                         >
