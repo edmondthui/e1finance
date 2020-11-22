@@ -4,14 +4,17 @@ import {withRouter} from 'react-router-dom'
 class BuyStock extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            
-        }
+        // this.state = {
+        //     value = 0
+        // }
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        // get the portfolio and holding information from the router
+        // convert value into quanity number
+        // add the quantity to the current holding quantity?
         this.props.createHolding(this.state);
         this.props.closeModal();
     }
@@ -22,7 +25,7 @@ class BuyStock extends React.Component {
 
     update(field) {
         return (e) => {
-            this.setState({[field]: e.currentTarget.value, portfolio_id: this.props.match.params.portfolioId})
+            this.setState({[field]: e.currentTarget.value})
         }
     }
 
@@ -33,9 +36,9 @@ class BuyStock extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <div className="create-portfolio-name">
                             <div onClick={this.props.closeModal} className="close-x">X</div>
-                            <h3>Pie name</h3>
+                            <h3>Buy STOCKNAME HERE</h3>
                             <p>Please enter the name of your pie.</p>
-                            <input type="text" value={this.state.name} onChange={this.update("pie_name")}/>
+                            <input type="number" value={0} onChange={this.update("value")}/>
                         </div>
                         <input type="submit" value="Create Pie" className="create-portfolio-submit"/>
                     </form>

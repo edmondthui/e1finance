@@ -1,11 +1,13 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import { Route } from 'react-router-dom'
 import DeletePortfolio from './delete_portfolio_container'
 import CreatePortfolio from './create_portfolio_container'
 import CreatePie from './create_pie_container'
 import DeletePie from './delete_pie_container'
-import { Route } from 'react-router-dom'
+import BuyStock from './buy_stock_container'
+import SellStock from './sell_stock_container'
 
 class Modal extends React.Component {
   
@@ -31,6 +33,12 @@ class Modal extends React.Component {
       case 'deletePie':
         component = <Route path="/dashboard/:portfolioId" component={DeletePie} />
         break;
+      case 'buyStock':
+        // component = <Route path="/dashboard/:portfolioId/:pieId" component={BuyStock} />
+        break;
+      case 'sellStock':
+        // component = <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
+        break
       default:
         return null;
     }

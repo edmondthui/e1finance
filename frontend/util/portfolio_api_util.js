@@ -80,3 +80,11 @@ export const deletePie = (pieId) => {
         url: `api/pies/${pieId}`
     })
 }
+
+export const createHolding = (holdingData) => {
+    return $.ajax({
+        method: "POST",
+        url: `/api/holdings`,
+        data: { holding: holdingData }
+    })
+}
