@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 

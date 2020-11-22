@@ -14,11 +14,7 @@ class BuyStock extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // get the portfolio and holding information from the router
-        // convert value into quanity number
-
-        // add the quantity to the current holding quantity?
-        debugger;
+        // change to edit instead of create Holding if you already have that stock and add to quantity
         let quantity = (this.state.value / this.props.stocks[this.state.stock_id-1].value)
         let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id}
         this.props.createHolding(buy);
@@ -27,6 +23,14 @@ class BuyStock extends React.Component {
 
     componentDidMount() {
         this.props.fetchStocks()
+    }
+
+    updateBuy(field) {
+        return (e) => {
+            e.currentTarget.style.width = e.currentTarget.value.length + "ch";
+            this.setState({[field]: e.currentTarget.value})
+            this.setState({pie_id: this.props.match.params.pieId})
+        }
     }
 
     update(field) {
@@ -41,16 +45,28 @@ class BuyStock extends React.Component {
             <option value={stock.id}>{stock.stock_name}</option>
         ))
         return (
-            <div className="create-portfolio-container">
-                <div className="create-portfolio-form-container">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="create-portfolio-name">
+            <div className="buy-stock-container">
+                <div className="buy-stock-form-container">
+                    <form onSubmit={this.handleSubmit} className="buy-form">
+                        <div className="buy-stock-form-items">
                             <div onClick={this.props.closeModal} className="close-x">X</div>
-                            <h3>Buy Stock</h3>
+                            <div className="buy-form-title">
+                                <h3>{this.state.stock_id ? `Buy ${this.props.stocks[this.state.stock_id-1].stock_name}` : "Buy Stock"}</h3>
+                            </div>
                             <select className="portfolio-select" name="portfolio" onChange={this.update("stock_id")}>
                                 {options}
                             </select>
-                            <input type="number" value={this.state.value} onChange={this.update("value")}/>
+                            <div className="input-value-buy-container">
+                                <div className="input-value-number-container">
+                                    <p className="buy-dollar-sign">$</p>
+                                    <input type="number" className="input-value-buy"  step=".01" value={this.state.value} onChange={this.updateBuy("value")}/>
+                                </div>
+                            </div>
+
+                            <div className = "cash-balance-container">
+                                <p>Currrent cash balance</p>
+                                <p>{"$"+this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                            </div>
                         </div>
                         <input type="submit" value="Buy Stock" className="create-portfolio-submit"/>
                     </form>

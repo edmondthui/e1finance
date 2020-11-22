@@ -102,3 +102,73 @@
     height: 40px;
     padding: 0px 10px;
 }
+
+.input-value-buy-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.buy-stock-form-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buy-dollar-sign {
+    font-size: 30px;
+}
+
+
+.input-value-buy{
+    font-size: 5rem;
+    color: #757575;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    margin: 30px 0px;
+    width: 45px;
+}
+
+.input-value-number-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.buy-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buy-form-title {
+    width: 100%;
+}
+
+.buy-form-title h3{
+    font-weight: 500;
+}
+
+.cash-balance-container{
+    display: flex;
+    background-color: #E9EDF2;
+    border-radius: 8px;
+    padding: 5px 30px;
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    font-size: 12px;
+    margin: 20px 0px;
+}
