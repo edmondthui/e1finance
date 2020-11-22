@@ -81,7 +81,7 @@ class PortfolioIndex extends React.Component {
                             <p className="header-name">Name</p>
                             <p className="header-value">Value</p>
                         </div>
-                        {items.length>0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please create a portfolio to add pies and stocks.</p></div></div>}
+                        {items.length>0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please create a portfolio or pie to buy / sell stocks.</p></div></div>}
                         </div>
                     </div>
             </div>
