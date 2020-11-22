@@ -2,7 +2,6 @@ import * as PortfolioAPIUtil from '../util/portfolio_api_util'
 import * as ExternalAPIUtil from '../util/IEX_api_utl'
 
 export const RECEIVE_STOCK_PRICE = "RECEIVE_STOCK_PRICE"
-
 export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS"
 export const RECEIVE_PIES = "RECEIVE_PIES"
 export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO"
@@ -12,6 +11,7 @@ export const RECEIVE_STOCKS = "RECEIVE_STOCKS"
 export const RECEIVE_STOCK = "RECEIVE_STOCK"
 export const REMOVE_HOLDING = "REMOVE_HOLDING"
 export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO"
+export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO"
 
 const receiveStocks = (stocks) => {
     return {
@@ -122,6 +122,20 @@ const createPortfolioAction = (portfolio) => {
         portfolio
     }
 }
+
+const deletePortfolioAction = (portfolio) => {
+    return {
+        type: DELETE_PORTFOLIO,
+        portfolio
+    }
+}
+
+export const deletePortfolio = (portfolioId) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.deletePortfolio(portfolioId).then((portfolio) => dispatch(deletePortfolioAction(portfolio)))
+    }
+}
+
 
 // FOR UPDATING STOCK GRAPH PRICES
 

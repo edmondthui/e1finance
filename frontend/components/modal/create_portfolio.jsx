@@ -1,5 +1,4 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
 
 class CreatePortfolio extends React.Component {
     constructor(props) {
@@ -28,6 +27,7 @@ class CreatePortfolio extends React.Component {
                 <div className="create-portfolio-form-container">
                     <form onSubmit={this.handleSubmit}>
                         <div className="create-portfolio-name">
+                            <div onClick={this.props.closeModal} className="close-x">X</div>
                             <h3>Account name</h3>
                             <input type="text" value={this.state.name} onChange={this.update("name")}/>
                         </div>
@@ -69,4 +69,4 @@ class CreatePortfolio extends React.Component {
     }
 }
 
-export default withRouter(CreatePortfolio)
+export default CreatePortfolio

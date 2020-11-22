@@ -1,28 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
+import DeletePortfolio from './delete_portfolio_container'
 import CreatePortfolio from './create_portfolio_container'
-
-// function Modal({modal, closeModal, createPortfolio}) {
-//   if (!modal) {
-//     return null;
-//   }
-//   let component;
-//   switch (modal) {
-//     case 'create portfolio':
-//       component = <CreatePortfolio createPortfolio={createPortfolio}/>;
-//       break;
-//     default:
-//       return null;
-//   }
-  // return (
-  //   <div className="modal-background fadeIn" onClick={closeModal}>
-  //     <div className="modal-child fadeIn" onClick={e => e.stopPropagation()}>
-  //       { component }
-  //     </div>
-  //   </div>
-  // );
-// }
 
 class Modal extends React.Component {
   
@@ -36,8 +16,11 @@ class Modal extends React.Component {
     }
     let component;
     switch (this.props.modal) {
-      case 'create portfolio':
+      case 'createPortfolio':
         component = <CreatePortfolio/>;
+        break;
+      case 'deletePortfolio':
+        component = <DeletePortfolio/>;
         break;
       default:
         return null;

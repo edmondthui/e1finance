@@ -58,16 +58,30 @@ class InvestmentPie extends React.Component {
 
 
         if (this.props.match.params) {
-            button = <div className="crud-button-continer"><button className="crud-create-button" onClick={()=> this.props.openModal('create portfolio')}>Create Portfolio</button><button className="crud-delete-button">Remove Portfolio</button></div>
+            button = <div className="crud-button-container">
+                <button className="crud-create-button" onClick={() => this.props.openModal('createPortfolio')}>Create Portfolio</button>
+                <button className="crud-delete-button" onClick={() => this.props.openModal('deletePortfolio')}>Remove Portfolio</button>
+            </div>
         }
         if (this.props.match.params.portfolioId) {
-            button = <div className="crud-button-continer"><button className="crud-create-button">Create Pie</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Delete Pie</button></div>
+            button = <div className="crud-button-container">
+                <button className="crud-create-button">Create Pie</button>
+                <button className="crud-delete-button">Rebalance</button>
+                <button className="crud-delete-button">Delete Pie</button>
+            </div>
         }
         if (this.props.match.params.pieId) {
-            button = <div className="crud-button-continer"><button className="crud-create-button">Buy Stock</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Sell Stock</button></div>
+            button = <div className="crud-button-container">
+                <button className="crud-create-button">Buy Stock</button>
+                <button className="crud-delete-button">Rebalance</button>
+                <button className="crud-delete-button">Sell Stock</button>
+                </div>
         }
         if (this.props.match.params.stockId) {
-            button = <div className="crud-button-continer"><button className="crud-create-button">Buy Stock</button><button className="crud-delete-button">Rebalance</button><button className="crud-delete-button">Sell Stock</button></div>
+            button = <div className="crud-button-container">
+                <button className="crud-create-button">Buy Stock</button>
+                <button className="crud-delete-button">Sell Stock</button>
+            </div>
         }
         
         return (

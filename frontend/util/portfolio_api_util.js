@@ -58,3 +58,10 @@ export const postPortfolio = (data) => {
         data: { portfolio: {portfolio_name: data.name} }
     })
 }
+
+export const deletePortfolio = (portfolioId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `api/portfolios/${portfolioId}`
+    })
+}

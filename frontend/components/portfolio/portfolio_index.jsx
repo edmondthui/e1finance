@@ -53,7 +53,6 @@ class PortfolioIndex extends React.Component {
                 totalValue += item.value
             })
         }
-        debugger;
         let items = this.props.items.map((item) => (
             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
                 <div className="portfolio-name">

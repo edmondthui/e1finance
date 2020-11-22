@@ -26,6 +26,8 @@
     top: 5px;
     right: 5px;
     cursor: pointer;
+    padding: 10px 10px 0 0;
+    opacity: .5;
 }
 
 .create-portfolio-radio {
@@ -48,7 +50,7 @@
 
 .create-portfolio-submit {
     height: 40px;
-    width: 20%;
+    width: 150px;
     background-color: #0020BD;
     border-radius: 5px;
     color: white;
@@ -91,4 +93,10 @@
 .fadeOut {
     animation-name: fadeOut;
     animation-duration: .3s;
+}
+
+.portfolio-select {
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
 }
