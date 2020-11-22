@@ -4,7 +4,6 @@ import { removeHolding, fetchHoldings, updateBuyingPower, updateHolding } from '
 import SellStock from './sell_stock'
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
   return {
       holdings: Object.values(state.entities.holdings),
       user: Object.values(state.entities.users)[0],

@@ -104,3 +104,10 @@ export const updateHolding = (holdingData) => {
         data: { holding: holdingData }
     })
 }
+
+export const removeHolding = (holdingId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/holdings/${holdingId}`
+    })
+}

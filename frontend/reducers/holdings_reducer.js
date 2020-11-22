@@ -16,7 +16,8 @@ const holdingsReducer = (state={}, action) => {
             newState[action.holding.id] = action.holding
             return newState;
         case REMOVE_HOLDING:
-            return {};
+            delete newState[Object.values(action.holding)[0].id]
+            return newState;
         default:
             return state;
     }

@@ -110,9 +110,10 @@ export const fetchStock = (stockId) => {
     }
 }
 
-export const removeHolding = () => {
+const removeHoldingAction = (holding) => {
     return {
         type: REMOVE_HOLDING,
+        holding
     }
 }
 
@@ -204,6 +205,12 @@ const updateHoldingAction = (holding) => {
 export const updateHolding = (holdingData) => {
     return (dispatch) => {
         PortfolioAPIUtil.updateHolding(holdingData).then((holding) => dispatch(updateHoldingAction(holding)))
+    }
+}
+
+export const removeHolding = (holdingId) => {
+    return (dispatch) => {
+        PortfolioAPIUtil.removeHolding(holdingId).then((holding) => dispatch(removeHoldingAction(holding)))
     }
 }
 

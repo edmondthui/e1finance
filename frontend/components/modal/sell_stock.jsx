@@ -10,6 +10,15 @@ class SellStock extends React.Component {
             stock_id: this.props.holdings[0].stock_id
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.deleteHolding = this.deleteHolding.bind(this)
+    }
+
+    deleteHolding(e) {
+        e.preventDefault()
+        let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
+        this.props.removeHolding(holding.id);
+        this.props.updateBuyingPower({id: this.props.user.id, buying_power: + holding.value})
+        this.props.closeModal();
     }
 
     handleSubmit(e) {
@@ -18,7 +27,6 @@ class SellStock extends React.Component {
         let quantity = (this.state.value / this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0].price)
         let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
         let sell = {quantity: -quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
-        debugger;
         if (sell.quantity === holding.quantity) {
             this.props.removeHolding(holding.id);
             this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
@@ -44,14 +52,12 @@ class SellStock extends React.Component {
 
     update(field) {
         return (e) => {
-            debugger;
             this.setState({[field]: e.currentTarget.value})
             this.setState({pie_id: this.props.match.params.pieId})
         }
     }
 
     render() {
-        debugger;
         let options = this.props.holdings.map(holding => (
             <option value={holding.stock_id}>{holding.stock_name}</option>
         ))
@@ -79,7 +85,10 @@ class SellStock extends React.Component {
                                 <p>{"$"+this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                             </div>
                         </div>
-                        <input type="submit" value="Sell Stock" className="create-portfolio-submit"/>
+                        <div className="sell-buttons">
+                            <input type="submit" value="Sell Stock" className="create-portfolio-submit"/>
+                            <button className={"delete-holding"} onClick={this.deleteHolding}>Sell All Shares</button>
+                        </div>
                     </form>
                 </div>
             </div>

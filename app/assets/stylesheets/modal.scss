@@ -172,3 +172,25 @@ input[type="number"] {
     font-size: 12px;
     margin: 20px 0px;
 }
+
+.delete-holding {
+    height: 40px;
+    width: 150px;
+    background-color:white;
+    border-radius: 5px;
+    color: #0020BD;
+    font-weight: 700;
+    border: 2px solid #0020BD;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
+
+.delete-holding:hover {
+    cursor: pointer;
+}
+
+.sell-buttons {
+    display: flex;
+    align-items: center;
+}

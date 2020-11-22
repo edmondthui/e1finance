@@ -14,10 +14,8 @@ class BuyStock extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // change to edit instead of create Holding if you already have that stock and add to quantity
         let stockId = this.state.stock_id ? this.state.stock_id : this.props.holdings[0].stock_id
         let holding = this.props.holdings.filter(holding => holding.stock_id === stockId)[0]
-        debugger;
         let quantity = (this.state.value / this.props.stocks[stockId-1].value)
         let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: stockId, user_id: this.props.user.id}
         if (this.props.holdings.filter(holding => holding.stock_id === stockId).length >= 1) {
