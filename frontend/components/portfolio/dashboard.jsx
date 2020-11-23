@@ -12,9 +12,9 @@ class Dashboard extends React.Component {
                 <LoggedInNavBar/>
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
-                        <NavLink to="/dashboard" activeclass="active" className="research-nav-content">Portfolio</NavLink>
-                        <NavLink exact to="/activity" activeclass="active" className="research-nav-content">Activity</NavLink>
-                        <NavLink exact to="/holdings" activeclass="active" className="research-nav-content">Holdings</NavLink>
+                        <NavLink exact to="/dashboard" activeclass="active" className="research-nav-content">Portfolio</NavLink>
+                        <NavLink to="/dashboard/activity" activeclass="active" className="research-nav-content">Activity</NavLink>
+                        <NavLink to="/dashboard/holdings" activeclass="active" className="research-nav-content">Holdings</NavLink>
                     </div>
                 </div>
                 <PortfolioInfo/>

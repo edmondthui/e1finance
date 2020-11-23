@@ -21,15 +21,17 @@ const App = () => (
     <Route exact path="/" component={SplashPage} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/signup" component={SignupFormContainer} />
-    <ProtectedRoute exact path="/dashboard/:portfolioId" component={DashboardPortfolio} />
-    <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId" component={DashboardPie} />
-    <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId/:stockId" component={DashboardStock} />
-    <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-    <ProtectedRoute exact path="/research" component={Research} />
-    <ProtectedRoute exact path="/research/stocks" component={Stocks} />
-    <ProtectedRoute exact path="/research/stocks/:stockId" component={StockShow} />
-    <ProtectedRoute exact path="/activity" component={Activity} />
-    <ProtectedRoute exact path="/holdings" component={Holdings} />
+    <Switch>
+      <ProtectedRoute exact path="/dashboard/activity" component={Activity} />
+      <ProtectedRoute exact path="/dashboard/holdings" component={Holdings} />
+      <ProtectedRoute exact path="/dashboard/:portfolioId" component={DashboardPortfolio} />
+      <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId" component={DashboardPie} />
+      <ProtectedRoute exact path="/dashboard/:portfolioId/:pieId/:stockId" component={DashboardStock} />
+      <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+      <ProtectedRoute exact path="/research" component={Research} />
+      <ProtectedRoute exact path="/research/stocks" component={Stocks} />
+      <ProtectedRoute exact path="/research/stocks/:stockId" component={StockShow} />
+    </Switch>
   </div>
 );
 
