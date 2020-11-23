@@ -34,13 +34,11 @@ class Chart extends React.Component {
         if (Array.isArray(this.props.tickers)) {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
-                setTimeout(() => {
-                    fetchInterdayData(ticker).then(response => {
-                        this.data.push(response)
-                        if (idx === holdingsLength-1) {
-                            this.setState({render: true}) 
-                        }
-                    })
+                fetchInterdayData(ticker).then(response => {
+                    this.data.push(response)
+                    if (idx === holdingsLength-1) {
+                        this.setState({render: true}) 
+                    }
                 })
             })
         }
