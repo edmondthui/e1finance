@@ -5,7 +5,6 @@ import { fetchInterdayData } from '../../util/IEX_api_util';
 
 
 const mapStateToProps = (state, ownProps) => {
-    debugger;
     return {
     }
 }

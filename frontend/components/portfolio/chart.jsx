@@ -30,7 +30,6 @@ class Chart extends React.Component {
         // }
         // ^ this is what I would want to do but I am limited by an external API and don't want to pay money
         // It would do too many API calls and my account would get limited and I would have to pay for premium
-        debugger;
         if (Array.isArray(this.props.tickers)) {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
@@ -108,7 +107,6 @@ class Chart extends React.Component {
     // }
 
     render() {
-        debugger;
         // let verticalLine = null;
         // let filteredPrices
         // if (this.props.data !== undefined) {
@@ -138,7 +136,6 @@ class Chart extends React.Component {
                     let sumHigh = 0;
                     let label = "";
                     for (let j = 0 ; j<this.data.length; j++) {
-                        debugger;
                         sumHigh += this.data[j][i].high * this.props.quantities[j]
                         label = this.data[j][i].label
                     }
@@ -150,7 +147,6 @@ class Chart extends React.Component {
                     let sumHigh = 0;
                     let label = "";
                     for (let j = 0 ; j<this.data.length; j++) {
-                        debugger;
                         sumHigh += this.data[j][i].high * this.props.quantities
                         label = this.data[j][i].label
                     }
