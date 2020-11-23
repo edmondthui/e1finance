@@ -25,14 +25,14 @@ class CreatePie extends React.Component {
 
     render() {
         return (
-            <div className="create-portfolio-container">
-                <div className="create-portfolio-form-container">
+            <div className="create-pie-container">
+                <div className="create-pie-form-container">
                     <form onSubmit={this.handleSubmit}>
                         <div className="create-portfolio-name">
                             <div onClick={this.props.closeModal} className="close-x">X</div>
                             <h3>Pie name</h3>
                             <p>Please enter the name of your pie.</p>
-                            <input type="text" value={this.state.name} onChange={this.update("pie_name")}/>
+                            <input type="text" className="pie-input-name" value={this.state.name} onChange={this.update("pie_name")}/>
                         </div>
                         <input type="submit" value="Create Pie" className="create-portfolio-submit"/>
                     </form>

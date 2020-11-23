@@ -11,7 +11,7 @@ class LoggedInNavBar extends React.Component {
 
     handleClick(e) {
         e.preventDefault()
-        this.props.history.push("/");
+        this.props.history.push("/dashboard");
     }
 
     handleLogout(e) {
