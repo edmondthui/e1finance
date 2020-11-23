@@ -3,14 +3,15 @@ import { RECEIVE_PORTFOLIOS, RECEIVE_PORTFOLIO, CREATE_PORTFOLIO, DELETE_PORTFOL
 const portfoliosReducer = (state={}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state)
+    debugger
     switch (action.type) {
         case RECEIVE_PORTFOLIOS:
             return action.portfolios
         case RECEIVE_PORTFOLIO:
-            newState[action.portfolio.id] = action.portfolio;
+            newState[Object.values(action.portfolio)[0].id] = Object.values(action.portfolio)[0];
             return newState;
         case CREATE_PORTFOLIO:
-            newState[action.portfolio.id] = action.portfolio;
+            newState[Object.values(action.portfolio)[0].id] = Object.values(action.portfolio)[0];
             return newState
         case DELETE_PORTFOLIO:
             delete newState[Object.values(action.portfolio)[0].id]
