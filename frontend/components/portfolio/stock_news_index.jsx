@@ -17,7 +17,7 @@ class StockNewsIndex extends React.Component {
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
         setTimeout(() => {
-            this.props.fetchStockPrice(this.props.stock.ticker)
+            // this.props.fetchStockPrice(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
         }, 500)
@@ -26,6 +26,7 @@ class StockNewsIndex extends React.Component {
     clickNews(idx) {
         window.location.href = this.props.news[idx].url
     }
+    
 
     
     render() {
@@ -53,7 +54,7 @@ class StockNewsIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    <PortfolioChart data={this.props.prices} /> 
+                    {/* <PortfolioChart data={this.props.prices} />  */}
                     <h1 className="slice-title">Markets</h1>
 
 

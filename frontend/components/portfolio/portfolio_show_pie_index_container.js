@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import PortfolioIndex from './portfolio_index'
+import PortfolioShowIndex from './portfolio_show_pie_index'
 import {fetchPies} from '../../actions/portfolio_actions'
 import {fetchStockPrice, removeHolding} from '../../actions/portfolio_actions'
 import { openModal } from '../../actions/modal_actions';
@@ -22,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PortfolioIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(PortfolioShowIndex)

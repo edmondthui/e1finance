@@ -7,7 +7,7 @@ import PortfolioPie from './portfolio_value_pie_container'
 let formattedChart = []
 let chart;
 
-class PortfolioIndex extends React.Component {
+class PortfolioShowIndex extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -99,4 +99,4 @@ class PortfolioIndex extends React.Component {
     }
 }
 
-export default withRouter(PortfolioIndex)
+export default withRouter(PortfolioShowIndex)

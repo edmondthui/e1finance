@@ -23,14 +23,14 @@ class PortfolioPieIndex extends React.Component {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
 
-    componentDidUpdate(prevProps) {
-        if (prevProps.items.length !== this.props.items.length) {
-            this.props.items.forEach(item => {
-                this.props.fetchStockPrice(item.ticker)
-            })
-        }
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps.items.length !== this.props.items.length) {
+    //         this.props.items.forEach(item => {
+    //             this.props.fetchStockPrice(item.ticker)
+    //         })
+    //     }
         
-    }
+    // }
 
 
 
@@ -45,7 +45,8 @@ class PortfolioPieIndex extends React.Component {
                 totalValue += item.value
                 holdings.push(item)
             });
-            chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
+            debugger;
+            // chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
         }
         let value;
         let items = this.props.items.map((item) => (
