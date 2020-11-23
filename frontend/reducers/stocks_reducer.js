@@ -7,7 +7,7 @@ const stocksReducer = (state={}, action) => {
         case RECEIVE_STOCKS:
             return action.stocks
         case RECEIVE_STOCK:
-            newState[Object.values(action.stock)[0].id] = Object.values(action.stock)[0]
+            newState = action.stock
             return newState
         case UPDATE_STOCK:
             newState[Object.values(action.stock)[0].id] = Object.values(action.stock)[0]

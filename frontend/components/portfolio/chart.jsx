@@ -30,16 +30,18 @@ class Chart extends React.Component {
                     this.data.push(response)
                     if (idx === holdingsLength-1) {
                         this.setState({render: true})
-                        this.data.forEach(data => {
-                            let dataObj = {price: data[data.length-1].high, id: this.props.stocks.filter(stock => stock.ticker === ticker)[0].id}
-                            this.props.updateStock(dataObj);
-                        })
+                        // this code might be buggy CHECK IT
+                        // this.data.forEach(data => {
+                        //     let dataObj = {price: data[data.length-1].high, id: this.props.stocks.filter(stock => stock.ticker === ticker)[0].id}
+                        //     this.props.updateStock(dataObj);
+                        // })
                     }
                 })
             })
         }
         else {
-            fetchInterdayData(this.props.ticker).then(response => {
+            debugger;
+            fetchInterdayData(this.props.tickers).then(response => {
                 this.data.push(response)
                 this.setState({render: true})
             })
@@ -74,6 +76,7 @@ class Chart extends React.Component {
                 }
             }
             else {
+                debugger;
                 for (let i = 0 ; i < this.data[0].length ; i ++) {
                     let sumHigh = 0;
                     let label = "";
