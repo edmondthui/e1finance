@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {withRouter } from 'react-router-dom'
 
 class SellStock extends React.Component {
     constructor(props) {
@@ -34,6 +34,10 @@ class SellStock extends React.Component {
         else if (-sell.quantity.toFixed(2) < holding.quantity.toFixed(2)) {
             this.props.updateHolding(sell);
             this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
+        }
+        if (this.props.match.params.stockId) {
+            this.props.closeModal();
+            this.props.history.push('/dashboard')
         }
         this.props.closeModal();
     }
