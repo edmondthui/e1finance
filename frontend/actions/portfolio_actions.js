@@ -17,6 +17,7 @@ export const DELETE_PIE = "DELETE_PIE"
 export const CREATE_HOLDING = "CREATE_HOLDING"
 export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER"
 export const UPDATE_HOLDING = "UPDATE_HOLDING"
+export const UPDATE_STOCK = "UPDATE_STOCK"
 
 
 const receiveStocks = (stocks) => {
@@ -211,6 +212,19 @@ export const updateHolding = (holdingData) => {
 export const removeHolding = (holdingId) => {
     return (dispatch) => {
         PortfolioAPIUtil.removeHolding(holdingId).then((holding) => dispatch(removeHoldingAction(holding)))
+    }
+}
+
+const updateStockAction = (stock) => {
+    return {
+        type: UPDATE_STOCK,
+        stock
+    }
+}
+
+export const updateStock = (stockData) => {
+    return(dispatch) => {
+        PortfolioAPIUtil.updateStock(stockData).then((stock) => dispatch(updateStockAction(stock)))
     }
 }
 

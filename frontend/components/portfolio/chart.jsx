@@ -22,13 +22,18 @@ class Chart extends React.Component {
     }
 
     componentDidMount() {
+        this.props.fetchStocks()
         if (Array.isArray(this.props.tickers)) {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
                 fetchInterdayData(ticker).then(response => {
                     this.data.push(response)
                     if (idx === holdingsLength-1) {
-                        this.setState({render: true}) 
+                        this.setState({render: true})
+                        this.data.forEach(data => {
+                            let dataObj = {price: data[data.length-1].high, id: this.props.stocks.filter(stock => stock.ticker === ticker)[0].id}
+                            this.props.updateStock(dataObj);
+                        })
                     }
                 })
             })
@@ -46,7 +51,6 @@ class Chart extends React.Component {
         if (data === null || !data.activePayload ) {
             return
         }
-        debugger;
         this.setState({
             value: "$"+data.activePayload[0].value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'),
             hover: true,
@@ -57,6 +61,7 @@ class Chart extends React.Component {
 
     render() {
         if (this.state.render) {
+
             if (Array.isArray(this.props.quantities)) {
                 for (let i = 0 ; i < this.data[0].length ; i ++) {
                     let sumHigh = 0;

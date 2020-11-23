@@ -1,19 +1,20 @@
 import {connect} from 'react-redux'
-import ValueChart from './chart'
-import {fetchPortfolios} from '../../actions/portfolio_actions'
+import Chart from './chart'
+import {fetchStocks, updateStock} from '../../actions/portfolio_actions'
 
 
 const mapStateToProps = (state) => {
     return {
-        portfolios: Object.values(state.entities.portfolios),
+        stocks: Object.values(state.entities.stocks),
         user: Object.values(state.entities.users)[0]
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: () => dispatch(fetchPortfolios())
+        fetchStocks: () => dispatch(fetchStocks()),
+        updateStock: (stockData) => dispatch(updateStock(stockData))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ValueChart)
+export default connect(mapStateToProps, mapDispatchToProps)(Chart)

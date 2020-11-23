@@ -111,3 +111,11 @@ export const removeHolding = (holdingId) => {
         url: `/api/holdings/${holdingId}`
     })
 }
+
+export const updateStock = (stockData) => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/stocks/${stockData.id}`,
+        data: { stock: stockData}
+    })
+}

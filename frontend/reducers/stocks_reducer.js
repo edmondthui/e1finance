@@ -1,4 +1,4 @@
-import { RECEIVE_STOCKS, RECEIVE_STOCK } from '../actions/portfolio_actions'
+import { RECEIVE_STOCKS, RECEIVE_STOCK, UPDATE_STOCK } from '../actions/portfolio_actions'
 
 const stocksReducer = (state={}, action) => {
     Object.freeze(state);
@@ -7,7 +7,10 @@ const stocksReducer = (state={}, action) => {
         case RECEIVE_STOCKS:
             return action.stocks
         case RECEIVE_STOCK:
-            newState = action.stock
+            newState[Object.values(action.stock)[0].id] = Object.values(action.stock)[0]
+            return newState
+        case UPDATE_STOCK:
+            newState[Object.values(action.stock)[0].id] = Object.values(action.stock)[0]
             return newState
         default:
             return state;

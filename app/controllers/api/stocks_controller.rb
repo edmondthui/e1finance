@@ -14,10 +14,21 @@ class Api::StocksController < ApplicationController
         render :show
     end
 
+    def update
+        @stock = Stock.find(params[:id])
+        @stock.price = params[:stock][:price].to_f.round(2)
+        if @stock.save
+            render :show
+        else
+            render json: ["Something went wrong please try again"], status: 422
+        end
+
+    end
+
     private
 
     def stock_params
-        params.require(:stock).permit(:id, :ticker, :name, :pie_id)
+        params.require(:stock).permit(:id, :ticker, :name, :pie_id, :price)
     end
     
 end
