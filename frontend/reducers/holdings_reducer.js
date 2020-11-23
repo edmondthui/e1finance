@@ -5,15 +5,16 @@ const holdingsReducer = (state={}, action) => {
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_HOLDINGS:
+            newState = Object.assign({}, state, action.holdings)
             return action.holdings
         case RECEIVE_HOLDING:
-            newState[action.holding.id] = action.holding;
+            newState[Object.values(action.holding)[0].id] = Object.values(action.holding)[0]
             return newState;
         case CREATE_HOLDING:
-            newState[action.holding.id] = action.holding
+            newState[Object.values(action.holding)[0].id] = Object.values(action.holding)[0]
             return newState;
         case UPDATE_HOLDING:
-            newState[action.holding.id] = action.holding
+            newState[Object.values(action.holding)[0].id] = Object.values(action.holding)[0]
             return newState;
         case REMOVE_HOLDING:
             delete newState[Object.values(action.holding)[0].id]

@@ -17,7 +17,6 @@ export const DELETE_PIE = "DELETE_PIE"
 export const CREATE_HOLDING = "CREATE_HOLDING"
 export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER"
 export const UPDATE_HOLDING = "UPDATE_HOLDING"
-// export const CLEAR_HOLDINGS = "CLEAR_HOLDINGS"
 
 
 const receiveStocks = (stocks) => {

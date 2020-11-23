@@ -24,6 +24,7 @@ class PortfolioInfo extends React.Component {
         else {
             title = "TOTAL PORTFOLIO VALUE"
         }
+
         return (
             <div className="portfolio-info-container">
                 {this.props.items.forEach((item) => (
@@ -38,7 +39,6 @@ class PortfolioInfo extends React.Component {
                         <p className="current-value">{"$" + totalValue.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                     </div>
                 </div>
-
                 <div className="deposit-container">
                     <div className="buying-power-container">
                         <div className="buying-power">

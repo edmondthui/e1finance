@@ -5,7 +5,7 @@ class SellStock extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 0,
+            value: null,
             pie_id: null,
             stock_id: this.props.holdings[0].stock_id
         }
@@ -34,10 +34,6 @@ class SellStock extends React.Component {
         else if (-sell.quantity.toFixed(2) < holding.quantity.toFixed(2)) {
             this.props.updateHolding(sell);
             this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
-        }
-        if (this.props.match.params.stockId) {
-            this.props.closeModal();
-            this.props.history.push('/dashboard')
         }
         this.props.closeModal();
     }
@@ -80,7 +76,7 @@ class SellStock extends React.Component {
                             <div className="input-value-buy-container">
                                 <div className="input-value-number-container">
                                     <p className="buy-dollar-sign">$</p>
-                                    <input type="number" className="input-value-buy"  step=".01" value={this.state.value} onChange={this.updateBuy("value")}/>
+                                    <input type="number" className="input-value-buy"  step=".01" value={this.state.value} placeholder="0" onChange={this.updateBuy("value")}/>
                                 </div>
                             </div>
 

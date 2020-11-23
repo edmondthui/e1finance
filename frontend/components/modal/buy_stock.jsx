@@ -5,7 +5,7 @@ class BuyStock extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: 0,
+            value: null,
             pie_id: null,
             stock_id: null
         }
@@ -74,7 +74,7 @@ class BuyStock extends React.Component {
                             <div className="input-value-buy-container">
                                 <div className="input-value-number-container">
                                     <p className="buy-dollar-sign">$</p>
-                                    <input type="number" className="input-value-buy"  step=".01" value={this.state.value} onChange={this.updateBuy("value")}/>
+                                    <input type="number" className="input-value-buy"  step=".01" value={this.state.value} onChange={this.updateBuy("value")} placeholder="0"/>
                                 </div>
                             </div>
 

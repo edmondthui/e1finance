@@ -47,7 +47,7 @@ class StockNewsIndex extends React.Component {
                 pie = <PortfolioPie items={formattedStock} totalValue={"$" + this.props.stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} openModal={this.props.openModal}/>
             } 
             else {
-                this.props.history.push('/dashboard')
+                this.props.history.push(`/dashboard/${this.props.match.params.portfolioId}/${this.props.match.params.pieId}`)
             }
         }
         let chart;

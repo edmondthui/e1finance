@@ -7,7 +7,7 @@ const piesReducer = (state={}, action) => {
         case RECEIVE_PIES:
             return action.pies
         case CREATE_PIE:
-            newState[action.pie.id] = action.pie;
+            newState[Object.values(action.pie)[0].id] = Object.values(action.pie)[0];
             return newState
         case DELETE_PIE:
             delete newState[Object.values(action.pie)[0].id]
