@@ -70,7 +70,7 @@ export const postPie = (data) => {
     return $.ajax({
         method: 'POST',
         url: '/api/pies',
-        data: { pie: data }
+        data: { pie: {pie_name: data.pie_name, portfolio_id: data.portfolio_id} }
     })
 }
 
