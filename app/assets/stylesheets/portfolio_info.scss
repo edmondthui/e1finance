@@ -54,10 +54,30 @@
     background-color: #0020BD;
     color: white;
     border-radius: 5px;
-    padding: 0px 10px; 
-    margin-right: 20px;
-    width: 100px;
+    width: 90%;
     text-align:center;
+    border: 1px solid #0020BD;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.withdraw-button {
+    height: 40px;
+    width: 90%;
+    background-color:white;
+    border-radius: 5px;
+    color: #0020BD;
+    font-weight: 700;
+    border: 2px solid #0020BD;
+    margin: 0px auto;
+}
+
+.deposit-button-container {
+    margin: 0 auto;
+}
+
+.withdraw-button:hover {
+    cursor: pointer;
 }
 
 .deposit-button:hover {
@@ -70,6 +90,9 @@
     background-color: white;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cash-balance{

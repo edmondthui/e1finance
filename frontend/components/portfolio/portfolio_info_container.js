@@ -1,6 +1,7 @@
 import {connect} from 'react-redux'
 import PortfolioInfo from './portfolio_info'
 import {fetchPortfolios} from '../../actions/portfolio_actions'
+import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
@@ -13,7 +14,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         action: () => dispatch(fetchPortfolios()),
-        fetchPortfolios: () => dispatch(fetchPortfolios())
+        fetchPortfolios: () => dispatch(fetchPortfolios()),
+        openModal: (modal) => dispatch(openModal(modal)) 
     }
 }
 

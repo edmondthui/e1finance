@@ -8,6 +8,8 @@ import CreatePie from './create_pie_container'
 import DeletePie from './delete_pie_container'
 import BuyStock from './buy_stock_container'
 import SellStock from './sell_stock_container'
+import Deposit from './deposit_container'
+import Withdraw from './withdraw_container'
 
 class Modal extends React.Component {
   
@@ -16,6 +18,7 @@ class Modal extends React.Component {
   }
 
   render() {
+    debugger;
     if (!this.props.modal) {
       return null;
     }
@@ -38,7 +41,13 @@ class Modal extends React.Component {
         break;
       case 'sellStock':
         component = <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
-        break
+        break;
+      case 'deposit':
+        component = <Deposit />
+        break;
+      case 'withdraw':
+        component = <Withdraw />
+        break;
       default:
         return null;
     }

@@ -20,24 +20,6 @@ class PortfolioIndex extends React.Component {
     handleClick(itemId) {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
-
-    // componentDidUpdate(prevProps) {
-    //     let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
-    //     if (prevProps.items.length !== this.props.items.length) {
-    //         this.props.items.forEach(items => {
-    //             if (items.tickers) {
-    //                 items.tickers.forEach(item=> this.props.fetchStockPrice(item))
-    //             }
-    //             else {
-    //                 this.props.action(paramsId)
-    //             }
-    //         })
-    //     }
-    // }
-
-    // componentWillUnmount() {
-    //     formattedChart = []
-    // }
     
     render() {
         
