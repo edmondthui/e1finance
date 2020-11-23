@@ -20,7 +20,9 @@
     text-decoration: none;
     padding: 10px;
     margin-left: 20px;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
 }
 
 
@@ -49,8 +51,15 @@
     font-size: 18px;
 }
 
+.research-nav-content:hover {
+    background-color: #D9DEF5;
+    border-radius: 20px;
+}
+
 .research-nav-container .active {
     background-color: #DDFA04;
-    border-radius: 10px;
+    border-radius: 20px;
     font-weight: 500;
+    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
 }
+

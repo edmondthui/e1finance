@@ -12,6 +12,8 @@ import Research from './research/research_container'
 import Stocks from './research/stocks_container'
 import StockShow from './research/stock_show'
 import Modal from './modal/modal'
+import Holdings from './holdings/holdings_container'
+import Activity from './activity/activity_container'
 
 const App = () => (
   <div>
@@ -26,6 +28,8 @@ const App = () => (
     <ProtectedRoute exact path="/research" component={Research} />
     <ProtectedRoute exact path="/research/stocks" component={Stocks} />
     <ProtectedRoute exact path="/research/stocks/:stockId" component={StockShow} />
+    <ProtectedRoute exact path="/activity" component={Activity} />
+    <ProtectedRoute exact path="/holdings" component={Holdings} />
   </div>
 );
 

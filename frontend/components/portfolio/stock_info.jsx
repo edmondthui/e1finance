@@ -4,10 +4,15 @@ import { withRouter, Link} from 'react-router-dom'
 class StockInfo extends React.Component {
     constructor(props) {
         super(props)
+        this.goBack = this.goBack.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchHolding(this.props.match.params.stockId)
+    }
+
+    goBack() {
+        this.props.history.push('/dashboard')
     }
 
     render() {
@@ -24,7 +29,7 @@ class StockInfo extends React.Component {
         return (
             <div className="portfolio-info-container">
                 <div className="portfolio-info" >
-                    <Link to={`/dashboard`} id="portfolio-back">{"⬅ BACK"}</Link>
+                    <div id="portfolio-back" onClick={() => this.goBack()}>⬅ BACK</div>
                     <h1 className="portfolio-info-name">{stockName}</h1>
                     <div className="values">
                         <p className="current-value-title">Current value</p>
