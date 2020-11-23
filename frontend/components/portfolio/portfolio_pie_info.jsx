@@ -47,14 +47,12 @@ class PortfolioPieInfo extends React.Component {
                             <p className="cash-balance">Cash balance</p>
                             <p className="cash-balance-number">{"$" + this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                         </div>
-                        <div className="deposit-button">
-                            <p>Deposit</p>
+                        <div className="deposit-button-container">
+                            <button className="deposit-button" onClick={() => this.props.openModal("deposit")}>Deposit</button>
                         </div>
                     </div>
                     <div className="auto-invest-container">
-                        <div>
-
-                        </div>
+                        <button className="withdraw-button" onClick={() => this.props.openModal("withdraw")}>Withdraw</button>
                     </div>
                 </div>
             </div>

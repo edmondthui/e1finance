@@ -1,7 +1,7 @@
 import {connect} from 'react-redux'
 import StockInfo from './stock_info'
 import {fetchHolding, fetchPies} from '../../actions/portfolio_actions'
-
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId)),
-        fetchPies: () => dispatch(fetchPies())
+        fetchPies: () => dispatch(fetchPies()),
+        openModal: (modal) => dispatch(openModal(modal)) 
     }
 }
 
