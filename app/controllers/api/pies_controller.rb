@@ -6,7 +6,7 @@ class Api::PiesController < ApplicationController
     end
 
     def create
-        @pie = Pie.new(pie_params)
+        @pie = current_user.pies.new(pie_params)
         if @pie.save
             render :show
         else
