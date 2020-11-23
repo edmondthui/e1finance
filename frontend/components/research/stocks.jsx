@@ -22,7 +22,7 @@ class Stocks extends React.Component {
             stocks = this.props.stocks.map((stock, idx )=> (
                 <div className="portfolio-index-item" key={idx} onClick={() => this.clickStock(idx)}>
                     <div className = "stock-content">
-                        <div>Image</div>
+                        <div className= "image-placeholder">Image</div>
                         <div className = "stock-name">
                             <p>{stock.ticker}</p>
                             <p>{stock.stock_name}</p>
