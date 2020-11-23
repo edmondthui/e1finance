@@ -7,6 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
+    debugger;
     return {
         items: Object.values(state.entities.holdings),
         pie: state.entities.pies[ownProps.match.params.pieId],

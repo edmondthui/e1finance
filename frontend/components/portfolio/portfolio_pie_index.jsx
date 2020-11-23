@@ -58,7 +58,7 @@ class PortfolioPieIndex extends React.Component {
                 </div>
                 <div style={{display: 'none' }}>{value = item.value ? item.value : window.location.reload()}</div>
                 <p className="item-value">{"$" + value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
-                <p className="item-value">{item.quantity ? item.quantity.toFixed(2) : 0 }</p>
+                <p className="item-value">{item.quantity ? item.quantity.toFixed(2) : null }</p>
             </div>
         ))
         return (

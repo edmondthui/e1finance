@@ -6,8 +6,6 @@ import { fetchInterdayData } from '../../util/IEX_api_util';
 
 // let formattedChart = [];
 // let quantity = []
-let data = [];
-let formattedChart = [];
 
 class Chart extends React.Component {
     constructor(props) {
@@ -18,6 +16,8 @@ class Chart extends React.Component {
             chartX: null,
             render: false,
         }
+        this.data = [];
+        this.formattedChart = [];
         // this.getValue = this.getValue.bind(this)
         // this.formatData = this.formatData.bind(this)
     }
@@ -36,7 +36,7 @@ class Chart extends React.Component {
             this.props.tickers.forEach((ticker, idx)=> {
                 setTimeout(() => {
                     fetchInterdayData(ticker).then(response => {
-                        data.push(response)
+                        this.data.push(response)
                         if (idx === holdingsLength-1) {
                             this.setState({render: true}) 
                         }
@@ -46,7 +46,7 @@ class Chart extends React.Component {
         }
         else {
             fetchInterdayData(this.props.ticker).then(response => {
-                data.push(response)
+                this.data.push(response)
                 this.setState({render: true})
             })
         }
@@ -110,7 +110,7 @@ class Chart extends React.Component {
     // }
 
     render() {
-        let chart;
+        debugger;
         // let verticalLine = null;
         // let filteredPrices
         // if (this.props.data !== undefined) {
@@ -136,30 +136,30 @@ class Chart extends React.Component {
         // }
         if (this.state.render) {
             if (Array.isArray(this.props.quantities)) {
-                for (let i = 0 ; i < data[0].length ; i ++) {
+                for (let i = 0 ; i < this.data[0].length ; i ++) {
                     let sumHigh = 0;
                     let label = "";
-                    for (let j = 0 ; j<data.length; j++) {
+                    for (let j = 0 ; j<this.data.length; j++) {
                         debugger;
-                        sumHigh += data[j][i].high * this.props.quantities[j]
-                        label = data[j][i].label
+                        sumHigh += this.data[j][i].high * this.props.quantities[j]
+                        label = this.data[j][i].label
                     }
-                    formattedChart.push({high: sumHigh, label: label})
+                    this.formattedChart.push({high: sumHigh, label: label})
                 }
             }
             else {
-                for (let i = 0 ; i < data[0].length ; i ++) {
+                for (let i = 0 ; i < this.data[0].length ; i ++) {
                     let sumHigh = 0;
                     let label = "";
-                    for (let j = 0 ; j<data.length; j++) {
+                    for (let j = 0 ; j<this.data.length; j++) {
                         debugger;
-                        sumHigh += data[j][i].high * this.props.quantities
-                        label = data[j][i].label
+                        sumHigh += this.data[j][i].high * this.props.quantities
+                        label = this.data[j][i].label
                     }
-                    formattedChart.push({high: sumHigh, label: label})
+                    this.formattedChart.push({high: sumHigh, label: label})
                 }
             }
-            this.setState({chart: formattedChart})
+            this.setState({chart: this.formattedChart})
             this.setState({render: false})
         }
 
