@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { withRouter } from "react-router";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const LoggedOutNavBar = (props) => (
     <section className="nav-bar">
@@ -9,25 +10,14 @@ const LoggedOutNavBar = (props) => (
 
             <div className="dropdown">
                 <Link to="how-it-works" spy={true} smooth={true} duration={1000} className="dropdown-title">How it works</Link>
-                {/* <p className="dropdown-title">How it works</p> */}
-                    {/* <div className="dropdown-content">
-                        <a href="#">Test</a>
-                    </div> */}
                 <Link to="why-e1" spy={true} smooth={true} duration={1000} className="dropdown-title">Why E1</Link>
-                {/* <p className="dropdown-title">Why E1</p> */}
-                    {/* <div className="dropdown-content">
-                        <a href="#">Test</a>
-                    </div> */}
-                {/* <p className="dropdown-title">Insights</p>
-                    <div className="dropdown-content">
-                        <a href="#">Test</a>
-                    </div> */}
-                {/* <p className="dropdown-title">FAQs</p>
-                    <div className="dropdown-content">
-                        <a href="#">Test</a>
-                    </div> */}
             </div>
         </nav>
+
+        <div className="personal-links">
+            <a href="https://github.com/edmondthui" className="dropdown-title"><FaGithub size={30} style={{color: "#1835C3"}}/></a>
+            <a href="https://www.linkedin.com/in/edmond-hui/" className="dropdown-title"><FaLinkedin size={30} style={{color: "#1835C3"}}/></a>
+        </div>
         <div className="login-buttons">
             <Link to="/login" id="login" onClick={() => props.history.push("/login")}>Login</Link>
             <Link to="/signup" id="signup" onClick={() => props.history.push("/signup")}>Get Started</Link>
