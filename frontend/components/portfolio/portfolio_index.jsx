@@ -61,7 +61,7 @@ class PortfolioIndex extends React.Component {
             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
                 <div className="portfolio-name">
                 <img src="https://i.postimg.cc/ncKSVm8J/pie-image.png" alt="pie-image" height="40" width="40"/>
-                <p>{item.portfolio_name} {item.pie_name} {item.stock_name}</p>
+                <p>{item.portfolio_name ? item.portfolio_name : window.location.reload()}</p>
                 </div>
                 <p className="item-value">{"$" + (item.value ? item.value : 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
