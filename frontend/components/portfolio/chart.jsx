@@ -40,7 +40,6 @@ class Chart extends React.Component {
             })
         }
         else {
-            debugger;
             fetchInterdayData(this.props.tickers).then(response => {
                 this.data.push(response)
                 this.setState({render: true})
@@ -76,7 +75,6 @@ class Chart extends React.Component {
                 }
             }
             else {
-                debugger;
                 for (let i = 0 ; i < this.data[0].length ; i ++) {
                     let sumHigh = 0;
                     let label = "";
