@@ -31,20 +31,25 @@ class Chart extends React.Component {
         // ^ this is what I would want to do but I am limited by an external API and don't want to pay money
         // It would do too many API calls and my account would get limited and I would have to pay for premium
         debugger;
-        let holdingsLength = this.props.tickers.length
-        this.props.tickers.forEach((ticker, idx)=> {
-            setTimeout(() => {
-                fetchInterdayData(ticker).then(response => {
-                    data.push(response)
-                    console.log(response)
-                    console.log(data)
-                    debugger;
-                    if (idx === holdingsLength-1) {
-                        this.setState({render: true}) 
-                    }
+        if (Array.isArray(this.props.tickers)) {
+            let holdingsLength = this.props.tickers.length
+            this.props.tickers.forEach((ticker, idx)=> {
+                setTimeout(() => {
+                    fetchInterdayData(ticker).then(response => {
+                        data.push(response)
+                        if (idx === holdingsLength-1) {
+                            this.setState({render: true}) 
+                        }
+                    })
                 })
             })
-        })
+        }
+        else {
+            fetchInterdayData(this.props.ticker).then(response => {
+                data.push(response)
+                this.setState({render: true})
+            })
+        }
 
     }
 
@@ -130,15 +135,29 @@ class Chart extends React.Component {
         //     verticalLine =  <line x1={this.state.chartX} y1={0} x2={this.state.chartX} y2={400} stroke="white" strokeWidth="20" opacity=".2"  />;
         // }
         if (this.state.render) {
-            debugger;
-            for (let i = 0 ; i < data[0].length ; i ++) {
-                let sumHigh = 0;
-                let label = "";
-                for (let j = 0 ; j<data.length; j++) {
-                    sumHigh += data[j][i].high * this.props.quantities[j]
-                    label = data[j][i].label
+            if (Array.isArray(this.props.quantities)) {
+                for (let i = 0 ; i < data[0].length ; i ++) {
+                    let sumHigh = 0;
+                    let label = "";
+                    for (let j = 0 ; j<data.length; j++) {
+                        debugger;
+                        sumHigh += data[j][i].high * this.props.quantities[j]
+                        label = data[j][i].label
+                    }
+                    formattedChart.push({high: sumHigh, label: label})
                 }
-                formattedChart.push({high: sumHigh, label: label})
+            }
+            else {
+                for (let i = 0 ; i < data[0].length ; i ++) {
+                    let sumHigh = 0;
+                    let label = "";
+                    for (let j = 0 ; j<data.length; j++) {
+                        debugger;
+                        sumHigh += data[j][i].high * this.props.quantities
+                        label = data[j][i].label
+                    }
+                    formattedChart.push({high: sumHigh, label: label})
+                }
             }
             this.setState({chart: formattedChart})
             this.setState({render: false})

@@ -6,9 +6,10 @@ import { openModal } from '../../actions/modal_actions';
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
         items: Object.values(state.entities.holdings),
+        pie: state.entities.pies[ownProps.match.params.pieId],
         prices: state.entities.prices,
         type: "Stock Index"
     }

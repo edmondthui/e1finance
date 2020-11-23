@@ -45,8 +45,9 @@ class PortfolioPieIndex extends React.Component {
                 totalValue += item.value
                 holdings.push(item)
             });
-            debugger;
-            // chart = <PortfolioChart data={formattedChart} holdings={holdings}/> 
+        }
+        if (this.props.pie) {
+            chart = <PortfolioChart tickers={this.props.pie.tickers} quantities={this.props.pie.quantity}/> 
         }
         let value;
         let items = this.props.items.map((item) => (

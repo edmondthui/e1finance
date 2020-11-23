@@ -1,5 +1,10 @@
 class Api::HoldingsController < ApplicationController
 
+    def index
+        @holding = Holding.all
+        render :index
+    end
+
     def show
         @holding = Holding.find(params[:id])
         render :show
