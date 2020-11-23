@@ -47,6 +47,7 @@ class LoggedInNavBar extends React.Component {
                                 <div className="profile-hover">
                                     <div className="profile-hover-content">
                                         <p className="profile-hover-title">Made by Edmond Hui</p>
+                                        <p className="profile-hover-message">Thank you for visiting</p>
                                         <p className="profile-hover-email">{this.props.user.email}</p>
                                         <button id="logout-button" onClick={this.handleLogout}>Log Out</button>
                                     </div>
