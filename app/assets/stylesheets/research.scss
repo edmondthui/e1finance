@@ -32,6 +32,12 @@
     width: 100%;
 }
 
+.activity-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
 .stock-content:hover {
     cursor: pointer;
 }

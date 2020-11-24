@@ -25,8 +25,8 @@ class Holdings extends React.Component {
         let activity;
         if (this.props.activities.length > 0) {
             activity = this.props.activities.map((activity, idx )=> (
-                <div className="portfolio-index-item" key={idx} onClick={() => this.clickStock(activity.name)}>
-                    <div className = "stock-content">
+                <div className="activity-index-item" key={idx} onClick={() => this.clickStock(activity.name)}>
+                    <div className = "activity-content">
                         <div className= "image-placeholder">Image</div>
                         <p>{activity.created_at}</p>
                         <div className = "activity-name">

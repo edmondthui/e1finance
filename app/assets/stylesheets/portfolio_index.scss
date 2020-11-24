@@ -33,6 +33,17 @@
     font-size: 14px;
 }
 
+.activity-index-item {
+    display: flex;
+    border-left: 1px solid #BCC4D2;
+    border-right: 1px solid #BCC4D2;
+    border-bottom: 1px solid #BCC4D2;
+    padding-left: 20px;
+    align-items: center;
+    height: 80px;
+    font-size: 14px;
+}
+
 .portfolio-index-item:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -61,6 +72,10 @@
 
 .portfolio-index-item:hover {
     cursor: pointer;
+    background-color: #D9DEF5;
+}
+
+.activity-index-item:hover {
     background-color: #D9DEF5;
 }
 
