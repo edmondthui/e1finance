@@ -119,3 +119,18 @@ export const updateStock = (stockData) => {
         data: { stock: stockData}
     })
 }
+
+export const getActivities = () => {
+    return $.ajax({
+        method: "GET",
+        url: '/api/activities'
+    })
+}
+
+export const createActivity = (activityData) => {
+    return $.ajax({
+        method: "POST",
+        url: '/api/activities',
+        data: { activity: activityData}
+    })
+}

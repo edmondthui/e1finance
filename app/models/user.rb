@@ -10,7 +10,6 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
-# require 'bcrypt'
 
 class User < ApplicationRecord
 
@@ -61,6 +60,10 @@ class User < ApplicationRecord
     has_many :holdings,
         through: :pies,
         source: :holdings
+
+    has_many :activities,
+        foreign_key: :user_id,
+        class_name: :Activity
 
     private
 

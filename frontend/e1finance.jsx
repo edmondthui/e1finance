@@ -5,7 +5,7 @@ import Root from './components/root'
 
 //TESTING
 // import {login, signup, logout} from './util/session_api_util'
-// import {getPortfolios, getStocks} from './util/portfolio_api_util'
+import {getPortfolios, getStocks, getActivities, createActivity} from './util/portfolio_api_util'
 // import {fetchPortfolios, fetchPies, getHolding, getStock} from './actions/portfolio_actions'
 // import {fetchCompanyNews, fetchInterdayData, fetchStockNews, fetchCompanyInfo} from './util/IEX_api_util'
 
@@ -43,4 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.fetchCompanyInfo = fetchCompanyInfo
     // window.getHolding = getHolding
     // window.getStock= getStock
+    window.createActivity = createActivity
+    window.getActivities = getActivities
 })
