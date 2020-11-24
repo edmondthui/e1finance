@@ -36,7 +36,7 @@ class SellStock extends React.Component {
         else {
             let quantity = (this.state.value / this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0].price)
             let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
+            let activity = {activity: holding.stock_name, name: "Sell", value: this.state.value, user_id: this.props.user.id}
             let sell = {quantity: -quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
             if (-sell.quantity.toFixed(2) === holding.quantity.toFixed(2)) {
                 this.props.removeHolding(holding.id);

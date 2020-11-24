@@ -29,7 +29,7 @@ class Holdings extends React.Component {
                     <div className = "stock-content">
                         <div className= "image-placeholder">Image</div>
                         <p>{activity.created_at}</p>
-                        <div className = "stock-name">
+                        <div className = "activity-name">
                             <p>{activity.name}</p>
                         </div>
                             <p>{activity.activity}</p>

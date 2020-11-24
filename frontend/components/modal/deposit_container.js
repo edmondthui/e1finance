@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { updateBuyingPower } from '../../actions/portfolio_actions'
 import Deposit from './deposit.jsx'
+import { createActivity } from '../../actions/activity_actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -12,7 +13,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
   return {
       closeModal: () => dispatch(closeModal()),
-      updateBuyingPower: (power) => dispatch(updateBuyingPower(power))
+      updateBuyingPower: (power) => dispatch(updateBuyingPower(power)),
+      createActivity: (activityData) => dispatch(createActivity(activityData))
+      
   };
 };
 

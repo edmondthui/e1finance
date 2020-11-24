@@ -18,7 +18,7 @@ class BuyStock extends React.Component {
         let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(stockId))[0]
         let quantity = (this.state.value / this.props.stocks[stockId-1].value)
         let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: stockId, user_id: this.props.user.id}
-        let activity = {activity: "Buy", name: this.props.stocks[stockId-1].stock_name, value: this.state.value, user_id: this.props.user.id}
+        let activity = {activity: this.props.stocks[stockId-1].stock_name, name: "Buy", value: this.state.value, user_id: this.props.user.id}
         if (this.state.value > this.props.user.buying_power) {
             this.props.closeModal();
         }
