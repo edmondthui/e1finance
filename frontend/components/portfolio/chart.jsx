@@ -23,9 +23,11 @@ class Chart extends React.Component {
         if (Array.isArray(this.props.tickers)) {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
+                debugger;
                 fetchInterdayData(ticker).then(response => {
                     // this would work a lot better if there was a fetch multiple ticker data api, this code is still buggy but theres nothing I can do.
                     // it works sometimes
+                    debugger;
                     this.data.push(response)
                 }).then(() => {
                     if (idx === holdingsLength-1) {
@@ -85,7 +87,7 @@ class Chart extends React.Component {
                     let sumHigh = 0;
                     let label = "";
                     for (let j = 0 ; j<this.data.length; j++) {
-                        sumHigh += this.data[j][i].high * this.props.quantities
+                        sumHigh += (this.data[j][i].high + this.data[j][i].low) / 2 * this.props.quantities
                         label = this.data[j][i].label
                     }
                     this.formattedChart.push({high: sumHigh, label: label})
