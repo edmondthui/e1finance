@@ -30,10 +30,9 @@ class Holdings extends React.Component {
                         <div className= "image-placeholder">Image</div>
                         <p>{activity.created_at}</p>
                         <div className = "stock-name">
-                            
-                            <p>{activity.activity}</p>
                             <p>{activity.name}</p>
                         </div>
+                            <p>{activity.activity}</p>
                         <div className = "stock-research-price">
                             <p>{"$" + activity.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                         </div>

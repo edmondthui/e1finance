@@ -15,14 +15,15 @@ class BuyStock extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let stockId = this.state.stock_id ? this.state.stock_id : this.props.stocks[0].id
-        let holding = this.props.holdings.filter(holding => holding.stock_id === stockId)[0]
+        let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(stockId))[0]
         let quantity = (this.state.value / this.props.stocks[stockId-1].value)
         let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: stockId, user_id: this.props.user.id}
         let activity = {activity: "Buy", name: this.props.stocks[stockId-1].stock_name, value: this.state.value, user_id: this.props.user.id}
+        debugger;
         if (this.state.value > this.props.user.buying_power) {
             this.props.closeModal();
         }
-        else if (this.props.holdings.filter(holding => holding.stock_id === stockId).length >= 1) {
+        else if (this.props.holdings.filter(holding => holding.stock_id === parseInt(stockId)).length >= 1) {
             let holdingData = {quantity: quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
             this.props.updateHolding(holdingData)
             this.props.createActivity(activity)
