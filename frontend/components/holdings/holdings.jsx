@@ -38,7 +38,7 @@ class Holdings extends React.Component {
                                 <p>{portfolio.names[idx]}</p>
                             </div>
                             <p className = "holding-quantity">{portfolio.quantity[idx].toFixed(2) + " shares"}</p>
-                            <p className = "holding-quantity">{"$" + (portfolio.value*portfolio.holding_percentages[idx] / portfolio.quantity[idx]).toFixed(2) + " per share"}</p>
+                            <p className = "holding-quantity">{"$" + (portfolio.value*portfolio.holding_percentages[idx] / portfolio.quantity[idx]).toFixed(2) + " / share"}</p>
                             <div className = "stock-research-price">
                                 <p>{"$" + (portfolio.value*portfolio.holding_percentages[idx]).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                             </div>

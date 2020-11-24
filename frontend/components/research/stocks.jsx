@@ -28,7 +28,7 @@ class Stocks extends React.Component {
                             <p>{stock.stock_name}</p>
                         </div>
                         <div className = "stock-research-price">
-                            <p>{"$" + stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
+                            <p>{"$" + stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') + " / share"}</p>
                         </div>
                     </div>       
                 </div>
