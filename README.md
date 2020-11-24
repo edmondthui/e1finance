@@ -10,3 +10,5 @@ E1 Finance is a clone of an investing platfrom created by ,[M1 Finance](https://
 * Charts and Pies: [Rcharts JS Library](http://recharts.org/en-US/)
 
 ## Features
+### Organize Your Portfolio
+![E1 Finance Dashboard Demo](https://im3.ezgif.com/tmp/ezgif-3-cdf7a69b1bb5.gif)
