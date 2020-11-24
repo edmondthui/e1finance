@@ -12,7 +12,7 @@ class DashboardStock extends React.Component {
                 <LoggedInNavBar/>
                 <div className="research-nav-bar">
                     <div className="research-nav-container">
-                        <NavLink exact to="/dashboard" activeclass="active" className="research-nav-content">Portfolio</NavLink>
+                        <NavLink to="/dashboard" activeclass="active" className="research-nav-content">Portfolio</NavLink>
                         <NavLink to="/dashboard/activity" activeclass="active" className="research-nav-content">Activity</NavLink>
                         <NavLink to="/dashboard/holdings" activeclass="active" className="research-nav-content">Holdings</NavLink>
                     </div>
