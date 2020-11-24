@@ -18,7 +18,8 @@ class Portfolio < ApplicationRecord
 
     has_many :pies,
         foreign_key: :portfolio_id,
-        class_name: :Pie
+        class_name: :Pie,
+        dependent: :destroy
 
     def value
         value = 0

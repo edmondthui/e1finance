@@ -5,7 +5,7 @@ class DeletePie extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: this.props.pies[0].id
+            id: this.props.pies[0] ? this.props.pies[0].id : null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.onChange = this.onChange.bind(this)

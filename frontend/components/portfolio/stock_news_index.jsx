@@ -52,7 +52,7 @@ class StockNewsIndex extends React.Component {
         }
         let chart;
         if (this.props.stock) {
-            chart = <PortfolioChart tickers={this.props.stock.ticker} quantities={this.props.stock.quantity} /> 
+            chart = <PortfolioChart tickers={this.props.stock.ticker} quantities={this.props.stock.quantity} id={this.props.stock.stock_id}/> 
         }
         return (
             <div className="portfolio-content-container">

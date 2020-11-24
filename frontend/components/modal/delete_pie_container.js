@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => {
   return {
       deletePie: (portfolioId) => dispatch(deletePie(portfolioId)),
       fetchPies: (portfolioId) => dispatch(fetchPies(portfolioId)),
-        closeModal: () => dispatch(closeModal())
+      closeModal: () => dispatch(closeModal())
   };
 };
 

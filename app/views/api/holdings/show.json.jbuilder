@@ -4,4 +4,5 @@ json.set! @holding.id do
     json.value @holding.value
     json.ticker @holding.stock.ticker
     json.quantity @holding.quantity
+    json.stock_id @holding.stock.id
 end
