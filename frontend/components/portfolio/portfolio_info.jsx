@@ -25,7 +25,6 @@ class PortfolioInfo extends React.Component {
         else {
             title = "TOTAL PORTFOLIO VALUE"
         }
-        debugger;
 
         return (
             <div className="portfolio-info-container">

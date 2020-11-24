@@ -24,9 +24,10 @@ class Chart extends React.Component {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
                 fetchInterdayData(ticker).then(response => {
+                    // this would work a lot better if there was a fetch multiple ticker data api, this code is still buggy but theres nothing I can do.
+                    // it works sometimes
                     this.data.push(response)
-                })
-                .then(() => {
+                }).then(() => {
                     if (idx === holdingsLength-1) {
                         this.data.forEach((data, idx) => {
                             let stocks = this.props.stocks
@@ -35,6 +36,9 @@ class Chart extends React.Component {
                             // this.props.updateStock(dataObj);
                             // updating stock prices makes app glitch out
                         })
+                    }
+                }).then(() => {
+                    if (idx === holdingsLength-1) {
                         this.setState({render: true})
                     }
                 })
