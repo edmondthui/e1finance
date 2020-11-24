@@ -25,13 +25,17 @@ class Chart extends React.Component {
             this.props.tickers.forEach((ticker, idx)=> {
                 fetchInterdayData(ticker).then(response => {
                     this.data.push(response)
-                }).then(() => {
+                })
+                .then(() => {
                     if (idx === holdingsLength-1) {
-                        this.data.forEach(data => {
-                            let dataObj = {price: (data[data.length-1].high + data[data.length-1].low) / 2, id: this.props.stocks.filter(stock => stock.ticker === ticker)[0].id}
+                        this.data.forEach((data, idx) => {
+                            let stocks = this.props.stocks
+                            let tickers = this.props.tickers
+                            debugger;
+                            let dataObj = {price: data[data.length-1].high, id: stocks.filter(stock => stock.ticker === tickers[idx])[0].id}
+                            debugger;
                             this.props.updateStock(dataObj);
                         })
-                        debugger;
                         this.setState({render: true})
                     }
                 })
