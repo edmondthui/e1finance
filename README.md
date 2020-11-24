@@ -19,7 +19,7 @@ Buy and sell stocks and frational shares are automatically calulated and purchas
 ![E1 Finance Buy / Sell Demo](https://im3.ezgif.com/tmp/ezgif-3-5be0fbfeb9cd.gif)
 
 ### Holdings & Activities
-All buy, sell, withdraw, and deposit activities are tracked on the activity page. Holdings are all tracked on the holdings page. Each activity is tracked in the backend with a separate activities table and each action sends a create request to the backend.  
+All buy, sell, withdraw, and deposit activities are tracked on the activity page. Holdings are all tracked on the holdings page and each user is associated with many holdings. Each activity is tracked in the backend with a separate activities table and each action sends a create request to the backend.  
 ![E1 Finance Holdings & Activities Demo](https://im3.ezgif.com/tmp/ezgif-3-fb73753e9b5d.gif)
 
 ### Withdraw / Deposit
