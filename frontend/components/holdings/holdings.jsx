@@ -18,7 +18,6 @@ class Holdings extends React.Component {
 
     clickHolding(ticker) {
         let idx = this.props.stocks.filter(stock => stock.ticker === ticker)[0].id - 1
-        debugger;
         this.props.history.push(`/research/stocks/${idx}`)
     }
 

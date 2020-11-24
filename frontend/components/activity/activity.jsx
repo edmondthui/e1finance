@@ -13,17 +13,20 @@ class Holdings extends React.Component {
 
     componentDidMount() {
         this.props.fetchActivities();
+        this.props.fetchStocks()
     }
 
-    clickStock(idx) {
-        
+    clickStock(name) {
+        debugger;
+        let idx = this.props.stocks.filter(stock => stock.stock_name === name)[0].id - 1
+        this.props.history.push(`/research/stocks/${idx}`)
     }
 
     render() {
         let activity;
         if (this.props.activities.length > 0) {
             activity = this.props.activities.map((activity, idx )=> (
-                <div className="portfolio-index-item" key={idx} onClick={() => this.clickStock(idx)}>
+                <div className="portfolio-index-item" key={idx} onClick={() => this.clickStock(activity.name)}>
                     <div className = "stock-content">
                         <div className= "image-placeholder">Image</div>
                         <p>{activity.created_at}</p>
