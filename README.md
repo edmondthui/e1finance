@@ -28,4 +28,4 @@ Change buying power with the withdraw and deposit buttons. Each user starts of w
 
 ### Research
 Check market news and research stock info and individual stock news. News with links, images, headlines, and details are fetched using the IEX Trading API.  
-![E1 Finance Research Demo](https://im3.ezgif.com/tmp/ezgif-3-2c69445109a5.gif)
+![E1 Finance Research Demo](https://i.imgur.com/c9S12mf.gif)
