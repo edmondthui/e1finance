@@ -1,7 +1,6 @@
 import { RECEIVE_ACTIVITIES, RECEIVE_ACTIVITY } from '../actions/activity_actions'
 
 const activitiesReducer = (state=[], action) => {
-    debugger;
     Object.freeze(state);
     let newState = Object.assign({}, state)
     switch (action.type) {

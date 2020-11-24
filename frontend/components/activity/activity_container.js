@@ -1,17 +1,18 @@
 import {connect} from 'react-redux'
 import Activity from './activity'
-// import {fetchPortfolios} from '../../actions/portfolio_actions'
+import {fetchActivities} from '../../actions/activity_actions'
 
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
-        
+        activities: Object.values(state.entities.activities)
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // fetchPortfolios: () => dispatch(fetchPortfolios())
+        fetchActivities: () => dispatch(fetchActivities())
     }
 }
 
