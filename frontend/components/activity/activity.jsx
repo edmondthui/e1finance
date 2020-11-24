@@ -40,6 +40,7 @@ class Holdings extends React.Component {
                     </div>       
                 </div>
             ))
+            activity = activity.reverse();
         }
         else {
             activity =  <div className="portfolio-index-item">

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { createHolding, fetchStocks, updateBuyingPower, updateHolding, fetchHoldings } from '../../actions/portfolio_actions';
 import BuyStock from './buy_stock'
+import { createActivity } from '../../actions/activity_actions'
 
 const mapStateToProps = (state) => {
   return {
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => {
       updateBuyingPower: (userData) => dispatch(updateBuyingPower(userData)),
       closeModal: () => dispatch(closeModal()),
       updateHolding: (holdingData) => dispatch(updateHolding(holdingData)),
-      fetchHoldings: (pieId) => dispatch(fetchHoldings(pieId))
+      fetchHoldings: (pieId) => dispatch(fetchHoldings(pieId)),
+      createActivity: (activityData) => dispatch(createActivity(activityData))
   };
 };
 
