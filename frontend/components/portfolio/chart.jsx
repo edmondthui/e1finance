@@ -12,6 +12,7 @@ class Chart extends React.Component {
             hover: false,
             chartX: null,
             render: false,
+            chart: null
         }
         this.data = [];
         this.formattedChart = [];
@@ -30,6 +31,7 @@ class Chart extends React.Component {
                             let dataObj = {price: (data[data.length-1].high + data[data.length-1].low) / 2, id: this.props.stocks.filter(stock => stock.ticker === ticker)[0].id}
                             this.props.updateStock(dataObj);
                         })
+                        debugger;
                         this.setState({render: true})
                     }
                 })

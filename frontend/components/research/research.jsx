@@ -12,10 +12,8 @@ class Research extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(() => {
-            this.props.fetchAllNews();
-            this.setState({render: true}) 
-        }, 500)
+        this.props.fetchAllNews();
+        this.setState({render: true}) 
     }
 
     clickNews(idx) {

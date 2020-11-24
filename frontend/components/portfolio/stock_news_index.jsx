@@ -19,7 +19,7 @@ class StockNewsIndex extends React.Component {
         setTimeout(() => {
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
-        }, 1000)
+        }, 500)
     }
 
     clickNews(idx) {
