@@ -12,7 +12,7 @@ E1 Finance is a clone of an investing platfrom created by ,[M1 Finance](https://
 ## Features
 ### Organize Your Portfolio
 Create portfolios with pies allowing you to choose your own stocks to build a portfolio completely customized to your unique financial goals and preferences.
- ![E1 Finance Dashboard Demo](https://im3.ezgif.com/tmp/ezgif-3-cdf7a69b1bb5.gif)
+![E1 Finance Dashboard Demo](https://im3.ezgif.com/tmp/ezgif-3-cdf7a69b1bb5.gif)
 ### Buy and Sell Stocks
 Buy and sell stocks and frational shares are automatically calulated and purchased to the account.
 ![E1 Finance Buy / Sell Demo](https://im3.ezgif.com/tmp/ezgif-3-5be0fbfeb9cd.gif)
