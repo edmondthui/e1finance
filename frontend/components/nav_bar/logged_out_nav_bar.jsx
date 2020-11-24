@@ -15,8 +15,8 @@ const LoggedOutNavBar = (props) => (
         </nav>
 
         <div className="personal-links">
-            <a href="https://github.com/edmondthui" className="dropdown-title"><FaGithub size={30} style={{color: "#1835C3"}}/></a>
-            <a href="https://www.linkedin.com/in/edmond-hui/" className="dropdown-title"><FaLinkedin size={30} style={{color: "#1835C3"}}/></a>
+            <a href="https://github.com/edmondthui" className="dropdown-title"><FaGithub size={30}/></a>
+            <a href="https://www.linkedin.com/in/edmond-hui/" className="dropdown-title"><FaLinkedin size={30}/></a>
         </div>
         <div className="login-buttons">
             <Link to="/login" id="login" onClick={() => props.history.push("/login")}>Login</Link>
