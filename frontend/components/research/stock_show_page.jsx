@@ -17,10 +17,6 @@ class StockShowPage extends React.Component {
 
     componentDidMount() {
         this.props.fetchStock(parseInt(this.props.match.params.stockId)+1)
-        // this.props.fetchCompanyInfo(this.props.stock.ticker)
-        // this.props.fetchStockNews(this.props.stock.ticker)
-        // this.setState({render: true}) 
-        // ^ this breaks if user refreshes on this page
         setTimeout(() => {
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
