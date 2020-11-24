@@ -20,7 +20,7 @@ Buy and sell stocks and frational shares are automatically calulated and purchas
 
 ### Holdings & Activities
 All buy, sell, withdraw, and deposit activities are tracked on the activity page. Holdings are all tracked on the holdings page and each user is associated with many holdings. Each activity is tracked in the backend with a separate activities table and each action sends a create request to the backend.  
-![E1 Finance Holdings & Activities Demo](https://im3.ezgif.com/tmp/ezgif-3-fb73753e9b5d.gif)
+![E1 Finance Holdings & Activities Demo](https://im3.ezgif.com/tmp/ezgif-3-e7f1c0d79b4c.gif)
 
 ### Withdraw / Deposit
 Change buying power with the withdraw and deposit buttons. Each user starts of with a buying power of $1,000,000 and this number will change with each buy, sell, deposit, and withdrawl.  
