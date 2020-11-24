@@ -2,7 +2,7 @@
     json.set! activity.id do
         json.id activity.id
         json.activity activity.activity
-        json.value holding.value
-        json.created_at holding.created_at
+        json.value activity.value
+        json.created_at activity.created_at
     end
 end
