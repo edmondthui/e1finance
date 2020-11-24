@@ -49,7 +49,12 @@ class Holdings extends React.Component {
                         <NavLink to="/dashboard/holdings" activeclass="active" className="research-nav-content">Holdings</NavLink>
                     </div>
                 </div>
-                {activity}
+                <div className="research-index-container">
+                    <div className="portfolio-index-header">
+                        <p className="header-name">Activity</p>
+                    </div>
+                    {activity}
+                </div>
                 <DashboardFooter/>
             </div>
         )
