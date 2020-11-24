@@ -28,9 +28,8 @@ class Pie < ApplicationRecord
 
     def value
         value = 0
-        stocks = Stock.all
         holdings.each do |holding|
-            value += holding.quantity * stocks[holding.stock_id-1].price
+            value += holding.quantity * Stock.where(id: holding.stock_id)[0].price
         end
         value.round(2)
     end

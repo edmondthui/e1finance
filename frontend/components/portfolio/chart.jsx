@@ -32,7 +32,7 @@ class Chart extends React.Component {
                             let stocks = this.props.stocks
                             let tickers = this.props.tickers
                             let dataObj = {price: (data[data.length-1].high + data[data.length-1].low) / 2, id: stocks.filter(stock => stock.ticker === tickers[idx])[0].id}
-                            // this.props.updateStock(dataObj);
+                            this.props.updateStock(dataObj);
                             // updating stock prices makes app glitch out
                         })
                         this.setState({render: true})
