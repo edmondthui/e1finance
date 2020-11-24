@@ -7,7 +7,7 @@ class SellStock extends React.Component {
         this.state = {
             value: null,
             pie_id: null,
-            stock_id: this.props.holdings[0].stock_id
+            stock_id: this.props.holdings[0] ? this.props.holdings[0].stock_id : null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.deleteHolding = this.deleteHolding.bind(this)
@@ -15,29 +15,39 @@ class SellStock extends React.Component {
 
     deleteHolding(e) {
         e.preventDefault()
-        let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-        let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
-        this.props.removeHolding(holding.id);
-        this.props.createActivity(activity)
-        this.props.updateBuyingPower({id: this.props.user.id, buying_power: + holding.value})
-        this.props.closeModal();
+        if (this.state.stock_id === null) {
+            this.props.closeModal();
+        }
+        else {
+            let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
+            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
+            this.props.removeHolding(holding.id);
+            this.props.createActivity(activity)
+            this.props.updateBuyingPower({id: this.props.user.id, buying_power: + holding.value})
+            this.props.closeModal();
+        }
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        let quantity = (this.state.value / this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0].price)
-        let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-        let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
-        let sell = {quantity: -quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
-        if (-sell.quantity.toFixed(2) === holding.quantity.toFixed(2)) {
-            this.props.removeHolding(holding.id);
-            this.props.createActivity(activity)
-            this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
+        if (this.state.stock_id === null) {
+            this.props.closeModal();
         }
-        else if (-sell.quantity.toFixed(2) < holding.quantity.toFixed(2)) {
-            this.props.updateHolding(sell);
-            this.props.createActivity(activity)
-            this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
+        else {
+            let quantity = (this.state.value / this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0].price)
+            let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
+            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
+            let sell = {quantity: -quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
+            if (-sell.quantity.toFixed(2) === holding.quantity.toFixed(2)) {
+                this.props.removeHolding(holding.id);
+                this.props.createActivity(activity)
+                this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
+            }
+            else if (-sell.quantity.toFixed(2) < holding.quantity.toFixed(2)) {
+                this.props.updateHolding(sell);
+                this.props.createActivity(activity)
+                this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
+            }
         }
         this.props.closeModal();
     }
@@ -65,6 +75,9 @@ class SellStock extends React.Component {
         let options = this.props.holdings.map(holding => (
             <option value={holding.stock_id}>{holding.stock_name}</option>
         ))
+        if ( this.state.stock_id === null ) {
+            options = <option>Please buy a stock first.</option>
+        }
         return (
             <div className="buy-stock-container">
                 <div className="buy-stock-form-container">

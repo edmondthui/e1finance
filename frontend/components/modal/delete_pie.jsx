@@ -27,10 +27,13 @@ class DeletePie extends React.Component {
         })
     }
 
-    render() {
+    render() { 
         let options = this.props.pies.map(pie => (
             <option value={pie.id}>{pie.pie_name}</option>
         ))
+        if ( this.state.id === null ) {
+            options = <option>Please create a pie first.</option>
+        }
         return (
             <div className="create-portfolio-container">
                 <div onClick={this.props.closeModal} className="close-x">X</div>
