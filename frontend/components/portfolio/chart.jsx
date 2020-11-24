@@ -31,10 +31,9 @@ class Chart extends React.Component {
                         this.data.forEach((data, idx) => {
                             let stocks = this.props.stocks
                             let tickers = this.props.tickers
-                            debugger;
-                            let dataObj = {price: data[data.length-1].high, id: stocks.filter(stock => stock.ticker === tickers[idx])[0].id}
-                            debugger;
-                            this.props.updateStock(dataObj);
+                            let dataObj = {price: (data[data.length-1].high + data[data.length-1].low) / 2, id: stocks.filter(stock => stock.ticker === tickers[idx])[0].id}
+                            // this.props.updateStock(dataObj);
+                            // updating stock prices makes app glitch out
                         })
                         this.setState({render: true})
                     }
@@ -44,8 +43,9 @@ class Chart extends React.Component {
         else {
             fetchInterdayData(this.props.tickers).then(response => {
                 this.data.push(response)
-                let dataObj = {price: response[response.length-1].high, id: this.props.id}
+                let dataObj = {price: (response[response.length-1].high + response[response.length-1].low) / 2, id: this.props.id}
                 this.props.updateStock(dataObj);
+                // updating stock prices makes app glitch out
                 this.setState({render: true})
             })
         }
@@ -70,7 +70,7 @@ class Chart extends React.Component {
                     let sumHigh = 0;
                     let label = "";
                     for (let j = 0 ; j<this.data.length; j++) {
-                        sumHigh += this.data[j][i].high * this.props.quantities[j]
+                        sumHigh += (this.data[j][i].high + this.data[j][i].low) / 2 * this.props.quantities[j]
                         label = this.data[j][i].label
                     }
                     this.formattedChart.push({high: sumHigh, label: label})
