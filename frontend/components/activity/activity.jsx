@@ -41,6 +41,13 @@ class Holdings extends React.Component {
                 </div>
             ))
         }
+        else {
+            activity =  <div className="portfolio-index-item">
+                <div className="portfolio-name">
+                    <p>Please buy or sell stock to see activities.</p>
+                </div>
+            </div>
+        }
         return (
             <div>
                 <LoggedInNavBar/>

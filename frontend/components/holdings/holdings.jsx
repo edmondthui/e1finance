@@ -47,6 +47,13 @@ class Holdings extends React.Component {
                 holdingsArr = holdingsArr.concat(holdings)
             })
         }
+        else {
+            holdingsArr = <div className="portfolio-index-item">
+                <div className="portfolio-name">
+                    <p>Please buy a stock to see holdings.</p>
+                </div>
+            </div>
+        }
         return (
             <div>
                 <LoggedInNavBar/>
