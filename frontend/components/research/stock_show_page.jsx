@@ -74,7 +74,6 @@ class StockShowPage extends React.Component {
         
         }
         if (this.props.stock) {
-            debugger;
             this.chart = <ResearchChart tickers={this.props.stock.ticker} id={this.props.stock.id}/> 
         }
         return (

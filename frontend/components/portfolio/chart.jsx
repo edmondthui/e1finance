@@ -25,8 +25,6 @@ class Chart extends React.Component {
         if (Array.isArray(this.props.tickers)) {
             this.props.tickers.forEach((ticker, idx)=> {
                 fetchInterdayData(ticker).then(response => {
-                    // this would work a lot better if there was a fetch multiple ticker data api, this code is still buggy but theres nothing I can do.
-                    // it works sometimes
                     this.data.push(response)
                     this.formatDataArray(response, idx);
                 })
@@ -37,7 +35,6 @@ class Chart extends React.Component {
                 this.data.push(response)
                 let dataObj = {price: (response[response.length-1].high + response[response.length-1].low) / 2, id: this.props.id}
                 this.props.updateStock(dataObj);
-                // updating stock prices makes app glitch out
                 this.formatData();
             })
         }
