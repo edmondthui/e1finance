@@ -67,7 +67,6 @@ class Chart extends React.Component {
     }
 
     formatDataArray(response, idx) {
-        debugger;
         let average = 0;
         let label;
         for (let i = 0 ; i<response.length; i++) {
