@@ -5,26 +5,32 @@ import PortfolioPie from './portfolio_value_pie_container'
 
 
 let formattedChart = []
-let chart;
+let chart = [];
 
 class PortfolioIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            items: null,
+        }
     }
 
     componentDidMount() {
         let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
         this.props.action(paramsId)
+        this.setState({items: this.props.items})
     }
 
     handleClick(itemId) {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
     
-    
     render() {
         let formattedPortfolio = [];
         let totalValue = 0;
+        let tickers = [];
+        let quantities = [];
+
         if (this.props.match.params.portfolioId) {
             this.props.items.forEach(item => {
                 formattedChart.push(this.props.prices)
@@ -48,17 +54,13 @@ class PortfolioIndex extends React.Component {
                 <p className="item-value">{"$" + (item.value ? item.value : 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
         ))
-        let tickers = [];
-        let quantities = [];
         if (this.props.items.length > 0) {
             this.props.items.forEach(portfolio => {
                 tickers = tickers.concat(portfolio.tickers)
-                quantities = quantities.concat(portfolio.quantity)
-                debugger;         
+                quantities = quantities.concat(portfolio.quantity)      
             })
             chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
-
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
