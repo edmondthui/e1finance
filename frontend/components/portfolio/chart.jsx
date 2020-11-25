@@ -24,11 +24,9 @@ class Chart extends React.Component {
         if (Array.isArray(this.props.tickers)) {
             let holdingsLength = this.props.tickers.length
             this.props.tickers.forEach((ticker, idx)=> {
-                debugger;
                 fetchInterdayData(ticker).then(response => {
                     // this would work a lot better if there was a fetch multiple ticker data api, this code is still buggy but theres nothing I can do.
                     // it works sometimes
-                    debugger;
                     this.data.push(response)
                 }).then(() => {
                     if (idx === holdingsLength-1) {
@@ -70,7 +68,6 @@ class Chart extends React.Component {
     }
 
     formatData() {
-        debugger;
         if (Array.isArray(this.props.quantities)) {
             for (let i = 0 ; i < this.data[0].length ; i ++) {
                 let sumHigh = 0;
@@ -81,6 +78,7 @@ class Chart extends React.Component {
                 }
                 this.formattedChart.push({high: sumHigh, label: label})
             }
+            debugger;
         }
         else {
             for (let i = 0 ; i < this.data[0].length ; i ++) {
@@ -94,7 +92,17 @@ class Chart extends React.Component {
             }
         }
         this.setState({chart: this.formattedChart})
-        debugger;
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.tickers.length !== this.props.tickers.length) {
+            fetchInterdayData(this.props.tickers).then(response => {
+                this.data.push(response)
+                let dataObj = {price: (response[response.length-1].high + response[response.length-1].low) / 2, id: this.props.id}
+                // this.props.updateStock(dataObj);
+                this.formatData();
+            })
+        }
     }
 
     render() {
@@ -125,7 +133,6 @@ class Chart extends React.Component {
         //     this.setState({chart: this.formattedChart})
         //     this.setState({render: false})
         // }
-        debugger;
         return (
             <div className="chart-container">
                 <div className="portfolio-chart">
