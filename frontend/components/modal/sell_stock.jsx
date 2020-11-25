@@ -20,7 +20,7 @@ class SellStock extends React.Component {
         }
         else {
             let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value ? this.state.value : this.props.holdings[0].value, user_id: this.props.user.id}
+            let activity = {activity: holding.stock_name, name: "Sell", value: this.state.value ? this.state.value : this.props.holdings[0].value, user_id: this.props.user.id}
             this.props.removeHolding(holding.id);
             this.props.createActivity(activity)
             this.props.updateBuyingPower({id: this.props.user.id, buying_power: + holding.value})
@@ -72,8 +72,8 @@ class SellStock extends React.Component {
     }
 
     render() {
-        let options = this.props.holdings.map(holding => (
-            <option value={holding.stock_id}>{holding.stock_name}</option>
+        let options = this.props.holdings.map((holding, idx )=> (
+            <option value={holding.stock_id} key={idx}>{holding.stock_name}</option>
         ))
         if ( this.state.stock_id === null ) {
             options = <option>Please buy a stock first.</option>
