@@ -4,12 +4,12 @@ import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
 
-let formattedChart = []
-let chart;
+
 
 class PortfolioShowIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.chart;
     }
 
     componentDidMount() {
@@ -25,16 +25,16 @@ class PortfolioShowIndex extends React.Component {
         
         let formattedPortfolio = [];
         let totalValue = 0;
+        let tickers = [];
+        let quantities = [];
         if (this.props.match.params.portfolioId) {
             this.props.items.forEach(item => {
-                formattedChart.push(this.props.prices)
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.pie_name })
                 totalValue += item.value
             })
         }
         else {
             this.props.items.forEach(item => {
-                formattedChart.push(this.props.prices)
                 formattedPortfolio.push({ id: item.id, value: item.value, name: item.portfolio_name })
                 totalValue += item.value
             })
@@ -48,14 +48,13 @@ class PortfolioShowIndex extends React.Component {
                 <p className="item-value">{"$" + (item.value ? item.value : 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
             </div>
         ))
-        let tickers = [];
-        let quantities = [];
+
         if (this.props.items.length > 0) {
             this.props.items.forEach(portfolio => {
                 tickers = tickers.concat(portfolio.tickers)
                 quantities = quantities.concat(portfolio.quantity)            
             })
-            chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
+            this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
 
         return (
@@ -66,14 +65,14 @@ class PortfolioShowIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    {chart}
+                    {this.chart}
                     <h1 className="slice-title">Slices</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
                             <p className="header-name">Name</p>
                             <p className="header-value">Value</p>
                         </div>
-                        {items.length>0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please create a portfolio or pie to buy / sell stocks.</p></div></div>}
+                        {items.length > 0 ? items : <div className="portfolio-index-item"><div className="portfolio-name"><p>Please create a portfolio or pie to buy / sell stocks.</p></div></div>}
                         </div>
                     </div>
             </div>

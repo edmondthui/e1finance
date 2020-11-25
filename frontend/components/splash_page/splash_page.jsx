@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const SplashPage = (props) => {
     return (
-        <main>
+        <main className="main">
             <LoggedOutNavBar/>
             <div className="splash-container">
                 <div className="splash-text">
@@ -23,7 +23,6 @@ const SplashPage = (props) => {
                 </div>
             </div>
             <div className="why-e1" id="why-e1">
-                {/* I WILL REPLACE THIS WITH MORE PERSONAL INFO LATER! */}
                 <h1>We believe:</h1>
                 <div className="why-e1-container">
                     <img src="https://i.postimg.cc/vZngvcd8/choice-1-768x768.png" alt="" height="30%" width="30%"/>

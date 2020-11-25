@@ -12,11 +12,10 @@ class PortfolioPieIndex extends React.Component {
     }
 
     componentDidMount() {
-        let paramsId = this.props.match.params.pieId ? this.props.match.params.pieId : ""
         this.props.items.forEach(item => {
             this.props.fetchStockPrice(item.ticker)
         })
-        this.props.action(paramsId)
+        this.props.action(this.props.match.params.pieId)
         this.props.fetchPies(this.props.match.params.portfolioId)
     }
 
@@ -28,16 +27,19 @@ class PortfolioPieIndex extends React.Component {
         let formattedPie = [];
         let totalValue = 0
         let holdings = [];
+        let quantities = [];
+        let tickers = [];
         if (this.props.items.length > 0) {
             this.props.items.forEach(item => {
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
                 totalValue += item.value
                 holdings.push(item)
+                quantities.push(item.quantity)
+                tickers.push(item.ticker)
             });
+            this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
-        if (this.props.pie) {
-            this.chart = <PortfolioChart tickers={this.props.pie.tickers} quantities={this.props.pie.quantity}/> 
-        }
+        debugger;
         let value;
         let items = this.props.items.map((item) => (
             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
@@ -59,6 +61,7 @@ class PortfolioPieIndex extends React.Component {
                 </div>
                 <div className="portfolio-main-content">
                     {this.chart}
+                    {/* <PortfolioChart tickers={tickers} quantities={quantities}/>  */}
                     <h1 className="slice-title">Markets</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">

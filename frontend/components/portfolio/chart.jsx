@@ -63,6 +63,7 @@ class Chart extends React.Component {
             this.formattedChart.push({average: average, label: label})
         }
         this.setState({chart: this.formattedChart})
+        this.formattedChart = [];
     }
 
     formatDataArray(response, idx) {

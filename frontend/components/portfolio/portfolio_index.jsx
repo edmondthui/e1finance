@@ -5,20 +5,15 @@ import PortfolioPie from './portfolio_value_pie_container'
 
 
 let formattedChart = []
-let chart = [];
 
 class PortfolioIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            items: null,
-        }
+        this.chart = [];
     }
 
     componentDidMount() {
-        let paramsId = this.props.match.params.portfolioId ? this.props.match.params.portfolioId : ""
-        this.props.action(paramsId)
-        this.setState({items: this.props.items})
+        this.props.action(this.props.match.params.portfolioId)
     }
 
     handleClick(itemId) {
@@ -59,7 +54,7 @@ class PortfolioIndex extends React.Component {
                 tickers = tickers.concat(portfolio.tickers)
                 quantities = quantities.concat(portfolio.quantity)      
             })
-            chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
+            this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
         return (
             <div className="portfolio-content-container">
@@ -69,7 +64,7 @@ class PortfolioIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    {chart}
+                    {this.chart}
                     <h1 className="slice-title">Slices</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
