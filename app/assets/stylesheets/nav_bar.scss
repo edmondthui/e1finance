@@ -134,6 +134,11 @@
     background-color: white;
     border-radius: 5px;
     margin-top: 10px;
+    box-shadow: 2px 2px 12px gray;
+}
+
+.profile-hover {
+    z-index: 10;
 }
 
 .profile-hover-title {
@@ -191,7 +196,7 @@
     width: 0; 
     border-left: 6px solid transparent;
 	border-right: 6px solid transparent;
-	border-bottom: 6px solid white;
+    border-bottom: 6px solid white;
 	position:absolute;
 	top: 5px;
 	right: 5%;
