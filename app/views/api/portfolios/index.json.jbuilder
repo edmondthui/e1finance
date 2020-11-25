@@ -5,12 +5,12 @@
     holding_percentages = []
     portfolio.pies.each do |pie|
         pie.stocks.each do |stock|
-            tickers << stock.ticker
             names << stock.name
         end
         pie.holdings.each do |holding|
             holding_percentages << (holding.value/pie.value)
-            quantity << holding.quantity
+            quantity.unshift(holding.quantity)
+            tickers.unshift(Stock.find(holding.stock_id).ticker)
         end
     end
     json.set! portfolio.id do

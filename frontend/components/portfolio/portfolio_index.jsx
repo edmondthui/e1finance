@@ -53,7 +53,8 @@ class PortfolioIndex extends React.Component {
         if (this.props.items.length > 0) {
             this.props.items.forEach(portfolio => {
                 tickers = tickers.concat(portfolio.tickers)
-                quantities = quantities.concat(portfolio.quantity)            
+                quantities = quantities.concat(portfolio.quantity)
+                debugger;         
             })
             chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }

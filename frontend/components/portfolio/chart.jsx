@@ -36,9 +36,8 @@ class Chart extends React.Component {
             fetchInterdayData(this.props.tickers).then(response => {
                 this.data.push(response)
                 let dataObj = {price: (response[response.length-1].high + response[response.length-1].low) / 2, id: this.props.id}
-                // this.props.updateStock(dataObj);
+                this.props.updateStock(dataObj);
                 // updating stock prices makes app glitch out
-                // this.setState({render: true})
                 this.formatData();
             })
         }
@@ -79,6 +78,7 @@ class Chart extends React.Component {
         }
         this.setState({chart: this.formattedChart})
     }
+
 
     render() {
         let chart;

@@ -7,7 +7,8 @@
     end
     pie.holdings.each do |holding|
         holding_percentages << (holding.value/pie.value)
-        quantity << holding.quantity
+        quantity.unshift(holding.quantity)
+        # tickers.unshift(Stock.find(holding.stock_id).id)
     end
     json.set! pie.id do
         json.id pie.id

@@ -3,12 +3,12 @@ import { withRouter, Redirect } from 'react-router-dom'
 import PortfolioChart from './portfolio_value_chart_container'
 import PortfolioPie from './portfolio_value_pie_container'
 
-let formattedChart = []
-let chart;
+// let formattedChart = []
 
 class PortfolioPieIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.chart = [];
     }
 
     componentDidMount() {
@@ -17,11 +17,14 @@ class PortfolioPieIndex extends React.Component {
             this.props.fetchStockPrice(item.ticker)
         })
         this.props.action(paramsId)
+        this.setState({items: this.props.items})
     }
 
     handleClick(itemId) {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
+
+
 
     render() {
         let formattedPie = [];
@@ -29,14 +32,13 @@ class PortfolioPieIndex extends React.Component {
         let holdings = [];
         if (this.props.items.length >= 1) {
             this.props.items.forEach(item => {
-                formattedChart.push(this.props.prices)
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });
                 totalValue += item.value
                 holdings.push(item)
             });
         }
         if (this.props.pie) {
-            chart = <PortfolioChart tickers={this.props.pie.tickers} quantities={this.props.pie.quantity}/> 
+            this.chart = <PortfolioChart tickers={this.props.pie.tickers} quantities={this.props.pie.quantity}/> 
         }
         let value;
         let items = this.props.items.map((item) => (
@@ -58,7 +60,7 @@ class PortfolioPieIndex extends React.Component {
                     </div>
                 </div>
                 <div className="portfolio-main-content">
-                    {chart}
+                    {this.chart}
                     <h1 className="slice-title">Markets</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
