@@ -29,6 +29,7 @@ class PortfolioPieIndex extends React.Component {
         let holdings = [];
         let quantities = [];
         let tickers = [];
+        this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         if (this.props.items.length > 0) {
             this.props.items.forEach(item => {
                 formattedPie.push({ id: item.id, value: item.value, name: item.stock_name });

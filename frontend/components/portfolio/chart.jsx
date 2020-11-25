@@ -77,8 +77,12 @@ class Chart extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.quantities.length !== this.props.quantities.length ) {
-            debugger;
+        if (this.props.quantities.length === 0 && prevProps.quantities.length !== this.props.quantities.length ) {
+            this.data = []
+            this.formattedChart = []
+            this.setState({chart: null})
+        }
+        else if (prevProps.quantities.length !== this.props.quantities.length ) {
             this.data = []
             this.formattedChart = []
             if (this.props.quantities) {
@@ -90,11 +94,23 @@ class Chart extends React.Component {
                 })
             }
         }
+        else if (this.props.quantities.length) {
+            this.props.quantities.forEach((quantity, idx) => {
+                if (prevProps.quantities[idx] !== quantity) {
+                    this.data = []
+                    this.formattedChart = []
+                    this.props.tickers.forEach((ticker, idx)=> {
+                        fetchInterdayData(ticker).then(response => {
+                            this.data.push(response)
+                            this.formatDataArray(response, idx);
+                        })
+                    })
+                }
+            }) 
+        }
     }
 
     componentWillUnmount() {
-        this.formattedChart = [];
-        this.data = [];
         this.setState({chart: null})
     }
 

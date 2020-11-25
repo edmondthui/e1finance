@@ -57,6 +57,7 @@ class PortfolioShowIndex extends React.Component {
             this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
 
+
         return (
             <div className="portfolio-content-container">
                 <div className="portfolio-pie-container">
