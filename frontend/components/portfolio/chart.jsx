@@ -108,6 +108,17 @@ class Chart extends React.Component {
                 }
             }) 
         }
+        if (!Array.isArray(this.props.tickers)) {
+            if (prevProps.quantities !== this.props.quantities && this.props.quantities !== 0) {
+                this.data = []
+                this.formattedChart = []
+                this.setState({chart: null})
+                fetchInterdayData(this.props.tickers).then(response => {
+                    this.data.push(response)
+                    this.formatData();
+                })
+            }
+        }
     }
 
     componentWillUnmount() {

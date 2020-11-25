@@ -23,8 +23,6 @@ class Withdraw extends React.Component {
         }
     }
 
-
-
     render() {
         return (
             <div className="create-portfolio-container">
