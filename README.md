@@ -23,9 +23,9 @@ All buy, sell, withdraw, and deposit activities are tracked on the activity page
 ![E1 Finance Holdings & Activities Demo](https://i.imgur.com/bF31nKa.gif)
 
 ### Withdraw / Deposit
-Change buying power with the withdraw and deposit buttons. Each user starts of with a buying power of $1,000,000 and this number will change with each buy, sell, deposit, and withdrawl.  
+Change buying power with the withdraw and deposit buttons. Each user starts of with a buying power of $1,000,000 and this number will change with each buy, sell, deposit, and withdrawl. All withdrawal and deposits are tracked on the activity page.  
 ![E1 Finance Withdraw & Deposit Demo](https://i.imgur.com/7efIF5Q.gif)
 
 ### Research
-Check market news and research stock info and individual stock news. News with links, images, headlines, and details are fetched using the IEX Trading API.  
+Check market news and research stock info and individual stock news. News with links, images, headlines, and details are fetched using the IEX Trading API. Stock prices for tickers you are researching are fetched from the IEX Trading API and stored in the database. This will update all portfolios and pies with the correct value at the time it was checked.  
 ![E1 Finance Research Demo](https://i.imgur.com/c9S12mf.gif)
