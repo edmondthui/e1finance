@@ -91,6 +91,8 @@ class Chart extends React.Component {
     }
 
     componentWillUnmount() {
+        this.formattedChart = [];
+        this.data = [];
         this.setState({chart: null})
     }
 

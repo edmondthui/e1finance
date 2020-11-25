@@ -20,7 +20,8 @@ class SellStock extends React.Component {
         }
         else {
             let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value, user_id: this.props.user.id}
+            let activity = {activity: "Sell", name: holding.stock_name, value: this.state.value ? this.state.value : this.props.holdings[0].value, user_id: this.props.user.id}
+            debugger;
             this.props.removeHolding(holding.id);
             this.props.createActivity(activity)
             this.props.updateBuyingPower({id: this.props.user.id, buying_power: + holding.value})
