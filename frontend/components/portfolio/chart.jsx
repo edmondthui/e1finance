@@ -11,7 +11,6 @@ class Chart extends React.Component {
             label: null,
             hover: false,
             chartX: null,
-            render: false,
             chart: null,
         }
         this.data = [];
@@ -79,14 +78,17 @@ class Chart extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.quantities.length !== this.props.quantities.length ) {
+            debugger;
             this.data = []
             this.formattedChart = []
-            this.props.tickers.forEach((ticker, idx)=> {
-                fetchInterdayData(ticker).then(response => {
-                    this.data.push(response)
-                    this.formatDataArray(response, idx);
+            if (this.props.quantities) {
+                this.props.tickers.forEach((ticker, idx)=> {
+                    fetchInterdayData(ticker).then(response => {
+                        this.data.push(response)
+                        this.formatDataArray(response, idx);
+                    })
                 })
-            })
+            }
         }
     }
 
