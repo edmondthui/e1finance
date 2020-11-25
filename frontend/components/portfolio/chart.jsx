@@ -23,6 +23,7 @@ class Chart extends React.Component {
     componentDidMount() {
         this.props.fetchStocks()
         if (Array.isArray(this.props.tickers)) {
+            debugger;
             this.props.tickers.forEach((ticker, idx)=> {
                 fetchInterdayData(ticker).then(response => {
                     // this would work a lot better if there was a fetch multiple ticker data api, this code is still buggy but theres nothing I can do.
@@ -70,6 +71,7 @@ class Chart extends React.Component {
     }
 
     formatDataArray(response, idx) {
+        debugger;
         let average = 0;
         let label;
         for (let i = 0 ; i<response.length; i++) {
@@ -77,17 +79,8 @@ class Chart extends React.Component {
             label = response[i].label
             this.formattedChart[i] ? this.formattedChart[i].average += average : this.formattedChart.push({average: average, label: label})
         }
-        debugger;
         this.setState({chart: this.formattedChart})
     }
-
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.tickers.length !== this.props.tickers.length) {
-    //         fetchInterdayData(this.props.tickers[this.props.tickers.length-1]).then(response => {
-    //             this.data.push(response)
-    //         })
-    //     }
-    // }
 
     render() {
         let chart;
@@ -101,7 +94,6 @@ class Chart extends React.Component {
                 </LineChart>
             </ResponsiveContainer>
         }
-        debugger;
         return (
             <div className="chart-container">
                 <div className="portfolio-chart">

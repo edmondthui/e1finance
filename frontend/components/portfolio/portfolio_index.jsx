@@ -21,8 +21,8 @@ class PortfolioIndex extends React.Component {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
     
+    
     render() {
-        
         let formattedPortfolio = [];
         let totalValue = 0;
         if (this.props.match.params.portfolioId) {

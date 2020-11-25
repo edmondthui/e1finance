@@ -23,17 +23,6 @@ class PortfolioPieIndex extends React.Component {
         this.props.history.push(this.props.match.url+`/${itemId}`);
     }
 
-    // componentDidUpdate(prevProps) {
-    //     if (prevProps.items.length !== this.props.items.length) {
-    //         this.props.items.forEach(item => {
-    //             this.props.fetchStockPrice(item.ticker)
-    //         })
-    //     }
-        
-    // }
-
-
-
     render() {
         let formattedPie = [];
         let totalValue = 0
