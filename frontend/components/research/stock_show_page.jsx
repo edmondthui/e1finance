@@ -1,10 +1,11 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
-// import PortfolioChart from './portfolio_value_chart_container'
+import ResearchChart from './research_chart_container'
 // import PortfolioPie from './portfolio_value_pie_container'
 
 let news = null;
 let info = null;
+let stockPrice;
 
 class StockShowPage extends React.Component {
     constructor(props) {
@@ -13,15 +14,18 @@ class StockShowPage extends React.Component {
             render: false,
         }
         
+        this.chart;
     }
 
     componentDidMount() {
-        this.props.fetchStock(parseInt(this.props.match.params.stockId)+1)
+        // this.props.fetchStock(parseInt(this.props.match.params.stockId)+1)
+        this.props.fetchStocks();
         setTimeout(() => {
             this.props.fetchCompanyInfo(this.props.stock.ticker)
             this.props.fetchStockNews(this.props.stock.ticker)
             this.setState({render: true}) 
         }, 500)
+
     }
 
     clickNews(idx) {
@@ -33,7 +37,7 @@ class StockShowPage extends React.Component {
     }
 
     render () {
-        let stockPrice;
+
         if(this.state.render) {
             news = this.props.news.map((article, idx) => (
                 <div className="portfolio-index-item" key={idx} onClick={() => this.clickNews(idx)}>
@@ -50,7 +54,6 @@ class StockShowPage extends React.Component {
                 <Link to="/research/stocks" id="portfolio-back" onClick={() => this.goBack()}>⬅ BACK</Link>
                 <h1>{this.props.stock.stock_name}</h1>
                 {stockPrice}
-                {/* <p>{this.props.info.tags}</p> */}
                 <p>{this.props.info.description}</p>
                 <a href={this.props.info.website}>Visit website</a>
                 <div className="stock-show-small">
@@ -70,16 +73,25 @@ class StockShowPage extends React.Component {
             </div>
         
         }
+        if (this.props.stock) {
+            debugger;
+            this.chart = <ResearchChart tickers={this.props.stock.ticker} id={this.props.stock.id}/> 
+        }
         return (
-            <div className="stock-show-container">
-                <div className="stock-show-profile-container">
-                    {info}
+            <div>
+                <div className="stock-show-graph-container">
+                    {this.chart}
                 </div>
-                <div className="stock-show-news-container">
-                    <div className="portfolio-index-header">
-                        <p className="header-name">Latest stock news</p>
+                <div className="stock-show-container">
+                    <div className="stock-show-profile-container">
+                        {info}
                     </div>
-                    {news}
+                    <div className="stock-show-news-container">
+                        <div className="portfolio-index-header">
+                            <p className="header-name">Latest stock news</p>
+                        </div>
+                        {news}
+                    </div>
                 </div>
             </div>
         )

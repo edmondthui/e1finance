@@ -1,8 +1,7 @@
 import {connect} from 'react-redux'
 import StockNewsIndex from './stock_news_index'
-import { fetchHoldings } from '../../actions/portfolio_actions'
+import { fetchHoldings, fetchStockPrice } from '../../actions/portfolio_actions'
 import {fetchStockNews} from '../../actions/news_actions'
-import {fetchStockPrice} from '../../actions/portfolio_actions'
 import { openModal } from '../../actions/modal_actions';
 
 
