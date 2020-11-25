@@ -67,6 +67,7 @@ class Chart extends React.Component {
     }
 
     formatDataArray(response, idx) {
+        debugger;
         let average = 0;
         let label;
         for (let i = 0 ; i<response.length; i++) {
@@ -75,6 +76,23 @@ class Chart extends React.Component {
             this.formattedChart[i] ? this.formattedChart[i].average += average : this.formattedChart.push({average: average, label: label})
         }
         this.setState({chart: this.formattedChart})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.quantities.length !== this.props.quantities.length ) {
+            this.data = []
+            this.formattedChart = []
+            this.props.tickers.forEach((ticker, idx)=> {
+                fetchInterdayData(ticker).then(response => {
+                    this.data.push(response)
+                    this.formatDataArray(response, idx);
+                })
+            })
+        }
+    }
+
+    componentWillUnmount() {
+        this.setState({chart: null})
     }
 
 

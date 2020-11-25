@@ -39,7 +39,6 @@ class PortfolioPieIndex extends React.Component {
             });
             this.chart = <PortfolioChart tickers={tickers} quantities={quantities}/> 
         }
-        debugger;
         let value;
         let items = this.props.items.map((item) => (
             <div key={item.id} className="portfolio-index-item" onClick={()=>this.handleClick(item.id)}>
