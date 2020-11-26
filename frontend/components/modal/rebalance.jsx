@@ -28,6 +28,9 @@ class Rebalance extends React.Component {
         if (percentage !== 100) {
             this.props.closeModal();
         }
+        if (Object.values(percentages).includes("0")) {
+            this.props.closeModal();
+        }
         else {
             this.props.holdings.forEach((holding, idx )=> {
                 if (parseInt(Object.values(percentages)[idx]) !== 0) {

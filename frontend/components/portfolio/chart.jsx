@@ -74,7 +74,6 @@ class Chart extends React.Component {
             this.formattedChart[i] ? this.formattedChart[i].average += average : this.formattedChart.push({average: average, label: label})
         }
         this.setState({chart: this.formattedChart})
-        this.formattedChart = [];
     }
 
     componentDidUpdate(prevProps) {
