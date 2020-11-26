@@ -37,7 +37,7 @@ Pie.create({ pie_name: "Consumer", portfolio_id: 2})
 
 # Seet test holding
 Holding.create({ quantity: 10, user_id: 1, stock_id: 1, pie_id: 1})
-Holding.create({ quantity: 10, user_id: 1, stock_id: 2, pie_id: 1})
+# Holding.create({ quantity: 10, user_id: 1, stock_id: 2, pie_id: 1})
 # Holding.create({ quantity: 30, user_id: 1, stock_id: 4, pie_id: 2})
 # Holding.create({ quantity: 15, user_id: 1, stock_id: 3, pie_id: 2})
 # Holding.create({ quantity: 55, user_id: 1, stock_id: 11, pie_id: 3})
