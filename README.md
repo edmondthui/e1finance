@@ -29,3 +29,7 @@ Change buying power with the withdraw and deposit buttons. Each user starts of w
 ### Research
 Check market news and research stock info and individual stock news. All news is fetched using the IEX Trading API with links, images, headlines, and details from the news source. Stock prices for tickers you are researching are fetched from the IEX Trading API and stored in the database. This will update all portfolios and pies with the correct value at the time it was checked.  
 ![E1 Finance Research Demo](https://i.imgur.com/c9S12mf.gif)
+
+### Autobuy / Rebalancing
+Dollar cost averaging is the best strategy for consistant long term profits. The autobuy feature allows the user to automatically divide their buying power into the pie's current percentages. The rebalancing feature allows users to set the percentage allocated to each stock in the pie.
+![E1 Finance Autobuy and Rebalance Demo](https://i.imgur.com/QdiFT8u.gif)
