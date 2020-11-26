@@ -30,5 +30,4 @@ class Portfolio < ApplicationRecord
         value.round(2)
     end
 
-
 end
