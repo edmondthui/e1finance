@@ -146,3 +146,27 @@
   justify-content: center;
   margin: 40px;
 }
+
+.add-stock-ticker {
+  margin-left: auto;
+  margin-right: 200px;
+}
+
+.add-stock-input {
+  margin-right: 20px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 7px 10px;
+}
+
+.add-stock-submit {
+  background-color: #0020bd;
+  color: white;
+  text-align: center;
+  border: 1px solid #0020bd;
+  cursor: pointer;
+  outline: none;
+  border-radius: 5px;
+  height: 30px;
+  width: 120px
+}
