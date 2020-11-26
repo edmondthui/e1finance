@@ -1,37 +1,50 @@
 import React from 'react'
 import {withRouter } from 'react-router-dom'
 
+
+
+
 class Rebalance extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            value: null,
-            pie_id: null,
-            stock_id: this.props.holdings[0] ? this.props.holdings[0].stock_id : null
-        }
+        // this.state = {
+        //     value: null,
+        //     pie_id: null,
+        //     stock_id: this.props.holdings[0] ? this.props.holdings[0].stock_id : null
+        // }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.percentages = {};
     }
 
     handleSubmit(e) {
+        let percentages = this.percentages
+        let pie = this.props.pie
         e.preventDefault();
-        if (this.state.stock_id === null) {
+        let percentage = 0;
+        Object.keys(percentages).forEach(key => {
+            percentage += parseInt(percentages[key])
+        })
+        if (percentage !== 100) {
             this.props.closeModal();
         }
         else {
-            let quantity = (this.state.value / this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0].price)
-            let holding = this.props.holdings.filter(holding => holding.stock_id === parseInt(this.state.stock_id))[0]
-            let activity = {activity: holding.stock_name, name: "Sell", value: this.state.value, user_id: this.props.user.id}
-            let sell = {quantity: -quantity, pie_id: this.state.pie_id, stock_id: this.state.stock_id, user_id: this.props.user.id, id: holding.id}
-            if (-sell.quantity.toFixed(2) === holding.quantity.toFixed(2)) {
-                this.props.removeHolding(holding.id);
-                this.props.createActivity(activity)
-                this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
-            }
-            else if (-sell.quantity.toFixed(2) < holding.quantity.toFixed(2)) {
-                this.props.updateHolding(sell);
-                this.props.createActivity(activity)
-                this.props.updateBuyingPower({id: this.props.user.id, buying_power: + this.state.value})
-            }
+            this.props.holdings.forEach((holding, idx )=> {
+                if (parseInt(Object.values(percentages)[idx]) !== 0) {
+                    let value = this.props.pie.value * (Object.values(percentages)[idx]/100)
+                    let quantity = value / holding.price
+                    let update = {quantity: quantity-holding.quantity, pie_id: this.props.pie_id, stock_id: holding.stock_id, user_id: this.props.user.id, id: holding.id}
+                    let activity = {activity: holding.stock_name, name: "Rebalance", value: value, user_id: this.props.user.id}
+                    this.props.updateHolding(update)
+                    this.props.createActivity(activity)
+                }
+                else {
+                    let value = pie.value * holding.percentage
+                    let activity = {activity: holding.stock_name, name: "Rebalance", value: value, user_id: this.props.user.id}
+                    this.props.removeHolding(holding.id);
+                    this.props.createActivity(activity)
+                }
+            })
         }
         this.props.closeModal();
     }
@@ -40,20 +53,27 @@ class Rebalance extends React.Component {
         this.props.fetchHoldings(this.props.match.params.pieId)
     }
 
+    handleChange(e) {
+        if (e.target.value > 100) {
+            e.target.value = 100
+        }
+        if (e.target.value < 0) {
+            e.target.value = 0
+        }
+        e.currentTarget.style.width = e.currentTarget.value.length + "ch";
+        this.percentages[e.currentTarget.name] = e.currentTarget.value
+    }
 
     render() {
         let holdings = this.props.holdings.map((holding, idx )=> (
             <div className="rebalance-inputs" key={idx}>
                 <p>{holding.stock_name}</p>
                 <div>
-                    <input type="number" value ={holding.percentage.toFixed(2)* 100} className="rebalance-input"/>
+                    <input type="number" placeholder ={(holding.percentage* 100).toFixed(2)} className="rebalance-input" name={holding.ticker} onChange={this.handleChange}/>
                     <p>%</p>
                 </div>
             </div>
         ))
-        if ( this.state.stock_id === null ) {
-            options = <option>Please buy a stock first.</option>
-        }
         return (
             <div className="rebalance-container">
                 <div className="buy-stock-form-container">
