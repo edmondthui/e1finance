@@ -1,17 +1,17 @@
-import { connect } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions';
-import { createPortfolio } from '../../actions/portfolio_actions';
-import CreatePortfolio from './create_portfolio'
+import { connect } from "react-redux";
+import { closeModal } from "../../actions/modal_actions";
+import { createPortfolio } from "../../actions/portfolio_actions";
+import CreatePortfolio from "./create_portfolio";
 
 const mapStateToProps = (state) => {
-  return {
-  };
+  return {};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-      createPortfolio: (portfolioData) => dispatch(createPortfolio(portfolioData)),
-      closeModal: () => dispatch(closeModal())
+    createPortfolio: (portfolioData) =>
+      dispatch(createPortfolio(portfolioData)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

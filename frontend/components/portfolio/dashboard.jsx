@@ -1,28 +1,47 @@
-import React from 'react';
-import LoggedInNavBar from '../nav_bar/logged_in_nav_bar_container'
-import PortfolioIndex from './portfolio_index_container'
-import PortfolioInfo from './portfolio_info_container'
-import DashboardFooter from './dashboard_footer'
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import LoggedInNavBar from "../nav_bar/logged_in_nav_bar_container";
+import PortfolioIndex from "./portfolio_index_container";
+import PortfolioInfo from "./portfolio_info_container";
+import DashboardFooter from "./dashboard_footer";
+import { NavLink } from "react-router-dom";
 
 class Dashboard extends React.Component {
-    render() {
-        return (
-            <div>
-                <LoggedInNavBar/>
-                <div className="research-nav-bar">
-                    <div className="research-nav-container">
-                        <NavLink exact to="/dashboard" activeclass="active" className="research-nav-content">Portfolio</NavLink>
-                        <NavLink to="/dashboard/activity" activeclass="active" className="research-nav-content">Activity</NavLink>
-                        <NavLink to="/dashboard/holdings" activeclass="active" className="research-nav-content">Holdings</NavLink>
-                    </div>
-                </div>
-                <PortfolioInfo/>
-                <PortfolioIndex />
-                <DashboardFooter/>
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <LoggedInNavBar />
+        <div className="research-nav-bar">
+          <div className="research-nav-container">
+            <NavLink
+              exact
+              to="/dashboard"
+              activeclass="active"
+              className="research-nav-content"
+            >
+              Portfolio
+            </NavLink>
+            <NavLink
+              to="/dashboard/activity"
+              activeclass="active"
+              className="research-nav-content"
+            >
+              Activity
+            </NavLink>
+            <NavLink
+              to="/dashboard/holdings"
+              activeclass="active"
+              className="research-nav-content"
+            >
+              Holdings
+            </NavLink>
+          </div>
+        </div>
+        <PortfolioInfo />
+        <PortfolioIndex />
+        <DashboardFooter />
+      </div>
+    );
+  }
 }
 
-export default Dashboard
+export default Dashboard;

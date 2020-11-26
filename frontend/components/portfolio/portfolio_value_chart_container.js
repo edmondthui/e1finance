@@ -1,20 +1,19 @@
-import {connect} from 'react-redux'
-import Chart from './chart'
-import {fetchStocks, updateStock} from '../../actions/portfolio_actions'
-
+import { connect } from "react-redux";
+import Chart from "./chart";
+import { fetchStocks, updateStock } from "../../actions/portfolio_actions";
 
 const mapStateToProps = (state) => {
-    return {
-        stocks: Object.values(state.entities.stocks),
-        user: Object.values(state.entities.users)[0]
-    }
-}
+  return {
+    stocks: Object.values(state.entities.stocks),
+    user: Object.values(state.entities.users)[0],
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchStocks: () => dispatch(fetchStocks()),
-        updateStock: (stockData) => dispatch(updateStock(stockData))
-    }
-}
+  return {
+    fetchStocks: () => dispatch(fetchStocks()),
+    updateStock: (stockData) => dispatch(updateStock(stockData)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Chart)
+export default connect(mapStateToProps, mapDispatchToProps)(Chart);

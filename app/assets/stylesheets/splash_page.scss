@@ -1,138 +1,138 @@
 .splash-container {
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .splash-text {
-    width: 30%;
-    padding-left: 100px;
+  width: 30%;
+  padding-left: 100px;
 }
 
 .splash-text h1 {
-    color: #12123D;
-    font-size: 50px;
-    font-weight: 800;
+  color: #12123d;
+  font-size: 50px;
+  font-weight: 800;
 }
 
 .splash-text p {
-    color: #12123D;
-    padding-bottom: 30px;
-    font-size: 20px;
-}
-
-.splash-image img{
-    width: 900px;
-}
-
-.splash-text #signup {
-    background-color: #1835C3;
-    color: white;
-}
-
-.splash-text #signup:hover {
-    background-color: #00178A;
-    border: 2px solid #00178A;
-}
-
-.how-it-works {
-    background-color: #12123D;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-}
-
-.how-it-works-title {
-    text-align: center;
-    color: white;
-    font-size: 40px;
-}
-
-.how-it-works-text {
-    text-align: center;
-    color: white;
-    font-size: 20px;
-}
-
-.footer-signup-bar {
-    background-color: #12123D;
-    padding: 30px;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-signup {
-    margin-top: 20px;
-    padding: 15px 80px;
-    color: #12123D;
-    font-size: 16px;
-    font-weight: 700;
-    background-color: #DDFA00;
-    border: 1px solid #DDFA00;
-    text-decoration: none;
-}
-
-.why-e1 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin: 0px 200px;
-    padding-top: 70px;
-}
-
-.why-e1 h1 {
-    font-size: 40px;
-}
-
-.why-e1-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;;
-}
-
-.why-e1-text {
-    padding: 0 auto;
-    width: 40%;
-}
-
-.why-e1-text h2 {
-    padding-bottom: 20px;
-    border-bottom: 1px solid #00D4A3;
-    color: #12123D;
-}
-
-.why-e1-text p {
-    color: #12123D;
-}
-.why-e1-container img {
-    padding: 0px 100px;
-}
-
-.splash-container {
-    @media only screen and (max-width: 1060px) {
-        flex-direction: column;
-    }
-}
-
-.splash-text {
-    @media only screen and (max-width: 1060px) {
-        padding: 0;
-        margin-bottom: 50px;
-    }
+  color: #12123d;
+  padding-bottom: 30px;
+  font-size: 20px;
 }
 
 .splash-image img {
-    @media only screen and (max-width: 1060px) {
-        width: 100%;
-    }
+  width: 900px;
+}
+
+.splash-text #signup {
+  background-color: #1835c3;
+  color: white;
+}
+
+.splash-text #signup:hover {
+  background-color: #00178a;
+  border: 2px solid #00178a;
+}
+
+.how-it-works {
+  background-color: #12123d;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.how-it-works-title {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.how-it-works-text {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+.footer-signup-bar {
+  background-color: #12123d;
+  padding: 30px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-signup {
+  margin-top: 20px;
+  padding: 15px 80px;
+  color: #12123d;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #ddfa00;
+  border: 1px solid #ddfa00;
+  text-decoration: none;
 }
 
 .why-e1 {
-    @media only screen and (max-width: 1060px) {
-        margin: 0px auto;
-    }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px 200px;
+  padding-top: 70px;
+}
+
+.why-e1 h1 {
+  font-size: 40px;
+}
+
+.why-e1-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-e1-text {
+  padding: 0 auto;
+  width: 40%;
+}
+
+.why-e1-text h2 {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #00d4a3;
+  color: #12123d;
+}
+
+.why-e1-text p {
+  color: #12123d;
+}
+.why-e1-container img {
+  padding: 0px 100px;
+}
+
+.splash-container {
+  @media only screen and (max-width: 1060px) {
+    flex-direction: column;
+  }
+}
+
+.splash-text {
+  @media only screen and (max-width: 1060px) {
+    padding: 0;
+    margin-bottom: 50px;
+  }
+}
+
+.splash-image img {
+  @media only screen and (max-width: 1060px) {
+    width: 100%;
+  }
+}
+
+.why-e1 {
+  @media only screen and (max-width: 1060px) {
+    margin: 0px auto;
+  }
 }

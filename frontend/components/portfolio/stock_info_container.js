@@ -1,22 +1,22 @@
-import {connect} from 'react-redux'
-import StockInfo from './stock_info'
-import {fetchHolding, fetchPies} from '../../actions/portfolio_actions'
-import { openModal } from '../../actions/modal_actions';
+import { connect } from "react-redux";
+import StockInfo from "./stock_info";
+import { fetchHolding, fetchPies } from "../../actions/portfolio_actions";
+import { openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        stock: state.entities.holdings[ownProps.match.params.stockId],
-        pie: state.entities.pies[ownProps.match.params.pieId],
-        user: Object.values(state.entities.users)[0]
-    }
-}
+  return {
+    stock: state.entities.holdings[ownProps.match.params.stockId],
+    pie: state.entities.pies[ownProps.match.params.pieId],
+    user: Object.values(state.entities.users)[0],
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId)),
-        fetchPies: () => dispatch(fetchPies()),
-        openModal: (modal) => dispatch(openModal(modal)) 
-    }
-}
+  return {
+    fetchHolding: (holdingId) => dispatch(fetchHolding(holdingId)),
+    fetchPies: () => dispatch(fetchPies()),
+    openModal: (modal) => dispatch(openModal(modal)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(StockInfo)
+export default connect(mapStateToProps, mapDispatchToProps)(StockInfo);

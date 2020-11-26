@@ -1,243 +1,252 @@
 .modal-background {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 0.95);
-    z-index: 10;
-    transition: opacity 400ms ease-in;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 10;
+  transition: opacity 400ms ease-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal-child {
-    position: absolute;
-    background-color: #FFFFFF;
-    box-shadow: 2px 2px 8px lightgray;
-    padding: 20px;
-    border-radius: 8px;
-    transition: background-color .5s ease-in;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 8px lightgray;
+  padding: 20px;
+  border-radius: 8px;
+  transition: background-color 0.5s ease-in;
 }
 
 .close-x {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    cursor: pointer;
-    padding: 10px 10px 0 0;
-    opacity: .5;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  padding: 10px 10px 0 0;
+  opacity: 0.5;
 }
 
 .create-portfolio-radio {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .create-portfolio-name input {
-    display: block;
-    height: 40px;
-    width: 95%;
-    border-radius: 6px;
-    border: 1px solid #00178A;
-    background-color: #E8F0FE;
-    margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    opacity: 1;
+  display: block;
+  height: 40px;
+  width: 95%;
+  border-radius: 6px;
+  border: 1px solid #00178a;
+  background-color: #e8f0fe;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  opacity: 1;
 }
 
 .create-portfolio-submit {
-    height: 40px;
-    width: 150px;
-    background-color: #0020BD;
-    border-radius: 5px;
-    color: white;
-    font-weight: 700;
-    border: 2px solid #0020BD;
-    margin: 0px 5px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-    line-height: 22px;
+  height: 40px;
+  width: 150px;
+  background-color: #0020bd;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  border: 2px solid #0020bd;
+  margin: 0px 5px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  line-height: 22px;
 }
 
 .create-portfolio-submit:hover {
-    cursor: pointer;
-    background-color: #00008B;
-    border: 2px solid #00008B;
+  cursor: pointer;
+  background-color: #00008b;
+  border: 2px solid #00008b;
 }
 
 .create-portfolio-radio p {
-    padding-left: 20px;
-    margin: 10px 0px;
+  padding-left: 20px;
+  margin: 10px 0px;
 }
 
 .radio-title {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 @keyframes fadeIn {
-    from {transform: translateY(0);opacity: 0;}
-    to {transform: translateY(0);opacity: 1;}
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-    from {transform: translateY(0);opacity: 1;}
-    to {transform: translateY(0);opacity: 0;}
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 0;
+  }
 }
 
 .fadeIn {
-    animation-name: fadeIn;
-    animation-duration: .3s;
+  animation-name: fadeIn;
+  animation-duration: 0.3s;
 }
 
 .fadeOut {
-    animation-name: fadeOut;
-    animation-duration: .3s;
+  animation-name: fadeOut;
+  animation-duration: 0.3s;
 }
 
 .portfolio-select {
-    width: 100%;
-    height: 40px;
-    padding: 0px 10px;
+  width: 100%;
+  height: 40px;
+  padding: 0px 10px;
 }
 
 .input-value-buy-container {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .buy-stock-form-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buy-dollar-sign {
-    font-size: 30px;
+  font-size: 30px;
 }
 
-
-.input-value-buy{
-    font-size: 5rem;
-    color: #757575;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    margin: 30px 0px;
-    width: 45px;
+.input-value-buy {
+  font-size: 5rem;
+  color: #757575;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  margin: 30px 0px;
+  width: 45px;
 }
 
 .input-value-number-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 
 .buy-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buy-form-title {
-    width: 100%;
+  width: 100%;
 }
 
-.buy-form-title h3{
-    font-weight: 500;
+.buy-form-title h3 {
+  font-weight: 500;
 }
 
-.cash-balance-container{
-    display: flex;
-    background-color: #E9EDF2;
-    border-radius: 8px;
-    padding: 5px 30px;
-    justify-content: space-between;
-    width: 80%;
-    align-items: center;
-    font-size: 12px;
-    margin: 20px 0px;
+.cash-balance-container {
+  display: flex;
+  background-color: #e9edf2;
+  border-radius: 8px;
+  padding: 5px 30px;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  font-size: 12px;
+  margin: 20px 0px;
 }
 
 .delete-holding {
-    height: 40px;
-    width: 150px;
-    background-color:white;
-    border-radius: 5px;
-    color: #0020BD;
-    font-weight: 700;
-    border: 2px solid #0020BD;
-    margin-top: 20px;
-    margin-left: 5px;
-    margin-bottom: 30px;
+  height: 40px;
+  width: 150px;
+  background-color: white;
+  border-radius: 5px;
+  color: #0020bd;
+  font-weight: 700;
+  border: 2px solid #0020bd;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-bottom: 30px;
 }
 
 .delete-holding:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .modal-submit-buttons {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
 .create-pie-container {
-    width: 500px;
+  width: 500px;
 }
 
 .rebalance-inputs {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
 }
 
 .rebalance-input {
-    border: none;
-    width: 50px;
-    outline: none;
-    font-size: 14px;
+  border: none;
+  width: 50px;
+  outline: none;
+  font-size: 14px;
 }
 
 .rebalance-form-items {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .rebalance-inputs div {
-    display: flex;
+  display: flex;
 }
 
 .rebalance-form-items {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rebalance-form {
-    justify-content: center;
+  justify-content: center;
 }
 
 .rebalance-inputs-container {
-    width: 100%;
+  width: 100%;
 }
 
 .rebalance-submit-button {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }

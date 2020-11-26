@@ -1,20 +1,20 @@
-import { connect } from 'react-redux';
-import { closeModal } from '../../actions/modal_actions';
-import { updateBuyingPower } from '../../actions/portfolio_actions'
-import Withdraw from './withdraw.jsx'
-import { createActivity } from '../../actions/activity_actions'
+import { connect } from "react-redux";
+import { closeModal } from "../../actions/modal_actions";
+import { updateBuyingPower } from "../../actions/portfolio_actions";
+import Withdraw from "./withdraw.jsx";
+import { createActivity } from "../../actions/activity_actions";
 
 const mapStateToProps = (state) => {
-    return {
-        user: Object.values(state.entities.users)[0],
-    };
+  return {
+    user: Object.values(state.entities.users)[0],
+  };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-      closeModal: () => dispatch(closeModal()),
-      updateBuyingPower: (power) => dispatch(updateBuyingPower(power)),
-      createActivity: (activityData) => dispatch(createActivity(activityData))
+    closeModal: () => dispatch(closeModal()),
+    updateBuyingPower: (power) => dispatch(updateBuyingPower(power)),
+    createActivity: (activityData) => dispatch(createActivity(activityData)),
   };
 };
 

@@ -1,149 +1,148 @@
 .portfolio-chart {
-    margin: auto;
-    width: 100%;
-    // width: 800px;
-    height: 300px;
+  margin: auto;
+  width: 100%;
+  // width: 800px;
+  height: 300px;
 }
 
 .chart-container {
-    background-color: #12123D;
-    margin: 5px 20px 5px 0px;
-    border-radius: 5px;
-    width: 800px;
+  background-color: #12123d;
+  margin: 5px 20px 5px 0px;
+  border-radius: 5px;
+  width: 800px;
 }
 
 .portfolio-content-container {
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(to bottom, #EBF4F2 100px, white 100px);
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ebf4f2 100px, white 100px);
 }
 
 .portfolio-pie-container {
-    border: 1px solid #C1C8D5;
-    border-radius: 20px;
-    width: 400px;
-    height: 400px;
-    margin-top: 4px;
-    margin-right: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: white
+  border: 1px solid #c1c8d5;
+  border-radius: 20px;
+  width: 400px;
+  height: 400px;
+  margin-top: 4px;
+  margin-right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
 }
 
 .dashboard-footer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px;
 }
 
 .dashboard-footer-text {
-    width: 600px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 20px;
-    color: #606C82;
+  width: 600px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+  color: #606c82;
 }
 
-.footer-social a{
-    padding: 5px;
+.footer-social a {
+  padding: 5px;
 }
 
 .pie-section-title {
-    position: absolute;
-    top: -35px;
-    left: -30px;
+  position: absolute;
+  top: -35px;
+  left: -30px;
 }
 
 .pie-title-container {
-    position: relative;
+  position: relative;
 }
 
 .crud-button-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .crud-create-button {
-    height: 40px;
-    width: 45%;
-    background-color: #0020BD;
-    border-radius: 5px;
-    color: white;
-    font-weight: 700;
-    border: 2px solid #0020BD;
-    margin: 0px 5px;
+  height: 40px;
+  width: 45%;
+  background-color: #0020bd;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+  border: 2px solid #0020bd;
+  margin: 0px 5px;
 }
 
 .crud-delete-button {
-    height: 40px;
-    width: 45%;
-    background-color:white;
-    border-radius: 5px;
-    color: #0020BD;
-    font-weight: 700;
-    border: 2px solid #0020BD;
-    margin: 0px 5px;
+  height: 40px;
+  width: 45%;
+  background-color: white;
+  border-radius: 5px;
+  color: #0020bd;
+  font-weight: 700;
+  border: 2px solid #0020bd;
+  margin: 0px 5px;
 }
 
 .crud-delete-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .crud-create-button:hover {
-    cursor: pointer;
-    background-color: #00008B;
-    border: 2px solid #00008B;
+  cursor: pointer;
+  background-color: #00008b;
+  border: 2px solid #00008b;
 }
 
 .portfolio-main-content {
-    width: 820px;
+  width: 820px;
 }
 
 .portfolio-content-container {
-    @media only screen and (max-width: 1160px) {
-        display: block;
-        margin: -5px 0 0px 0;
-    }
+  @media only screen and (max-width: 1160px) {
+    display: block;
+    margin: -5px 0 0px 0;
+  }
 }
 
 .portfolio-pie-container {
-    @media only screen and (max-width: 1160px) {
-        margin: 0 auto;
-        width: 95%
-    }
+  @media only screen and (max-width: 1160px) {
+    margin: 0 auto;
+    width: 95%;
+  }
 }
 
 .chart-container {
-    @media only screen and (max-width: 1160px) {
-        width: 95%;
-        margin: 50px auto;
-    }
+  @media only screen and (max-width: 1160px) {
+    width: 95%;
+    margin: 50px auto;
+  }
 }
 
 .portfolio-main-content .portfolio-index-container {
-    @media only screen and (max-width: 1160px) {
-        width: 95%;
-        margin: 5px auto;
-    }
+  @media only screen and (max-width: 1160px) {
+    width: 95%;
+    margin: 5px auto;
+  }
 }
 
 .portfolio-main-content {
-    @media only screen and (max-width: 1160px) {
-        width: 100%;
-    }
+  @media only screen and (max-width: 1160px) {
+    width: 100%;
+  }
 }
 
 .slice-title {
-    @media only screen and (max-width: 1160px) {
-        margin-left: 25px;
-    }
+  @media only screen and (max-width: 1160px) {
+    margin-left: 25px;
+  }
 }
 
 .portfolio-info-container {
-    @media only screen and (max-width: 1160px) {
-        padding: 0px 25px;
-    }
+  @media only screen and (max-width: 1160px) {
+    padding: 0px 25px;
+  }
 }
-

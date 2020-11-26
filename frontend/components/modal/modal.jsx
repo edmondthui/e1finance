@@ -1,21 +1,20 @@
-import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
-import { Route } from 'react-router-dom'
-import DeletePortfolio from './delete_portfolio_container'
-import CreatePortfolio from './create_portfolio_container'
-import CreatePie from './create_pie_container'
-import DeletePie from './delete_pie_container'
-import BuyStock from './buy_stock_container'
-import SellStock from './sell_stock_container'
-import Deposit from './deposit_container'
-import Withdraw from './withdraw_container'
-import Rebalance from './rebalance_container'
+import React from "react";
+import { closeModal } from "../../actions/modal_actions";
+import { connect } from "react-redux";
+import { Route } from "react-router-dom";
+import DeletePortfolio from "./delete_portfolio_container";
+import CreatePortfolio from "./create_portfolio_container";
+import CreatePie from "./create_pie_container";
+import DeletePie from "./delete_pie_container";
+import BuyStock from "./buy_stock_container";
+import SellStock from "./sell_stock_container";
+import Deposit from "./deposit_container";
+import Withdraw from "./withdraw_container";
+import Rebalance from "./rebalance_container";
 
 class Modal extends React.Component {
-  
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
@@ -24,53 +23,66 @@ class Modal extends React.Component {
     }
     let component;
     switch (this.props.modal) {
-      case 'createPortfolio':
-        component = <CreatePortfolio/>;
+      case "createPortfolio":
+        component = <CreatePortfolio />;
         break;
-      case 'deletePortfolio':
-        component = <DeletePortfolio/>;
+      case "deletePortfolio":
+        component = <DeletePortfolio />;
         break;
-      case 'createPie':
-        component = <Route path="/dashboard/:portfolioId" component={CreatePie} />
+      case "createPie":
+        component = (
+          <Route path="/dashboard/:portfolioId" component={CreatePie} />
+        );
         break;
-      case 'deletePie':
-        component = <Route path="/dashboard/:portfolioId" component={DeletePie} />
+      case "deletePie":
+        component = (
+          <Route path="/dashboard/:portfolioId" component={DeletePie} />
+        );
         break;
-      case 'buyStock':
-        component = <Route path="/dashboard/:portfolioId/:pieId" component={BuyStock} />
+      case "buyStock":
+        component = (
+          <Route path="/dashboard/:portfolioId/:pieId" component={BuyStock} />
+        );
         break;
-      case 'sellStock':
-        component = <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
+      case "sellStock":
+        component = (
+          <Route path="/dashboard/:portfolioId/:pieId" component={SellStock} />
+        );
         break;
-      case 'deposit':
-        component = <Deposit />
+      case "deposit":
+        component = <Deposit />;
         break;
-      case 'withdraw':
-        component = <Withdraw />
+      case "withdraw":
+        component = <Withdraw />;
         break;
-      case 'rebalance':
-        component = <Route path="/dashboard/:portfolioId/:pieId" component={Rebalance} />
+      case "rebalance":
+        component = (
+          <Route path="/dashboard/:portfolioId/:pieId" component={Rebalance} />
+        );
         break;
       default:
         return null;
     }
     return (
       <div className="modal-background fadeIn" onClick={this.props.closeModal}>
-        <div className="modal-child fadeIn" onClick={e => e.stopPropagation()}>
-          { component }
+        <div
+          className="modal-child fadeIn"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {component}
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     closeModal: () => dispatch(closeModal()),
   };

@@ -1,122 +1,123 @@
 .portfolio-info-container {
-    display: flex;
-    background-color: #EBF4F2;
-    height: 300px;
-    align-items: center;
-    // justify-content: space-around;
+  display: flex;
+  background-color: #ebf4f2;
+  height: 300px;
+  align-items: center;
+  // justify-content: space-around;
 }
 
 .portfolio-info {
-    // flex: 3;
-    margin-left: auto;
-    width: 910px;
+  // flex: 3;
+  margin-left: auto;
+  width: 910px;
 }
 
 .portfolio-info-name {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .buying-power-container {
-    // flex: 1;
-    width: 300px;
-    // width: 100%;
+  // flex: 1;
+  width: 300px;
+  // width: 100%;
 }
 
 .current-value {
-    font-size: 52px;
-    margin: 0;
-    font-weight: 100;
-    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  font-size: 52px;
+  margin: 0;
+  font-weight: 100;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica,
+    Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
 }
 
-.current-value-title{
-    margin: 0;
-    font-size: 12px;
-    color: #606C82;
+.current-value-title {
+  margin: 0;
+  font-size: 12px;
+  color: #606c82;
 }
 
 .buying-power-container {
-    background-color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 120px;
-    border-bottom: 2px solid #EBF4F2;
+  background-color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  border-bottom: 2px solid #ebf4f2;
 }
 
 .buying-power {
-    padding: 5px 20px;
+  padding: 5px 20px;
 }
 
 .deposit-button {
-    background-color: #0020BD;
-    color: white;
-    border-radius: 5px;
-    width: 90%;
-    text-align:center;
-    border: 1px solid #0020BD;
-    height: 40px;
-    margin-right: 20px;
+  background-color: #0020bd;
+  color: white;
+  border-radius: 5px;
+  width: 90%;
+  text-align: center;
+  border: 1px solid #0020bd;
+  height: 40px;
+  margin-right: 20px;
 }
 
 .withdraw-button {
-    height: 40px;
-    width: 90%;
-    background-color:white;
-    border-radius: 5px;
-    color: #0020BD;
-    font-weight: 700;
-    border: 2px solid #0020BD;
-    margin: 0px auto;
+  height: 40px;
+  width: 90%;
+  background-color: white;
+  border-radius: 5px;
+  color: #0020bd;
+  font-weight: 700;
+  border: 2px solid #0020bd;
+  margin: 0px auto;
 }
 
 .deposit-button-container {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .withdraw-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .deposit-button:hover {
-    cursor: pointer;
-    background-color: #00178A;
+  cursor: pointer;
+  background-color: #00178a;
 }
 
-.auto-invest-container{
-    height: 100px;
-    background-color: white;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.auto-invest-container {
+  height: 100px;
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.cash-balance{
-    margin: 0;
-    color: #606C82;
+.cash-balance {
+  margin: 0;
+  color: #606c82;
 }
 
 .cash-balance-number {
-    font-size: 25px;
-    margin: 0;
-    font-weight: 700;
+  font-size: 25px;
+  margin: 0;
+  font-weight: 700;
 }
 
-.deposit-container{
-    width: 300px;
-    margin-right: auto;
+.deposit-container {
+  width: 300px;
+  margin-right: auto;
 }
 
 #portfolio-back {
-    text-decoration: none;
-    font-weight: 700;
-    color: #00008B;
+  text-decoration: none;
+  font-weight: 700;
+  color: #00008b;
 }
 
 #portfolio-back:hover {
-    cursor: pointer;
+  cursor: pointer;
 }

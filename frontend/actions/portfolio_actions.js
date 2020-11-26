@@ -1,242 +1,275 @@
-import * as PortfolioAPIUtil from '../util/portfolio_api_util'
-import * as ExternalAPIUtil from '../util/IEX_api_util'
+import * as PortfolioAPIUtil from "../util/portfolio_api_util";
+import * as ExternalAPIUtil from "../util/IEX_api_util";
 
-export const RECEIVE_STOCK_PRICE = "RECEIVE_STOCK_PRICE"
-export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS"
-export const RECEIVE_PIES = "RECEIVE_PIES"
-export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO"
-export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS"
-export const RECEIVE_HOLDING = "RECEIVE_HOLDING"
-export const RECEIVE_STOCKS = "RECEIVE_STOCKS"
-export const RECEIVE_STOCK = "RECEIVE_STOCK"
-export const REMOVE_HOLDING = "REMOVE_HOLDING"
-export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO"
-export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO"
-export const CREATE_PIE = "CREATE_PIE"
-export const DELETE_PIE = "DELETE_PIE"
-export const CREATE_HOLDING = "CREATE_HOLDING"
-export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER"
-export const UPDATE_HOLDING = "UPDATE_HOLDING"
-export const UPDATE_STOCK = "UPDATE_STOCK"
-
+export const RECEIVE_STOCK_PRICE = "RECEIVE_STOCK_PRICE";
+export const RECEIVE_PORTFOLIOS = "RECEIVE_PORTFOLIOS";
+export const RECEIVE_PIES = "RECEIVE_PIES";
+export const RECEIVE_PORTFOLIO = "RECEIVE_PORTFOLIO";
+export const RECEIVE_HOLDINGS = "RECEIVE_HOLDINGS";
+export const RECEIVE_HOLDING = "RECEIVE_HOLDING";
+export const RECEIVE_STOCKS = "RECEIVE_STOCKS";
+export const RECEIVE_STOCK = "RECEIVE_STOCK";
+export const REMOVE_HOLDING = "REMOVE_HOLDING";
+export const CREATE_PORTFOLIO = "CREATE_PORTFOLIO";
+export const DELETE_PORTFOLIO = "DELETE_PORTFOLIO";
+export const CREATE_PIE = "CREATE_PIE";
+export const DELETE_PIE = "DELETE_PIE";
+export const CREATE_HOLDING = "CREATE_HOLDING";
+export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER";
+export const UPDATE_HOLDING = "UPDATE_HOLDING";
+export const UPDATE_STOCK = "UPDATE_STOCK";
 
 const receiveStocks = (stocks) => {
-    return {
-        type: RECEIVE_STOCKS,
-        stocks
-    }
-}
+  return {
+    type: RECEIVE_STOCKS,
+    stocks,
+  };
+};
 
 const receivePortfolios = (portfolios) => {
-    return {
-        type: RECEIVE_PORTFOLIOS,
-        portfolios
-    }
-}
+  return {
+    type: RECEIVE_PORTFOLIOS,
+    portfolios,
+  };
+};
 
 const receivePies = (pies) => {
-    return {
-        type: RECEIVE_PIES,
-        pies
-    }
-}
+  return {
+    type: RECEIVE_PIES,
+    pies,
+  };
+};
 
 const receivePortfolio = (portfolio) => {
-    return {
-        type: RECEIVE_PORTFOLIO,
-        portfolio
-    }
-}
+  return {
+    type: RECEIVE_PORTFOLIO,
+    portfolio,
+  };
+};
 
 const receiveHoldings = (holdings) => {
-    return {
-        type: RECEIVE_HOLDINGS,
-        holdings
-    }
-}
+  return {
+    type: RECEIVE_HOLDINGS,
+    holdings,
+  };
+};
 
 const receiveHolding = (holding) => {
-    return {
-        type: RECEIVE_HOLDING,
-        holding
-    }
-}
+  return {
+    type: RECEIVE_HOLDING,
+    holding,
+  };
+};
 
 const receiveStock = (stock) => {
-    return {
-        type: RECEIVE_STOCK,
-        stock
-    }
-}
+  return {
+    type: RECEIVE_STOCK,
+    stock,
+  };
+};
 
 export const fetchPortfolios = () => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getPortfolios().then((portfolios) => dispatch(receivePortfolios(portfolios)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getPortfolios().then((portfolios) =>
+      dispatch(receivePortfolios(portfolios))
+    );
+  };
+};
 
 export const fetchPies = (portfolioId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getPies(portfolioId).then((pies) => dispatch(receivePies(pies)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getPies(portfolioId).then((pies) =>
+      dispatch(receivePies(pies))
+    );
+  };
+};
 
 export const fetchPortfolio = (portfolioId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getPortfolio(portfolioId).then((portfolio) => dispatch(receivePortfolio(portfolio)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getPortfolio(portfolioId).then((portfolio) =>
+      dispatch(receivePortfolio(portfolio))
+    );
+  };
+};
 
 export const fetchHoldings = (pieId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getHoldings(pieId).then((holdings) => dispatch(receiveHoldings(holdings)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getHoldings(pieId).then((holdings) =>
+      dispatch(receiveHoldings(holdings))
+    );
+  };
+};
 
 export const fetchHolding = (holdingId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getHolding(holdingId).then((holding) => dispatch(receiveHolding(holding)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getHolding(holdingId).then((holding) =>
+      dispatch(receiveHolding(holding))
+    );
+  };
+};
 
 export const fetchStocks = () => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getStocks().then((stocks) => dispatch(receiveStocks(stocks)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getStocks().then((stocks) =>
+      dispatch(receiveStocks(stocks))
+    );
+  };
+};
 
 export const fetchStock = (stockId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.getStock(stockId).then((stock) => dispatch(receiveStock(stock)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.getStock(stockId).then((stock) =>
+      dispatch(receiveStock(stock))
+    );
+  };
+};
 
 const removeHoldingAction = (holding) => {
-    return {
-        type: REMOVE_HOLDING,
-        holding
-    }
-}
+  return {
+    type: REMOVE_HOLDING,
+    holding,
+  };
+};
 
 export const createPortfolio = (portfolioData) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.postPortfolio(portfolioData).then((portfolio) => dispatch(createPortfolioAction(portfolio)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.postPortfolio(portfolioData).then((portfolio) =>
+      dispatch(createPortfolioAction(portfolio))
+    );
+  };
+};
 
 const createPortfolioAction = (portfolio) => {
-    return {
-        type: CREATE_PORTFOLIO,
-        portfolio
-    }
-}
+  return {
+    type: CREATE_PORTFOLIO,
+    portfolio,
+  };
+};
 
 const deletePortfolioAction = (portfolio) => {
-    return {
-        type: DELETE_PORTFOLIO,
-        portfolio
-    }
-}
+  return {
+    type: DELETE_PORTFOLIO,
+    portfolio,
+  };
+};
 
 export const deletePortfolio = (portfolioId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.deletePortfolio(portfolioId).then((portfolio) => dispatch(deletePortfolioAction(portfolio)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.deletePortfolio(portfolioId).then((portfolio) =>
+      dispatch(deletePortfolioAction(portfolio))
+    );
+  };
+};
 
 const createPieAction = (pie) => {
-    return {
-        type: CREATE_PIE,
-        pie
-    }
-}
+  return {
+    type: CREATE_PIE,
+    pie,
+  };
+};
 
 export const createPie = (pieData) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.postPie(pieData).then((pie) => dispatch(createPieAction(pie)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.postPie(pieData).then((pie) =>
+      dispatch(createPieAction(pie))
+    );
+  };
+};
 
 const deletePieAction = (pie) => {
-    return {
-        type: DELETE_PIE,
-        pie
-    }
-}
+  return {
+    type: DELETE_PIE,
+    pie,
+  };
+};
 
 export const deletePie = (pieId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.deletePie(pieId).then((pie) => dispatch(deletePieAction(pie)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.deletePie(pieId).then((pie) =>
+      dispatch(deletePieAction(pie))
+    );
+  };
+};
 
 const createHoldingAction = (holding) => {
-    return {
-        type: CREATE_HOLDING,
-        holding
-    }
-}
+  return {
+    type: CREATE_HOLDING,
+    holding,
+  };
+};
 
 export const createHolding = (holdingData) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.createHolding(holdingData).then((holding) => dispatch(createHoldingAction(holding)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.createHolding(holdingData).then((holding) =>
+      dispatch(createHoldingAction(holding))
+    );
+  };
+};
 
 const updateBuyingPowerAction = (user) => {
-    return {
-        type: UPDATE_BUYING_POWER,
-        user
-    }
-}
+  return {
+    type: UPDATE_BUYING_POWER,
+    user,
+  };
+};
 
 export const updateBuyingPower = (userData) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.updateBuyingPower(userData).then((user) => dispatch(updateBuyingPowerAction(user)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.updateBuyingPower(userData).then((user) =>
+      dispatch(updateBuyingPowerAction(user))
+    );
+  };
+};
 
 const updateHoldingAction = (holding) => {
-    return {
-        type: UPDATE_HOLDING,
-        holding
-    }
-}
+  return {
+    type: UPDATE_HOLDING,
+    holding,
+  };
+};
 
 export const updateHolding = (holdingData) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.updateHolding(holdingData).then((holding) => dispatch(updateHoldingAction(holding)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.updateHolding(holdingData).then((holding) =>
+      dispatch(updateHoldingAction(holding))
+    );
+  };
+};
 
 export const removeHolding = (holdingId) => {
-    return (dispatch) => {
-        PortfolioAPIUtil.removeHolding(holdingId).then((holding) => dispatch(removeHoldingAction(holding)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.removeHolding(holdingId).then((holding) =>
+      dispatch(removeHoldingAction(holding))
+    );
+  };
+};
 
 const updateStockAction = (stock) => {
-    return {
-        type: UPDATE_STOCK,
-        stock
-    }
-}
+  return {
+    type: UPDATE_STOCK,
+    stock,
+  };
+};
 
 export const updateStock = (stockData) => {
-    return(dispatch) => {
-        PortfolioAPIUtil.updateStock(stockData).then((stock) => dispatch(updateStockAction(stock)))
-    }
-}
+  return (dispatch) => {
+    PortfolioAPIUtil.updateStock(stockData).then((stock) =>
+      dispatch(updateStockAction(stock))
+    );
+  };
+};
 
 const receiveStockPrice = (prices) => {
-    return {
-        type: RECEIVE_STOCK_PRICE,
-        prices
-    }
-}
+  return {
+    type: RECEIVE_STOCK_PRICE,
+    prices,
+  };
+};
 
 export const fetchStockPrice = (ticker) => {
-    return (dispatch) => {
-        ExternalAPIUtil.fetchInterdayData(ticker).then((prices) => dispatch(receiveStockPrice(prices)))
-    }
-}
+  return (dispatch) => {
+    ExternalAPIUtil.fetchInterdayData(ticker).then((prices) =>
+      dispatch(receiveStockPrice(prices))
+    );
+  };
+};

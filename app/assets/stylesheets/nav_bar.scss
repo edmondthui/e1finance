@@ -1,276 +1,271 @@
 .nav-bar {
-    display: flex;
-    margin-left: 300px;
-    align-items: center;
-    background-color: white;
-    font-weight: 600;
-    color: #1835C3;
-    height: 70px;
+  display: flex;
+  margin-left: 300px;
+  align-items: center;
+  background-color: white;
+  font-weight: 600;
+  color: #1835c3;
+  height: 70px;
 }
 
 .dropdown {
-    display: flex;
-    position: relative;
-
+  display: flex;
+  position: relative;
 }
 
 .dropdown-title {
-    padding: 0 10px;
-    text-decoration: none;
-    color: #1835C3;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #1835c3;
 }
 
 .dropdown-title:hover {
-    color: #00804D;
-    cursor: pointer;
+  color: #00804d;
+  cursor: pointer;
 }
 
 .dropdown-content {
-    display: none;
+  display: none;
 }
 
 .login-buttons {
-    margin-left: auto;
-    margin-right: 300px;
+  margin-left: auto;
+  margin-right: 300px;
 }
 
 #login {
-    text-decoration: none;
-    padding-right: 20px;
-    color: #1835C3;
-    cursor: pointer;
+  text-decoration: none;
+  padding-right: 20px;
+  color: #1835c3;
+  cursor: pointer;
 }
 
 #login:hover {
-    color: #00804D;
+  color: #00804d;
 }
 
 #signup {
-    text-decoration: none;
-    border: 2px solid #1835C3;
-    text-decoration: none;
-    padding-left: 50px;
-    padding-right: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #1835C3;
+  text-decoration: none;
+  border: 2px solid #1835c3;
+  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #1835c3;
 }
 
 #signup:hover {
-    background-color: #1835C3;
-    color: white;
-    cursor: pointer;
-    transition: background-color .2s linear;
+  background-color: #1835c3;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
 }
 
 .logged-in-nav-bar {
-    background-color: #12123D;
+  background-color: #12123d;
 }
 
 .logged-in-nav-container {
-    display: flex;
-    color: white;
+  display: flex;
+  color: white;
 }
 
 .logged-in-nav-container p {
-    padding-left: 20px;
+  padding-left: 20px;
 }
 
 .logged-in-nav-logo:hover {
-    cursor: pointer
+  cursor: pointer;
 }
 
 .logged-in-nav-content:hover {
-    cursor: pointer
+  cursor: pointer;
 }
 
-
-.logged-in-nav-bar{
-    display: flex;
-    padding-left: 300px;
-    height: 70px;
-    align-items: center;
+.logged-in-nav-bar {
+  display: flex;
+  padding-left: 300px;
+  height: 70px;
+  align-items: center;
 }
 
 .profile-button {
-    color: white;
-    border: 1px solid #DDAA47;
-    border-radius: 100px;
-    display: flex;
-    padding: 5px 15px;
-    align-items: center;
-    position: relative;
+  color: white;
+  border: 1px solid #ddaa47;
+  border-radius: 100px;
+  display: flex;
+  padding: 5px 15px;
+  align-items: center;
+  position: relative;
 }
 
-
-.profile-button img{
-    padding-right: 3px;
+.profile-button img {
+  padding-right: 3px;
 }
 
-.profile-button-container{
-    margin-left: auto;
-    padding-right: 300px;
+.profile-button-container {
+  margin-left: auto;
+  padding-right: 300px;
 }
 
 .profile-button:hover {
-    cursor: pointer;
-    background-color: #2F315E;
+  cursor: pointer;
+  background-color: #2f315e;
 }
 
-.profile-button:hover > .profile-hover{
-    display: block
+.profile-button:hover > .profile-hover {
+  display: block;
 }
 
 .profile-hover:hover {
-    cursor: default;
+  cursor: default;
 }
 
 .profile-hover-content {
-    color: black;
-    padding: 0px 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-    box-shadow: 2px 2px 12px gray;
+  color: black;
+  padding: 0px 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+  box-shadow: 2px 2px 12px gray;
 }
 
 .profile-hover {
-    z-index: 10;
+  z-index: 10;
 }
 
 .profile-hover-title {
-    margin-top: 15px;
-    margin-bottom: 0px;
-    font-weight: 700;
-    
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-weight: 700;
 }
 
 .profile-hover-email {
-    font-size: 14px;
-    color: #606C82;
+  font-size: 14px;
+  color: #606c82;
 }
 
 .profile-hover-message {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    color: #606C82;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #606c82;
 }
 
 #logout-button {
-    text-decoration: none;
-    border: 2px solid #1835C3;
-    text-decoration: none;
-    padding-left: 50px;
-    padding-right: 60px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #1835C3;
-    border-radius: 8px;
-    background-color: white;
-    font-size: 16px;
-    font-weight: 700;
+  text-decoration: none;
+  border: 2px solid #1835c3;
+  text-decoration: none;
+  padding-left: 50px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #1835c3;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 #logout-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .profile-hover {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    top: 10px;
-    right: 0;
-    width: 300px;
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  top: 10px;
+  right: 0;
+  width: 300px;
 
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .profile-hover:hover > .profile-hover-content:after {
-    content:"";
-    height: 0;
-    width: 0; 
-    border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-    border-bottom: 6px solid white;
-	position:absolute;
-	top: 5px;
-	right: 5%;
-	margin:0 0 0 3px;
-	z-index:100;	
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  position: absolute;
+  top: 5px;
+  right: 5%;
+  margin: 0 0 0 3px;
+  z-index: 100;
 }
 
 .profile-button:hover .profile-hover-content:after {
-    content:"";
-    height: 0;
-    width: 0; 
-    border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-bottom: 6px solid white;
-	position:absolute;
-	top: 5px;
-	right: 5%;
-	margin:0 0 0 3px;
-    z-index:100;	
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  position: absolute;
+  top: 5px;
+  right: 5%;
+  margin: 0 0 0 3px;
+  z-index: 100;
 }
 
 @media all and (max-width: 1260) {
-    .login-buttons#signup .login-buttons#login {
-        display: none;
-    }
+  .login-buttons#signup .login-buttons#login {
+    display: none;
+  }
 }
 
 .login-buttons #signup {
-    @media only screen and (max-width: 1260px) {
-        display: none;
-    }
+  @media only screen and (max-width: 1260px) {
+    display: none;
+  }
 }
 
 #login {
-    @media only screen and (max-width: 1060px) {
-        margin: 0 100px;
-    }
+  @media only screen and (max-width: 1060px) {
+    margin: 0 100px;
+  }
 }
 
 .nav-content {
-    @media only screen and (max-width: 995px) {
-        display: none;
-    }
+  @media only screen and (max-width: 995px) {
+    display: none;
+  }
 }
 
 .login-buttons {
-    @media only screen and (max-width: 1060px) {
-        margin-right: 50px;
-    }
+  @media only screen and (max-width: 1060px) {
+    margin-right: 50px;
+  }
 }
 
-
 .nav-bar {
-    @media only screen and (max-width: 1060px) {
-        margin-left: 50px;
-    }
+  @media only screen and (max-width: 1060px) {
+    margin-left: 50px;
+  }
 }
 
 .logged-in-nav-content {
-    text-decoration: none;
-    color: white;
-    margin: 0 20px;
+  text-decoration: none;
+  color: white;
+  margin: 0 20px;
 }
 
 .active {
-    font-weight: 700;
-    color: #DDFA04;
-    text-decoration: none;
+  font-weight: 700;
+  color: #ddfa04;
+  text-decoration: none;
 }
 
 .logged-in-nav-content:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .personal-links {
-    display: flex;
+  display: flex;
 }

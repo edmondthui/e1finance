@@ -1,132 +1,130 @@
 .research-index-container {
-    margin: 50px 200px;
+  margin: 50px 200px;
 }
 
 .research-nav-bar {
-    background-color: #F6F7FB;
-    border-bottom: 1px solid #D9DEE7;
-    height: 50px;
-    align-items: center;
-    display: flex;
+  background-color: #f6f7fb;
+  border-bottom: 1px solid #d9dee7;
+  height: 50px;
+  align-items: center;
+  display: flex;
 }
 
 .research-nav-container {
-    padding-left: 290px;
-
+  padding-left: 290px;
 }
 
 .research-nav-content {
-    color: #606C82;
-    text-decoration: none;
-    padding: 10px;
-    margin-left: 20px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  color: #606c82;
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica,
+    Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
 }
 
-
 .stock-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .activity-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .stock-content:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 
 .stock-name {
-    margin-left: 100px;
-    width: 400px;
-}
-
-
-.stock-research-price {
-    margin-left: auto;
-    margin-right: 100px;
+  margin-left: 100px;
+  width: 400px;
 }
 
 .stock-research-price {
-    font-size: 18px;
+  margin-left: auto;
+  margin-right: 100px;
+}
+
+.stock-research-price {
+  font-size: 18px;
 }
 
 .research-nav-content:hover {
-    background-color: #D9DEF5;
-    border-radius: 20px;
+  background-color: #d9def5;
+  border-radius: 20px;
 }
 
 .research-nav-container .active {
-    background-color: #DDFA04;
-    border-radius: 20px;
-    font-weight: 500;
-    font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Helvetica,Arial,sans-serif,apple color emoji,segoe ui emoji,segoe ui symbol;
+  background-color: #ddfa04;
+  border-radius: 20px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Helvetica,
+    Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
 }
 
 .holding-quantity {
-    width: 15%;
+  width: 15%;
 }
 
 .image-placeholder {
-    display: none;
+  display: none;
 }
 
 .activity-name {
-    margin-left: 100px;
-    width: 400px;
-    font-weight: 700;
+  margin-left: 100px;
+  width: 400px;
+  font-weight: 700;
 }
 
 .stock-show-graph-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
 }
 
 .research-portfolio-chart {
-    margin: auto;
-    width: 100%;
-    height: 400px;
+  margin: auto;
+  width: 100%;
+  height: 400px;
 }
 
 .research-chart-container {
-    background-color: white;
-    border-radius: 5px;
-    width: 87%;
+  background-color: white;
+  border-radius: 5px;
+  width: 87%;
 }
 
 .research-portfolio-header {
-    color: #12123D;
-    position: absolute;
-    z-index: 2;
-    padding-left: 20px;
-    font-size: 20px;
-    padding-top: 10px;
+  color: #12123d;
+  position: absolute;
+  z-index: 2;
+  padding-left: 20px;
+  font-size: 20px;
+  padding-top: 10px;
 }
 
 .research-portfolio-graph-value {
-    position: absolute;
-    color: #12123D;
-    z-index: 1;
-    padding-left: 20px;
-    font-size: 14px;
-    padding-top: 30px;
-    font-weight: 700;
+  position: absolute;
+  color: #12123d;
+  z-index: 1;
+  padding-left: 20px;
+  font-size: 14px;
+  padding-top: 30px;
+  font-weight: 700;
 }
 
 .research-portfolio-graph-label {
-    position: absolute;
-    color: #12123D;
-    z-index: 1;
-    padding-left: 20px;
-    font-size: 14px;
-    padding-top: 45px;
-    font-weight: 700;
+  position: absolute;
+  color: #12123d;
+  z-index: 1;
+  padding-left: 20px;
+  font-size: 14px;
+  padding-top: 45px;
+  font-weight: 700;
 }
