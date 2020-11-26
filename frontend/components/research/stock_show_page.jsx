@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
+import { fetchCompanyInfo } from "../../util/IEX_api_util";
 import ResearchChart from "./research_chart_container";
 
 let news = null;
@@ -12,16 +13,22 @@ class StockShowPage extends React.Component {
     this.state = {
       render: false,
     };
-
     this.chart;
+    this.fetchInfo = this.fetchInfo.bind(this)
+    this.info;
   }
 
   componentDidMount() {
     this.props.fetchStocks();
     setTimeout(() => {
-      this.props.fetchCompanyInfo(this.props.stock.ticker);
-      this.props.fetchStockNews(this.props.stock.ticker);
-      this.setState({ render: true });
+      fetchCompanyInfo(this.props.stock.ticker)
+      .then(response => {
+        this.props.updateStock({name: response.companyName, id: this.props.stock.id, price: this.props.stock.value});
+        this.info = response
+      }).then(() => {
+        this.props.fetchStockNews(this.props.stock.ticker);
+        this.setState({ render: true });
+      })
     }, 500);
   }
 
@@ -31,6 +38,10 @@ class StockShowPage extends React.Component {
 
   goBack() {
     this.props.history.goBack();
+  }
+
+
+  fetchInfo() {
   }
 
   render() {
@@ -63,7 +74,7 @@ class StockShowPage extends React.Component {
       stockPrice = (
         <h2 className="stock-index-price">
           {"$" +
-            this.props.stock.value
+            (this.props.stock.value ? this.props.stock.value : 0)
               .toFixed(2)
               .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
         </h2>
@@ -80,20 +91,20 @@ class StockShowPage extends React.Component {
           </Link>
           <h1>{this.props.stock.stock_name}</h1>
           {stockPrice}
-          <p>{this.props.info.description}</p>
-          <a href={this.props.info.website}>Visit website</a>
+          <p>{this.info.description}</p>
+          <a href={this.info.website}>Visit website</a>
           <div className="stock-show-small">
             <div>
               <p>CEO</p>
-              <p>{this.props.info.CEO}</p>
+              <p>{this.info.CEO}</p>
             </div>
             <div>
               <p>Employees</p>
-              <p>{this.props.info.employees}</p>
+              <p>{this.info.employees}</p>
             </div>
             <div>
               <p>Market</p>
-              <p>{this.props.info.exchange}</p>
+              <p>{this.info.exchange}</p>
             </div>
           </div>
         </div>

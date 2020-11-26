@@ -2,6 +2,7 @@ import {
   RECEIVE_STOCKS,
   RECEIVE_STOCK,
   UPDATE_STOCK,
+  CREATE_STOCK,
 } from "../actions/portfolio_actions";
 
 const stocksReducer = (state = {}, action) => {
@@ -14,6 +15,10 @@ const stocksReducer = (state = {}, action) => {
       newState = action.stock;
       return newState;
     case UPDATE_STOCK:
+      newState[Object.values(action.stock)[0].id] = Object.values(
+        action.stock
+      )[0];
+    case CREATE_STOCK:
       newState[Object.values(action.stock)[0].id] = Object.values(
         action.stock
       )[0];

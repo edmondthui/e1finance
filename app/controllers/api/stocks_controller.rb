@@ -17,6 +17,7 @@ class Api::StocksController < ApplicationController
     def update
         @stock = Stock.find(params[:id])
         @stock.price = params[:stock][:price].to_f.round(2)
+        @stock.name = params[:stock][:name]
         if @stock.save
             render :show
         else

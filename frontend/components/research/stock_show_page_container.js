@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import StockShowPage from "./stock_show_page";
 import { fetchCompanyInfo, fetchStockNews } from "../../actions/news_actions";
-import { fetchStock, fetchStocks } from "../../actions/portfolio_actions";
+import { fetchStock, fetchStocks, updateStock } from "../../actions/portfolio_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchCompanyInfo: (ticker) => dispatch(fetchCompanyInfo(ticker)),
     fetchStockNews: (ticker) => dispatch(fetchStockNews(ticker)),
     fetchStocks: () => dispatch(fetchStocks()),
+    updateStock: (stockData) => dispatch(updateStock(stockData)),
   };
 };
 

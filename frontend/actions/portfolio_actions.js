@@ -18,6 +18,7 @@ export const CREATE_HOLDING = "CREATE_HOLDING";
 export const UPDATE_BUYING_POWER = "UPDATE_BUYING_POWER";
 export const UPDATE_HOLDING = "UPDATE_HOLDING";
 export const UPDATE_STOCK = "UPDATE_STOCK";
+export const CREATE_STOCK = "CREATE_STOCK";
 
 const receiveStocks = (stocks) => {
   return {
@@ -270,6 +271,21 @@ export const fetchStockPrice = (ticker) => {
   return (dispatch) => {
     ExternalAPIUtil.fetchInterdayData(ticker).then((prices) =>
       dispatch(receiveStockPrice(prices))
+    );
+  };
+};
+
+export const createStockAction = (stock) => {
+  return {
+    type: CREATE_STOCK,
+    stock,
+  };
+};
+
+export const createStock = (stockData) => {
+  return (dispatch) => {
+    PortfolioAPIUtil.createStock(stockData).then((stock) =>
+      dispatch(receiveStockPrice(stock))
     );
   };
 };

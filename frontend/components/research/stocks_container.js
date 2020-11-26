@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Stocks from "./stocks";
-import { fetchStocks } from "../../actions/portfolio_actions";
+import { fetchStocks, createStock } from "../../actions/portfolio_actions";
 
 const mapStateToProps = (state) => {
   return {
@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchStocks: () => dispatch(fetchStocks()),
+    createStock: (stockData) => dispatch(createStock(stockData))
   };
 };
 

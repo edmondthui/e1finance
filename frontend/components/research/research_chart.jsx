@@ -21,9 +21,9 @@ class ResearchChart extends React.Component {
 
   componentDidMount() {
     this.props.fetchStocks();
+    let dataObj = {};
     fetchInterdayData(this.props.tickers).then((response) => {
-      this.data.push(response);
-      let dataObj = {
+      dataObj = {
         price:
           (response[response.length - 1].high +
             response[response.length - 1].low) /
@@ -31,6 +31,7 @@ class ResearchChart extends React.Component {
         id: this.props.id,
       };
       this.props.updateStock(dataObj);
+      this.data.push(response);
       this.formatData();
     });
   }
