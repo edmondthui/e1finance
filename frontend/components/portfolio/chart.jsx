@@ -52,7 +52,6 @@ class Chart extends React.Component {
     }
 
     formatData() {
-        debugger;
         for (let i = 0 ; i < this.data[0].length ; i ++) {
             let average = 0;
             let label = "";
@@ -78,7 +77,6 @@ class Chart extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger;
         if (this.props.quantities.length === 0 && prevProps.quantities.length !== this.props.quantities.length ) {
             this.data = []
             this.formattedChart = []
