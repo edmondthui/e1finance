@@ -11,7 +11,7 @@ export const fetchInterdayData = (ticker) => {
   if (ticker===undefined) ticker = "aapl"
   return $.ajax({
     method: 'GET',
-    url: `https://cloud.iexapis.com/stable/stock/${ticker.toLowerCase()}/intraday-prices?token=${window.api_key}`,
+    url: `https://cloud.iexapis.com/stable/stock/${ticker.toLowerCase()}/intraday-prices?&chartInterval=5&token=${window.api_key}`,
     // url: `https://sandbox.iexapis.com/stable/stock/${ticker.toLowerCase()}/intraday-prices?token=Tpk_b52b6d3dff234c59994a24ccc7ecd48f`
     // SANDBOX ^
   })
