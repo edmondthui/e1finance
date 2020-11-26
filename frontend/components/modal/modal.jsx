@@ -10,6 +10,7 @@ import BuyStock from './buy_stock_container'
 import SellStock from './sell_stock_container'
 import Deposit from './deposit_container'
 import Withdraw from './withdraw_container'
+import Rebalance from './rebalance_container'
 
 class Modal extends React.Component {
   
@@ -46,6 +47,9 @@ class Modal extends React.Component {
         break;
       case 'withdraw':
         component = <Withdraw />
+        break;
+      case 'rebalance':
+        component = <Route path="/dashboard/:portfolioId/:pieId" component={Rebalance} />
         break;
       default:
         return null;

@@ -199,3 +199,45 @@ input[type="number"] {
 .create-pie-container {
     width: 500px;
 }
+
+.rebalance-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.rebalance-input {
+    border: none;
+    width: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.rebalance-form-items {
+    justify-content: space-between;
+}
+
+.rebalance-inputs div {
+    display: flex;
+}
+
+.rebalance-form-items {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.rebalance-form {
+    justify-content: center;
+}
+
+.rebalance-inputs-container {
+    width: 100%;
+}
+
+.rebalance-submit-button {
+    display: flex;
+    justify-content: center;
+}

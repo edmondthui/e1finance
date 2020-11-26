@@ -69,7 +69,7 @@ class InvestmentPie extends React.Component {
         if (this.props.match.params.pieId) {
             button = <div className="crud-button-container">
                 <button className="crud-create-button" onClick={() => this.props.openModal('buyStock')}>Buy Stock</button>
-                {/* <button className="crud-delete-button" onClick={() => this.props.openModal('rebalance')}>Rebalance</button> */}
+                <button className="crud-delete-button" onClick={() => this.props.openModal('rebalance')}>Rebalance</button>
                 <button className="crud-delete-button" onClick={() => this.props.openModal('sellStock')}>Sell Stock</button>
                 </div>
         }
