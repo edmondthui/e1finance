@@ -6,6 +6,10 @@ import DashboardFooter from "../portfolio/dashboard_footer";
 class Stocks extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      visible: 5
+    }
+    this.loadMore = this.loadMore.bind(this)
   }
 
   componentDidMount() {
@@ -16,12 +20,19 @@ class Stocks extends React.Component {
     this.props.history.push(`/research/stocks/${idx}`);
   }
 
+  loadMore() {
+    this.setState({
+      visible: this.state.visible + 4
+    })
+  }
+
   render() {
     let stocks;
+    let showMore;
     if (this.props.stocks) {
-      stocks = this.props.stocks.map((stock, idx) => (
+      stocks = this.props.stocks.slice(0, this.state.visible).map((stock, idx) => (
         <div
-          className="portfolio-index-item"
+          className="portfolio-index-item fadeIn"
           key={idx}
           onClick={() => this.clickStock(idx)}
         >
@@ -41,6 +52,9 @@ class Stocks extends React.Component {
           </div>
         </div>
       ));
+    }
+    if (this.state.visible < this.props.stocks.length) {
+      showMore = <button onClick={this.loadMore} className="show-more">Load more</button>
     }
     return (
       <div>
@@ -69,6 +83,9 @@ class Stocks extends React.Component {
             <p className="header-name">Stocks</p>
           </div>
           {stocks}
+          <div className= "show-more-container">
+            {showMore}
+          </div>
         </div>
         <DashboardFooter />
       </div>

@@ -128,3 +128,21 @@
   padding-top: 45px;
   font-weight: 700;
 }
+
+.show-more {
+  background-color: #0020bd;
+  color: white;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #0020bd;
+  height: 40px;
+  width: 20%;
+  cursor: pointer;
+  outline: none;
+}
+
+.show-more-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
