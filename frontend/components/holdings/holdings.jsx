@@ -23,9 +23,6 @@ class Holdings extends React.Component {
 
     render() {
         let holdingsArr = [];
-        // tickers.push(ticker)
-        // quantity.push(portfolio.quantity[idx])
-        // value.push(portfolio.value*portfolio.holding_percentages[idx]/portfolio.quantity[idx])
         if (this.props.portfolios.length > 0) {
             this.props.portfolios.forEach((portfolio) => {
                 let holdings = portfolio.tickers.map((ticker,idx) => (

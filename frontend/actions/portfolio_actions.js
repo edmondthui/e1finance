@@ -228,15 +228,6 @@ export const updateStock = (stockData) => {
     }
 }
 
-// export const clearHoldings = () => {
-//     return {
-//         type: CLEAR_HOLDINGS
-//     }
-// }
-
-// FOR UPDATING STOCK GRAPH PRICES
-
-
 const receiveStockPrice = (prices) => {
     return {
         type: RECEIVE_STOCK_PRICE,

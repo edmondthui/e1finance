@@ -5,7 +5,7 @@ import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        items: Object.values(state.entities.pies), // change from portfolios to pies
+        items: Object.values(state.entities.pies), 
         user: Object.values(state.entities.users)[0],
         portfolio: state.entities.portfolios[ownProps.match.params.portfolioId],
         type: "Portfolio Show"
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        action: (portfolioId) => dispatch(fetchPies(portfolioId)), //change to fetch pies
+        action: (portfolioId) => dispatch(fetchPies(portfolioId)), 
         fetchPortfolios: () => dispatch(fetchPortfolios()),
         openModal: (modal) => dispatch(openModal(modal)) 
     }

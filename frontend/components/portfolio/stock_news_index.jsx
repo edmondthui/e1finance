@@ -42,7 +42,7 @@ class StockNewsIndex extends React.Component {
                 </div>
             ))
             if (this.props.stock) {
-                stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>  // TODO FETCH STOCK PRICE
+                stockPrice = <h1 className="stock-index-price">{"$"+(this.props.stock.value/this.props.stock.quantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</h1>
                 const formattedStock = [{id: this.props.stock.id, value: this.props.stock.value, name: this.props.stock.stock_name}]
                 pie = <PortfolioPie items={formattedStock} totalValue={"$" + this.props.stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')} openModal={this.props.openModal}/>
             } 

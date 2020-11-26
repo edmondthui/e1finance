@@ -15,8 +15,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         action: () => dispatch(fetchPortfolios()),
         fetchStockPrice: (ticker) => dispatch(fetchStockPrice(ticker)),
-        openModal: (modal) => dispatch(openModal(modal)),
-        // clearHoldings: () => dispatch(clearHoldings())
+        openModal: (modal) => dispatch(openModal(modal))
     }
 }
 

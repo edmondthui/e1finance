@@ -7,11 +7,6 @@ import {withRouter } from 'react-router-dom'
 class Rebalance extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     value: null,
-        //     pie_id: null,
-        //     stock_id: this.props.holdings[0] ? this.props.holdings[0].stock_id : null
-        // }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
         this.percentages = {};

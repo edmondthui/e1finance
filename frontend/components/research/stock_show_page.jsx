@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import ResearchChart from './research_chart_container'
-// import PortfolioPie from './portfolio_value_pie_container'
+
 
 let news = null;
 let info = null;
@@ -18,7 +18,7 @@ class StockShowPage extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchStock(parseInt(this.props.match.params.stockId)+1)
+
         this.props.fetchStocks();
         setTimeout(() => {
             this.props.fetchCompanyInfo(this.props.stock.ticker)

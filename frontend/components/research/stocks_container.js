@@ -12,7 +12,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchStocks: () => dispatch(fetchStocks())
-        // Will need to fetch all stocks
     }
 }
 
