@@ -20,9 +20,17 @@ class Api::StocksController < ApplicationController
         if @stock.save
             render :show
         else
-            render json: ["Something went wrong please try again"], status: 422
+            render json: ["Something went wrong please try again."], status: 422
         end
+    end
 
+    def create
+        @stock = Stock.new(stock_params)
+        if @stock.save
+            render :show
+        else
+            render json: ["Not valid ticker please try again."], status: 401
+        end
     end
 
     private

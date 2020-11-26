@@ -133,3 +133,11 @@ export const createActivity = (activityData) => {
     data: { activity: activityData },
   });
 };
+
+export const createStock = (stockData) => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/stocks",
+    data: { stock: stockData }
+  })
+}
