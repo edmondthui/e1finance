@@ -102,7 +102,7 @@ class SellStock extends React.Component {
                                 <p>{"$"+this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                             </div>
                         </div>
-                        <div className="sell-buttons">
+                        <div className="modal-submit-buttons">
                             <input type="submit" value="Sell Stock" className="create-portfolio-submit"/>
                             <button className={"delete-holding"} onClick={this.deleteHolding}>Sell All Shares</button>
                         </div>

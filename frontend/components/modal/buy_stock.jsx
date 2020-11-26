@@ -5,11 +5,28 @@ class BuyStock extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            value: null,
+            value: "",
             pie_id: null,
             stock_id: null
         }
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.autobuy = this.autobuy.bind(this)
+    }
+
+    autobuy(e) {
+        e.preventDefault()
+        let stockId = this.state.stock_id ? this.state.stock_id : this.props.stocks[0].id
+        let buyingPower = this.props.user.buying_power
+        this.props.holdings.forEach(holding => {
+            let value = holding.percentage * buyingPower
+            let quantity = (value / holding.price)
+            let buy = {quantity: quantity, pie_id: this.state.pie_id, stock_id: holding.stock_id, user_id: this.props.user.id, id: holding.id}
+            let activity = {activity: this.props.stocks[stockId-1].stock_name, name: "Autobuy", value: value, user_id: this.props.user.id}
+            this.props.updateHolding(buy)
+            this.props.createActivity(activity)
+            this.props.updateBuyingPower({id: this.props.user.id, buying_power: -value})
+        })
+        this.props.closeModal();
     }
 
     handleSubmit(e) {
@@ -58,8 +75,8 @@ class BuyStock extends React.Component {
     }
 
     render() {
-        let options = this.props.stocks.map(stock => (
-            <option value={stock.id}>{stock.stock_name}</option>
+        let options = this.props.stocks.map((stock, idx )=> (
+            <option value={stock.id} key={idx}>{stock.stock_name}</option>
         ))
         return (
             <div className="buy-stock-container">
@@ -85,7 +102,10 @@ class BuyStock extends React.Component {
                                 <p>{"$"+this.props.user.buying_power.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}</p>
                             </div>
                         </div>
-                        <input type="submit" value="Buy Stock" className="create-portfolio-submit"/>
+                        <div className="modal-submit-buttons">
+                            <input type="submit" value="Buy Stock" className="create-portfolio-submit"/>
+                            <button className={"delete-holding"} onClick={this.autobuy}>Autobuy</button>
+                        </div>
                     </form>
                 </div>
             </div>

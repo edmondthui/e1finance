@@ -61,7 +61,6 @@ class PortfolioPieIndex extends React.Component {
                 </div>
                 <div className="portfolio-main-content">
                     {this.chart}
-                    {/* <PortfolioChart tickers={tickers} quantities={quantities}/>  */}
                     <h1 className="slice-title">Markets</h1>
                     <div className="portfolio-index-container">
                         <div className="portfolio-index-header">
