@@ -45,6 +45,7 @@ class Stocks extends React.Component {
     this.setState({
       visible: this.state.visible + loads,
     });
+    this.props.stocks.reverse()
   }
 
   updateTicker(field) {
@@ -57,7 +58,7 @@ class Stocks extends React.Component {
     let stocks;
     let showMore;
     if (this.props.stocks) {
-      stocks = this.props.stocks
+      stocks = this.props.stocks.reverse()
         .slice(0, this.state.visible)
         .map((stock, idx) => (
           <div
