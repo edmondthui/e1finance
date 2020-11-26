@@ -61,7 +61,6 @@ class Chart extends React.Component {
             }
             this.formattedChart.push({average: average, label: label})
         }
-        debugger;
         this.setState({chart: this.formattedChart})
         this.formattedChart = [];
     }
@@ -75,9 +74,11 @@ class Chart extends React.Component {
             this.formattedChart[i] ? this.formattedChart[i].average += average : this.formattedChart.push({average: average, label: label})
         }
         this.setState({chart: this.formattedChart})
+        this.formattedChart = [];
     }
 
     componentDidUpdate(prevProps) {
+        debugger;
         if (this.props.quantities.length === 0 && prevProps.quantities.length !== this.props.quantities.length ) {
             this.data = []
             this.formattedChart = []
@@ -85,6 +86,7 @@ class Chart extends React.Component {
         }
         else if (prevProps.quantities.length !== this.props.quantities.length ) {
             this.formattedChart = []
+            this.data = []
             this.setState({chart: null})
             if (this.props.quantities) {
                 this.props.tickers.forEach((ticker, idx)=> {
