@@ -35,7 +35,7 @@ class Stocks extends React.Component {
     let stocks;
     let showMore;
     if (this.props.stocks) {
-      stocks = this.props.stocks.reverse().slice(0, this.state.visible).map((stock, idx) => (
+      stocks = this.props.stocks.slice(0, this.state.visible).map((stock, idx) => (
         <div
           className="portfolio-index-item fadeIn"
           key={idx}
