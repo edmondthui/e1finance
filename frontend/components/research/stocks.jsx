@@ -45,12 +45,13 @@ class Stocks extends React.Component {
     this.setState({
       visible: this.state.visible + loads,
     });
-    this.props.stocks.reverse()
+    this.props.stocks.reverse();
   }
 
   updateTicker(field) {
     return e => {
       this.setState({[field]: e.target.value.toUpperCase()})
+      this.props.stocks.reverse();    
     }
   }
 
