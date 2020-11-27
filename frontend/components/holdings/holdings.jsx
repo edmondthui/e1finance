@@ -25,6 +25,7 @@ class Holdings extends React.Component {
   render() {
     let holdingsArr = [];
     if (this.props.portfolios.length > 0) {
+      debugger;
       this.props.portfolios.forEach((portfolio) => {
         let holdings = portfolio.tickers.map((ticker, idx) => (
           <div
@@ -33,7 +34,7 @@ class Holdings extends React.Component {
             onClick={() => this.clickHolding(ticker)}
           >
             <div className="stock-content">
-              <img src={ticker.image !== null ? ticker.image : "https://i.postimg.cc/jjXLsv17/Untitled-design-52.png"} alt="stock logo" className="stock-image"/>
+              <img src={portfolio.images[idx] !== null ? portfolio.images[idx] : "https://i.postimg.cc/jjXLsv17/Untitled-design-52.png"} alt="stock logo" className="stock-image"/>
               <div className="stock-name">
                 <p>{ticker}</p>
                 <p>{portfolio.names[idx]}</p>

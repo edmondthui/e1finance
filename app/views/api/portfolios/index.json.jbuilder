@@ -3,11 +3,15 @@
     quantity = []
     names = []
     holding_percentages = []
+    images = []
     portfolio.pies.each do |pie|
-        pie.stocks.each do |stock|
-            names << stock.name
-        end
+        # pie.stocks.each do |stock|
+            # names.unshift(stock.name)
+            # images.unshift(stock.image)
+        # end
         pie.holdings.each do |holding|
+            names.unshift(holding.stock.name)
+            images.unshift(holding.stock.image)
             holding_percentages.unshift(holding.value/pie.value)
             quantity.unshift(holding.quantity)
             tickers.unshift(Stock.find(holding.stock_id).ticker)
@@ -21,5 +25,6 @@
         json.holding_percentages holding_percentages
         json.quantity quantity
         json.names names
+        json.images images
     end
 end
