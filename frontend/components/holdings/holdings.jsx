@@ -23,7 +23,6 @@ class Holdings extends React.Component {
   }
 
   render() {
-    debugger;
     let holdingsArr = [];
     if (this.props.portfolios.length > 0) {
       this.props.portfolios.forEach((portfolio) => {
