@@ -19,8 +19,10 @@ class StockShowPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchStocks();
+    this.props.fetchStocks()
+    debugger;
     setTimeout(() => {
+      debugger;
       fetchCompanyInfo(this.props.stock.ticker)
       .then(response => {
         this.props.updateStock({name: response.companyName, id: this.props.stock.id, price: this.props.stock.value});
@@ -29,7 +31,7 @@ class StockShowPage extends React.Component {
         this.props.fetchStockNews(this.props.stock.ticker);
         this.setState({ render: true });
       })
-    }, 500);
+    }, 1500);
   }
 
   clickNews(idx) {

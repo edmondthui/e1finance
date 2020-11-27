@@ -45,13 +45,11 @@ class Stocks extends React.Component {
     this.setState({
       visible: this.state.visible + loads,
     });
-    this.props.stocks.reverse();
   }
 
   updateTicker(field) {
     return e => {
-      this.setState({[field]: e.target.value.toUpperCase()})
-      this.props.stocks.reverse();    
+      this.setState({[field]: e.target.value.toUpperCase()}) 
     }
   }
 
@@ -59,7 +57,7 @@ class Stocks extends React.Component {
     let stocks;
     let showMore;
     if (this.props.stocks) {
-      stocks = this.props.stocks.reverse()
+      stocks = this.props.stocks
         .slice(0, this.state.visible)
         .map((stock, idx) => (
           <div
@@ -76,7 +74,7 @@ class Stocks extends React.Component {
               <div className="stock-research-price">
                 <p>
                   {"$" +
-                    stock.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,") +
+                    (stock.value ? stock.value : 0).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,") +
                     " / share"}
                 </p>
               </div>
