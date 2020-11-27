@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <script type="text/javascript">
       window.api_key = "<%= Rails.application.credentials.IEX_API[:key]%>"
+      window.finn_api_key = "<%= Rails.application.credentials.FINN_API[:key]%>"
     </script>
     <% if logged_in? %>
       <script type="text/javascript">

@@ -5,6 +5,7 @@ if @stocks
             json.ticker stock.ticker
             json.stock_name stock.name
             json.value stock.price
+            json.image stock.image
         end
     end
 else

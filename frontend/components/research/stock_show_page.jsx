@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import { fetchCompanyInfo } from "../../util/IEX_api_util";
+import { fetchCompanyInfo, fetchCompanyInfo2 } from "../../util/IEX_api_util";
 import ResearchChart from "./research_chart_container";
 
 let news = null;
@@ -23,11 +23,13 @@ class StockShowPage extends React.Component {
     setTimeout(() => {
       fetchCompanyInfo(this.props.stock.ticker)
       .then(response => {
-        this.props.updateStock({name: response.companyName, id: this.props.stock.id, price: this.props.stock.value});
         this.info = response
       }).then(() => {
         this.props.fetchStockNews(this.props.stock.ticker);
         this.setState({ render: true });
+      })
+      fetchCompanyInfo2(this.props.stock.ticker).then(response => {
+        this.props.updateStock({name: response.name, id: this.props.stock.id, price: this.props.stock.value, image: response.logo});
       })
     }, 1500);
   }

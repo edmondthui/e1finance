@@ -66,7 +66,7 @@ class Stocks extends React.Component {
             onClick={() => this.clickStock(idx)}
           >
             <div className="stock-content">
-              <div className="image-placeholder">Image</div>
+              <img src={stock.image !== null ? stock.image : "https://i.postimg.cc/jjXLsv17/Untitled-design-52.png"} alt="stock logo" className="stock-image"/>
               <div className="stock-name">
                 <p>{stock.ticker}</p>
                 <p>{stock.stock_name}</p>

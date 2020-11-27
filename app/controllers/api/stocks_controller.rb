@@ -17,6 +17,7 @@ class Api::StocksController < ApplicationController
     def update
         @stock = Stock.find(params[:id])
         @stock.price = params[:stock][:price].to_f.round(2)
+        @stock.image = params[:stock][:image]
         if (params[:stock][:name] != nil) 
             @stock.name = params[:stock][:name]
         end
@@ -39,7 +40,7 @@ class Api::StocksController < ApplicationController
     private
 
     def stock_params
-        params.require(:stock).permit(:id, :ticker, :name, :pie_id, :price)
+        params.require(:stock).permit(:id, :ticker, :name, :pie_id, :price, :image)
     end
     
 end

@@ -30,3 +30,13 @@ export const fetchCompanyInfo = (ticker) => (
     // url: `https://sandbox.iexapis.com/stable/stock/${ticker.toLowerCase()}/company?token=Tpk_b52b6d3dff234c59994a24ccc7ecd48f`
   })
 )
+
+// FINN API
+
+export const fetchCompanyInfo2 = (ticker) => (
+  $.ajax({
+    method: 'GET',
+    url: `https://finnhub.io/api/v1/stock/profile2?symbol=${ticker.toLowerCase()}&token=${window.finn_api_key}`
+    // url: `https://finnhub.io/api/v1/stock/profile2?symbol=${ticker.toLowerCase()}&token=sandbox_bv08j8f48v6s4f9bj0i0`
+  })
+)
