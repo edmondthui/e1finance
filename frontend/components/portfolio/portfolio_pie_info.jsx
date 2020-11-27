@@ -11,11 +11,6 @@ class PortfolioPieInfo extends React.Component {
     this.props.fetchPies(this.props.match.params.portfolioId);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.items.length !== this.props.items.length) {
-    }
-  }
-
   render() {
     let totalValue = 0;
     let title;
