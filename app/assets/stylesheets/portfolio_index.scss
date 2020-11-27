@@ -33,6 +33,11 @@
   font-size: 14px;
 }
 
+.research-stock-index-container:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 .activity-index-item {
   display: flex;
   border-left: 1px solid #bcc4d2;

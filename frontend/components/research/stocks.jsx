@@ -130,7 +130,9 @@ class Stocks extends React.Component {
           <div className="portfolio-index-header">
             <p className="header-name">Stocks</p>
           </div>
-          {stocks}
+          <div className="research-stock-index-container">
+            {stocks}
+          </div>
           <div className="show-more-container">{showMore}</div>
         </div>
         <DashboardFooter />
