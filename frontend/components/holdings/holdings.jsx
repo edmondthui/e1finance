@@ -23,6 +23,7 @@ class Holdings extends React.Component {
   }
 
   render() {
+    debugger;
     let holdingsArr = [];
     if (this.props.portfolios.length > 0) {
       this.props.portfolios.forEach((portfolio) => {
@@ -44,9 +45,7 @@ class Holdings extends React.Component {
               <p className="holding-quantity">
                 {"$" +
                   (
-                    (portfolio.value * portfolio.holding_percentages[idx]) /
-                    portfolio.quantity[idx]
-                  ).toFixed(2) +
+                    (portfolio.value * portfolio.holding_percentages[idx]) / portfolio.quantity[idx]).toFixed(2) +
                   " / share"}
               </p>
               <div className="stock-research-price">

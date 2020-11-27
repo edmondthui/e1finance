@@ -8,7 +8,7 @@
             names << stock.name
         end
         pie.holdings.each do |holding|
-            holding_percentages << (holding.value/pie.value)
+            holding_percentages.unshift(holding.value/pie.value)
             quantity.unshift(holding.quantity)
             tickers.unshift(Stock.find(holding.stock_id).ticker)
         end
