@@ -14,7 +14,6 @@ class StockShowPage extends React.Component {
       render: false,
     };
     this.chart;
-    this.fetchInfo = this.fetchInfo.bind(this)
     this.info;
   }
 
@@ -40,10 +39,6 @@ class StockShowPage extends React.Component {
 
   goBack() {
     this.props.history.goBack();
-  }
-
-
-  fetchInfo() {
   }
 
   render() {

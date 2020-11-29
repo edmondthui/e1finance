@@ -26,7 +26,7 @@ export const fetchStockNews = () => (
 export const fetchCompanyInfo = (ticker) => (
   $.ajax({
     method: 'GET',
-    url: `https://cloud.iexapis.com/stable/stock/${ticker.toLowerCase()}/company?token=${window.api_key}`
+    url: `https://cloud.iexapis.com/stable/stock/${ticker.toLowerCase()}/company/batch?types=quote&filter=description,exchange,CEO,employees&token=${window.api_key}`
     // url: `https://sandbox.iexapis.com/stable/stock/${ticker.toLowerCase()}/company?token=Tpk_b52b6d3dff234c59994a24ccc7ecd48f`
   })
 )
