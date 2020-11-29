@@ -1,6 +1,6 @@
 <p align="center">
   <img width="300" height="300" src="https://i.imgur.com/Qlg10Fz.png">
-</p>
+</p>  
 # E1 Finance
 
 [Live Demo](https://e1finance.herokuapp.com/#/)  
