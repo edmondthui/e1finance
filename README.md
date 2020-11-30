@@ -27,5 +27,36 @@ Users can create portfolios with many pies allowing them to choose their own sto
 ![E1 Finance Dashboard Demo](https://i.imgur.com/lbHPV8D.gif)
 
 ### Autobuy & Rebalancing
-Dollar cost averaging is the best strategy for consistant long term profits. The autobuy feature allows the user to automatically divide their buying power into the pie's current percentages. The rebalancing feature allows users to set the percentage allocated to each stock in the pie. This feature uses the percerntages calculated earlier and allows users to change their current holding percentages of stocks. Rebalancing required all other features to be working such as buying, selling, holdings, and activities. This was the last feature I added to my application and takes advantage of the features I implemented previously. Rebalancing either triggers a buy or sell depending if the percentage the users sets is higher or lower than the current percentage. Then, this updates holdings in the database. Lastly, it adds a new activity for the user.  
+Dollar cost averaging is the best strategy for consistant long term profits. The autobuy feature allows the user to automatically divide their buying power into the pie's current percentages. The rebalancing feature allows users to set the percentage allocated to each stock in the pie. This feature uses the percerntages calculated earlier and allows users to change their current holding percentages of stocks. Rebalancing required all other features to be working such as buying, selling, holdings, and activities. This was the last feature I added to my application and takes advantage of the features I implemented previously. 
+```
+  handleSubmit(e) {
+    let percentages = this.percentages;
+    let pie = this.props.pie;
+    e.preventDefault();
+    let percentage = 0;
+    Object.keys(percentages).forEach((key) => {
+      percentage += parseInt(percentages[key]);
+    });
+    if (percentage !== 100) { this.props.closeModal() }
+    if (Object.values(percentages).includes("0")) { this.props.closeModal() } else {
+      this.props.holdings.forEach((holding, idx) => {
+        if (parseInt(Object.values(percentages)[idx]) !== 0) {
+          let value = this.props.pie.value * (Object.values(percentages)[idx] / 100);
+          let quantity = value / holding.price;
+          let update = { quantity: quantity - holding.quantity, pie_id: this.props.pie_id, stock_id: holding.stock_id, user_id: this.props.user.id, id: holding.id, };
+          let activity = { activity: holding.stock_name, name: "Rebalance", value: value, user_id: this.props.user.id, };
+          this.props.updateHolding(update);
+          this.props.createActivity(activity);
+        } else {
+          let value = pie.value * holding.percentage;
+          let activity = { activity: holding.stock_name, name: "Rebalance", value: value, user_id: this.props.user.id, };
+          this.props.removeHolding(holding.id);
+          this.props.createActivity(activity);
+        }
+      });
+    }
+    this.props.closeModal();
+  }
+  ```
+Rebalancing either triggers a buy or sell depending if the percentage the users sets is higher or lower than the current percentage. Then, this updates holdings in the database. Lastly, it adds a new activity for the user.  
 ![E1 Finance Autobuy and Rebalance Demo](https://i.imgur.com/QdiFT8u.gif)
