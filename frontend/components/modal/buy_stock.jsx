@@ -15,9 +15,6 @@ class BuyStock extends React.Component {
 
   autobuy(e) {
     e.preventDefault();
-    let stockId = this.state.stock_id
-      ? this.state.stock_id
-      : this.props.stocks[0].id;
     let buyingPower = this.props.user.buying_power;
     this.props.holdings.forEach((holding) => {
       let value = holding.percentage * buyingPower;
@@ -30,7 +27,6 @@ class BuyStock extends React.Component {
         id: holding.id,
         stock_name: holding.stock_name
       };
-      debugger;
       let activity = {
         activity: buy.stock_name,
         name: "Autobuy",
