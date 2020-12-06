@@ -2,6 +2,7 @@ import React from "react";
 import LoggedInNavBar from "../nav_bar/logged_in_nav_bar_container";
 import { NavLink, withRouter } from "react-router-dom";
 import DashboardFooter from "../portfolio/dashboard_footer";
+import SearchBar from './search_bar'
 
 class Stocks extends React.Component {
   constructor(props) {
@@ -111,7 +112,7 @@ class Stocks extends React.Component {
             </NavLink>
           </div>
           <div className="add-stock-ticker">
-            <form onSubmit={this.addStock}>
+            {/* <form onSubmit={this.addStock}>
               <input
                 type="text"
                 placeholder="TICKER"
@@ -123,7 +124,8 @@ class Stocks extends React.Component {
                 value="Research stock"
                 className="add-stock-submit"
               />
-            </form>
+            </form> */}
+            <SearchBar/>
           </div>
         </div>
         <div className="research-index-container">
