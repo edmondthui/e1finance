@@ -28,9 +28,11 @@ class BuyStock extends React.Component {
         stock_id: holding.stock_id,
         user_id: this.props.user.id,
         id: holding.id,
+        stock_name: holding.stock_name
       };
+      debugger;
       let activity = {
-        activity: this.props.stocks[stockId - 1].stock_name,
+        activity: buy.stock_name,
         name: "Autobuy",
         value: value,
         user_id: this.props.user.id,
