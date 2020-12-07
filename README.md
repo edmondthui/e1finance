@@ -5,7 +5,7 @@
 # E1 Finance
 
 [Live Demo](https://e1finance.herokuapp.com/#/)  
-E1 Finance is a clone of an investing platfrom created by [M1 Finance](https://www.m1finance.com/). They are a startup that recently closed their Serices C round of funding. Users can simulate creating a portfolio and investing using pies to organize and manage their stocks. 
+E1 Finance is a clone of an investing platfrom created by [M1 Finance](https://www.m1finance.com/). Users can simulate creating a portfolio and investing using pies to organize and manage their stocks. 
 
 ## Technologies Used
 * Frontend: React, Redux, CSS, HTML5
