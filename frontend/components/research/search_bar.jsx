@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
           stocks = this.props.stocks.filter(x=> x.ticker.toUpperCase().includes(e.currentTarget.value.toUpperCase()) || x.stock_name.toUpperCase().includes(e.currentTarget.value.toUpperCase()))
         }
         stocks = stocks.slice(0, 5);
-        this.setState({[field]: stocks, search: e.currentTarget.value.toUpperCase()})
+        this.setState({[field]: stocks, search: stocks[0].ticker})
       }
     }
   }
@@ -44,8 +44,9 @@ class SearchBar extends React.Component {
     e.preventDefault();
     let newStock = this.props.stocks.filter(stock => stock.ticker === this.state.search)
     if (newStock.length === 0) {
-      this.props.createStock({ ticker: this.state.search })
-      this.props.history.push(`/research/stocks/${this.props.stocks.length}`)
+      // this.props.createStock({ ticker: this.state.search })
+      // this.props.history.push(`/research/stocks/${this.props.stocks.length}`)
+      this.setState({search: ""})
     }
     else {
       this.props.history.push(`/research/stocks/${newStock[0].id-1}`)
