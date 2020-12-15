@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 
 const mapStateToProps = (state) => {
   return {
-    tickers: Object.values(state.entities.stocks).map(stock => stock.ticker)
+    // tickers: Object.values(state.entities.stocks).map(stock => stock.ticker),
+    stocks: Object.values(state.entities.stocks)
   }
 }
 
@@ -12,29 +13,34 @@ class SearchBar extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-      tickers: []
+      stocks: []
     }
   }
 
   update(field) {
     return e => {
-
+      let stocks = [];
+      if (e.currentTarget.value !== "") {
+        stocks = this.props.stocks.filter(x=> x.ticker.toUpperCase().includes(e.currentTarget.value.toUpperCase()) || x.stock_name.toUpperCase().includes(e.currentTarget.value.toUpperCase()))
+      }
+      stocks = stocks.slice(0, 5);
+      this.setState({[field]: stocks})
     }
   }
 
   render() {
     return(
-      <div>
+      <div className="search-container">
         <form>
-          <input className="add-stock-input" type="text" onChange={this.update("search")} />
+          <input className="add-stock-input" type="text" onChange={this.update("stocks")} />
           <input type="submit" className="add-stock-submit"/>
         </form>
 
-        {this.state.tickers.length > 0 ? this.state.tickers.map(tickers => (
-          <div>
-            <Link to={`/research/stocks/${tickers}`}></Link>
-          </div>
-        )) : ""}
+        <div className="search-box">
+          {this.state.stocks ? this.state.stocks.map(stock => (
+              <Link to={`/research/stocks/${stock.id-1}`} className="search-item">{stock.ticker} {stock.stock_name}</Link>
+              )) : ""}
+        </div>
       </div>
     )
   }
