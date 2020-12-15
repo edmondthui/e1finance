@@ -12,24 +12,24 @@ class Stocks extends React.Component {
       ticker: "",
     };
     this.loadMore = this.loadMore.bind(this);
-    this.addStock = this.addStock.bind(this);
+    // this.addStock = this.addStock.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchStocks();
   }
 
-  addStock(e) {
-    e.preventDefault();
-    let newStock = this.props.stocks.filter(stock => stock.ticker === this.state.ticker)
-    if (newStock.length === 0) {
-      this.props.createStock({ ticker: this.state.ticker })
-      this.props.history.push(`/research/stocks/${this.props.stocks.length}`)
-    }
-    else {
-      this.props.history.push(`/research/stocks/${newStock[0].id-1}`)
-    }
-  }
+  // addStock(e) {
+  //   e.preventDefault();
+  //   let newStock = this.props.stocks.filter(stock => stock.ticker === this.state.ticker)
+  //   if (newStock.length === 0) {
+  //     this.props.createStock({ ticker: this.state.ticker })
+  //     this.props.history.push(`/research/stocks/${this.props.stocks.length}`)
+  //   }
+  //   else {
+  //     this.props.history.push(`/research/stocks/${newStock[0].id-1}`)
+  //   }
+  // }
 
   clickStock(idx) {
     this.props.history.push(`/research/stocks/${idx}`);

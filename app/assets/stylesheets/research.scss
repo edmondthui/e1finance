@@ -154,6 +154,7 @@
 
 .add-stock-input {
   margin-right: 20px;
+  width: 200px;
   border-radius: 5px;
   border: 1px solid lightgray;
   padding: 7px 10px;
@@ -184,12 +185,30 @@
 .search-box {
   position: absolute;
   background-color: #FFFFFF;
-  border: 1px solid #d9dee7;
-  border-radius: 5px;
   top: 35px;
+  width: 225px;
+}
+
+.search-item:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid #d9dee7;
+  border-right: 1px solid #d9dee7;
+  border-left: 1px solid #d9dee7;
+}
+
+.search-item:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 1px solid #d9dee7;
+  border-right: 1px solid #d9dee7;
+  border-left: 1px solid #d9dee7;
 }
 
 .search-item {
+  border-right: 1px solid #d9dee7;
+  border-left: 1px solid #d9dee7;
+  border-top: 1px solid #d9dee7;
   display: block;
   text-decoration: none;
   padding: 10px;
