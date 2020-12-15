@@ -35,12 +35,13 @@ const LoggedOutNavBar = (props) => (
     </nav>
 
     <div className="personal-links">
-      <a href="https://github.com/edmondthui" className="dropdown-title">
+      <a href="https://github.com/edmondthui" className="dropdown-title" target="_blank">
         <FaGithub size={30} />
       </a>
       <a
         href="https://www.linkedin.com/in/edmond-hui/"
         className="dropdown-title"
+        target="_blank"
       >
         <FaLinkedin size={30} />
       </a>
