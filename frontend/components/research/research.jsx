@@ -50,7 +50,7 @@ class Research extends React.Component {
       ));
     }
     return (
-      <div>
+      <div className="background">
         <LoggedInNavBar />
         <div className="research-nav-bar">
           <div className="research-nav-container">
