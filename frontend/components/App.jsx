@@ -16,7 +16,7 @@ import Holdings from "./holdings/holdings_container";
 import Activity from "./activity/activity_container";
 
 const App = () => (
-  <div>
+  <div className="background">
     <Modal />
     <Route exact path="/" component={SplashPage} />
     <AuthRoute path="/login" component={LoginFormContainer} />
