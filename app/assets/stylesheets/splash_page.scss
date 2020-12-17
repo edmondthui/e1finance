@@ -1,8 +1,9 @@
 .splash-container {
   display: flex;
   margin: auto;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  background-color: white;
 }
 
 .splash-text {
@@ -41,7 +42,7 @@
   padding: 30px;
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  padding-top: 60px;
 }
 
 .how-it-works-title {
@@ -59,7 +60,7 @@
 .footer-signup-bar {
   background-color: #12123d;
   padding: 30px;
-  margin-top: 60px;
+  padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,8 +81,9 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 0px 200px;
+  padding: 0px 200px;
   padding-top: 70px;
+  background-color: white;
 }
 
 .why-e1 h1 {
@@ -108,8 +110,18 @@
 .why-e1-text p {
   color: #12123d;
 }
+
 .why-e1-container img {
   padding: 0px 100px;
+}
+
+#root {
+  background-color: #F4F5FB;
+}
+
+.main {
+  width: 90%;
+  margin: auto;
 }
 
 .splash-container {

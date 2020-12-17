@@ -1,11 +1,15 @@
 .nav-bar {
   display: flex;
-  margin-left: 300px;
+  // margin-left: 300px;
   align-items: center;
   background-color: white;
   font-weight: 600;
   color: #1835c3;
   height: 70px;
+}
+
+.nav-bar img {
+  padding-left: 100px;
 }
 
 .dropdown {
