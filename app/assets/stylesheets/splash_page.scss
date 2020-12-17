@@ -23,10 +23,6 @@
   font-size: 20px;
 }
 
-.splash-image img {
-  width: 900px;
-}
-
 .splash-text #signup {
   background-color: #1835c3;
   color: white;
@@ -75,6 +71,14 @@
   background-color: #ddfa00;
   border: 1px solid #ddfa00;
   text-decoration: none;
+}
+
+.splash-image{
+  height: 625px;
+}
+
+.splash-image img{
+  width: 900px;
 }
 
 .why-e1 {
