@@ -1,5 +1,10 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaAngellist,
+  FaAddressCard,
+} from "react-icons/fa";
 
 class DashboardFooter extends React.Component {
   render() {
@@ -16,6 +21,12 @@ class DashboardFooter extends React.Component {
           </a>
           <a href="https://www.linkedin.com/in/edmond-hui/" target="_blank">
             <FaLinkedin size={30} style={{ color: "#12123D" }} />
+          </a>
+          <a href="https://angel.co/u/edmondthui" target="_blank">
+            <FaAngellist size={30} style={{ color: "#12123D" }} />
+          </a>
+          <a href="https://edmondhui.com/" target="_blank">
+            <FaAddressCard size={30} style={{ color: "#12123D" }} />
           </a>
         </div>
       </div>

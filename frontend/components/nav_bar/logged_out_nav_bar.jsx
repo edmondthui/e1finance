@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-scroll";
 import { withRouter } from "react-router";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaAngellist, FaAddressCard } from "react-icons/fa";
 
 const LoggedOutNavBar = (props) => (
   <section className="nav-bar">
@@ -35,7 +35,11 @@ const LoggedOutNavBar = (props) => (
     </nav>
 
     <div className="personal-links">
-      <a href="https://github.com/edmondthui" className="dropdown-title" target="_blank">
+      <a
+        href="https://github.com/edmondthui"
+        className="dropdown-title"
+        target="_blank"
+      >
         <FaGithub size={30} />
       </a>
       <a
@@ -44,6 +48,20 @@ const LoggedOutNavBar = (props) => (
         target="_blank"
       >
         <FaLinkedin size={30} />
+      </a>
+      <a
+        href="https://angel.co/u/edmondthui"
+        className="dropdown-title"
+        target="_blank"
+      >
+        <FaAngellist size={30} />
+      </a>
+      <a
+        href="https://edmondhui.com/"
+        className="dropdown-title"
+        target="_blank"
+      >
+        <FaAddressCard size={30} />
       </a>
     </div>
     <div className="login-buttons">
