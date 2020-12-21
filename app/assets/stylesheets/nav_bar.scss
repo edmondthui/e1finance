@@ -10,6 +10,7 @@
 
 .nav-bar img {
   padding-left: 100px;
+  padding-right: 25px;
 }
 
 .dropdown {
@@ -34,7 +35,7 @@
 
 .login-buttons {
   margin-left: auto;
-  margin-right: 300px;
+  margin-right: 100px;
 }
 
 #login {
@@ -52,11 +53,14 @@
   text-decoration: none;
   border: 2px solid #1835c3;
   text-decoration: none;
-  padding-left: 50px;
-  padding-right: 60px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 75px;
+  padding-right: 75px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 250px;
+  height: 50px;
   color: #1835c3;
+  font-weight: 700;
 }
 
 #signup:hover {

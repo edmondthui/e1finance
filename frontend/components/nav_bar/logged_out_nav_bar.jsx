@@ -5,12 +5,14 @@ import { FaGithub, FaLinkedin, FaAngellist, FaAddressCard } from "react-icons/fa
 
 const LoggedOutNavBar = (props) => (
   <section className="nav-bar">
-    <img
-      src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png"
-      alt="E1 Logo"
-      height="50"
-      width="50"
-    />
+    <a href="/">
+      <img
+        src="https://i.postimg.cc/jjXLsv17/Untitled-design-52.png"
+        alt="E1 Logo"
+        height="50"
+        width="50"
+      />
+    </a>
     <nav className="nav-content">
       <div className="dropdown">
         <Link
