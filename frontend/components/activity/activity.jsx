@@ -40,8 +40,12 @@ class Holdings extends React.Component {
             <p>{activity.activity}</p>
             <div className="stock-research-price">
               <p>
-                {"$" +
-                  activity.value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}
+                {activity.value
+                  ? "$" +
+                    activity.value
+                      .toFixed(2)
+                      .replace(/\d(?=(\d{3})+\.)/g, "$&,")
+                  : "$0"}
               </p>
             </div>
           </div>
