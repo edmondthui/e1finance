@@ -26,7 +26,6 @@ class Holdings extends React.Component {
     let holdingsArr = [];
     if (this.props.portfolios.length > 0) {
       this.props.portfolios.forEach((portfolio) => {
-        debugger;
         let holdings = portfolio.tickers.map((ticker, idx) => (
           <div
             className="portfolio-index-item"
