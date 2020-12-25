@@ -26,6 +26,7 @@ class Holdings extends React.Component {
     let holdingsArr = [];
     if (this.props.portfolios.length > 0) {
       this.props.portfolios.forEach((portfolio) => {
+        debugger;
         let holdings = portfolio.tickers.map((ticker, idx) => (
           <div
             className="portfolio-index-item"
@@ -50,7 +51,7 @@ class Holdings extends React.Component {
               <div className="stock-research-price">
                 <p>
                   {"$" +
-                    (portfolio.value * portfolio.holding_percentages[idx])
+                    (portfolio.quantity[idx] * portfolio.prices[idx])
                       .toFixed(2)
                       .replace(/\d(?=(\d{3})+\.)/g, "$&,")}
                 </p>
