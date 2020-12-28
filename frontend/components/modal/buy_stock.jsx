@@ -64,7 +64,7 @@ class BuyStock extends React.Component {
       value: this.state.value,
       user_id: this.props.user.id,
     };
-    if (this.state.value > this.props.user.buying_power) {
+    if (this.state.value > this.props.user.buying_power || this.state.value === "") {
       this.props.closeModal();
     } else if (
       this.props.holdings.filter(

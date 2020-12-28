@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
           stocks = this.props.stocks.filter(x=> x.ticker.toUpperCase().includes(e.currentTarget.value.toUpperCase()) || x.stock_name.toUpperCase().includes(e.currentTarget.value.toUpperCase()))
         }
         stocks = stocks.slice(0, 5);
-        this.setState({[field]: stocks, search: stocks[0].ticker})
+        this.setState({[field]: stocks, search: stocks[0] ? stocks[0].ticker: ""})
       }
     }
   }

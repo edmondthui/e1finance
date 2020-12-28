@@ -49,11 +49,11 @@ class Chart extends React.Component {
       return;
     }
     this.setState({
-      value:
+      value: data.activePayload[0].value ? 
         "$" +
         data.activePayload[0].value
           .toFixed(2)
-          .replace(/\d(?=(\d{3})+\.)/g, "$&,"),
+          .replace(/\d(?=(\d{3})+\.)/g, "$&,") : "Please buy a stock to see value over time",
       hover: true,
       chartX: data.chartX,
       label: data.activePayload[0].payload.label,
