@@ -28,7 +28,7 @@ Users can create portfolios with many pies allowing them to choose their own sto
 
 ### Autobuy & Rebalancing
 Dollar cost averaging is the best strategy for consistant long term profits. The autobuy feature allows the user to automatically divide their buying power into the pie's current percentages. The rebalancing feature allows users to set the percentage allocated to each stock in the pie. This feature uses the percerntages calculated earlier and allows users to change their current holding percentages of stocks. Rebalancing required all other features to be working such as buying, selling, holdings, and activities.  
-```
+```JavaScript
   handleSubmit(e) {
     let percentages = this.percentages;
     let pie = this.props.pie;
