@@ -11,16 +11,19 @@ class Withdraw extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateBuyingPower({
-      id: this.props.user.id,
-      buying_power: -this.state.buying_power,
-    });
-    this.props.createActivity({
-      activity: "",
-      name: "Withdraw",
-      value: this.state.buying_power,
-      user_id: this.props.user.id,
-    });
+    if (this.state.buying_power <= this.props.user.buying_power) {
+      this.props.updateBuyingPower({
+        id: this.props.user.id,
+        buying_power: -this.state.buying_power,
+      });
+      this.props.createActivity({
+        activity: "",
+        name: "Withdraw",
+        value: this.state.buying_power,
+        user_id: this.props.user.id,
+      });
+    }
+
     this.props.closeModal();
   }
 
