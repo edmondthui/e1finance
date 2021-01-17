@@ -58,5 +58,5 @@ Dollar cost averaging is the best strategy for consistant long term profits. The
     this.props.closeModal();
   }
   ```  
-  This was the last feature I added to my application and takes advantage of the features I implemented previously. Rebalancing either triggers a buy or sell depending if the percentage the users sets is higher or lower than the current percentage. Then, this updates holdings in the database. Lastly, it adds a new activity for the user.  
+  This was the last feature I added to my application and takes advantage of the features I implemented previously. Rebalancing either triggers a buy or sell depending if the percentage the user sets is higher or lower than the current percentage. Then, this updates holdings in the database. Lastly, it adds a new activity for the user.  
 ![E1 Finance Autobuy and Rebalance Demo](https://i.imgur.com/QdiFT8u.gif)
