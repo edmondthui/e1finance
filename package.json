@@ -34,10 +34,14 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack -w --mode=development",
-    "postinstall": "webpack --mode=production"
-  },
+    "render-postbuild": "npm run build",
+    "sequelize": "sequelize",
+    "sequelize-cli": "sequelize-cli",
+    "start": "per-env",
+    "start:development": "nodemon -r dotenv/config ./bin/www",
+    "start:production": "node ./bin/www",
+    "build": "echo 'Building....'"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/edmondthui/e1finance.git"
